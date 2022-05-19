@@ -3,10 +3,10 @@
   <channel>
     <title>泽柏</title>
     <description>欢迎来到我的个人站~</description>
-    <link>http://jonce.cn/</link>
-    <atom:link href="http://jonce.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 May 2022 23:29:38 +0800</pubDate>
-    <lastBuildDate>Thu, 19 May 2022 23:29:38 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 20 May 2022 00:29:14 +0800</pubDate>
+    <lastBuildDate>Fri, 20 May 2022 00:29:14 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -73,8 +73,8 @@
 
 </description>
         <pubDate>Sat, 11 Jul 2020 00:00:00 +0800</pubDate>
-        <link>http://jonce.cn/2020/07/blog_info/</link>
-        <guid isPermaLink="true">http://jonce.cn/2020/07/blog_info/</guid>
+        <link>http://localhost:4000/2020/07/blog_info/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/07/blog_info/</guid>
         
         <category>jekyll</category>
         
@@ -125,8 +125,8 @@
 
 </description>
         <pubDate>Fri, 10 Jul 2020 00:00:00 +0800</pubDate>
-        <link>http://jonce.cn/2020/07/ReleaseNode/</link>
-        <guid isPermaLink="true">http://jonce.cn/2020/07/ReleaseNode/</guid>
+        <link>http://localhost:4000/2020/07/ReleaseNode/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/07/ReleaseNode/</guid>
         
         <category>jekyll</category>
         
@@ -237,8 +237,8 @@ H6 :###### Header 6    &lt;br /&gt;
 
 </description>
         <pubDate>Sun, 20 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://jonce.cn/2016/11/markdownTool/</link>
-        <guid isPermaLink="true">http://jonce.cn/2016/11/markdownTool/</guid>
+        <link>http://localhost:4000/2016/11/markdownTool/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/markdownTool/</guid>
         
         <category>markdown</category>
         
@@ -509,8 +509,8 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
 
 </description>
         <pubDate>Fri, 14 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://jonce.cn/2016/10/jekyll_tutorials1/</link>
-        <guid isPermaLink="true">http://jonce.cn/2016/10/jekyll_tutorials1/</guid>
+        <link>http://localhost:4000/2016/10/jekyll_tutorials1/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/jekyll_tutorials1/</guid>
         
         <category>jekyll</category>
         
