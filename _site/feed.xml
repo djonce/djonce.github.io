@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 May 2022 01:36:19 +0800</pubDate>
-    <lastBuildDate>Fri, 20 May 2022 01:36:19 +0800</lastBuildDate>
+    <pubDate>Fri, 20 May 2022 12:34:45 +0800</pubDate>
+    <lastBuildDate>Fri, 20 May 2022 12:34:45 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -75,58 +75,6 @@
         <pubDate>Sat, 11 Jul 2020 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2020/07/blog_info/</link>
         <guid isPermaLink="true">http://localhost:4000/2020/07/blog_info/</guid>
-        
-        <category>jekyll</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>博客迭代记录</title>
-        <description>&lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
-
-&lt;p&gt;本博客首发时间为2015年，至今已经5个年头了。&lt;/p&gt;
-
-&lt;p&gt;感觉之前更新迭代的有点乱，很多用户在使用的时候也没法确定是否要更新新版的博客，再次我专门用一篇文章来记录博客更新迭代的记录，如果你已经在使用我的博客模板的，你可以看看更新记录后确认下是否要更新。&lt;/p&gt;
-
-&lt;p&gt;博客的全功能介绍请看&lt;a href=&quot;http://leopardpan.cn/2020/07/blog_info/&quot;&gt;博客功能介绍&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;100&quot;&gt;1.0.0&lt;/h2&gt;
-
-&lt;p&gt;2016-11-25 第一版发布，红色主题&lt;/p&gt;
-
-&lt;h2 id=&quot;200-开发中&quot;&gt;2.0.0 开发中&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2016-11-25 修改博客风格为淡蓝色主题&lt;/li&gt;
-  &lt;li&gt;2016-12-16 增长404、about等页面&lt;/li&gt;
-  &lt;li&gt;2017-1-12 增加代码高亮&lt;/li&gt;
-  &lt;li&gt;2017-3-19 增加打赏公共&lt;/li&gt;
-  &lt;li&gt;2017-9-8 多说评论系统停服，切换到disqus评论（多说上的评论全没了😭）&lt;/li&gt;
-  &lt;li&gt;2019-1-25 增加博客底部社交链接&lt;/li&gt;
-  &lt;li&gt;2020-7-8 博客域名从 &lt;a href=&quot;http://baixin.io&quot;&gt;http://baixin.io&lt;/a&gt; 迁移到 &lt;a href=&quot;http://leopardpan.cn&quot;&gt;http://leopardpan.cn&lt;/a&gt; （baixin.io没法备案之前的统计也全没了😭）.&lt;/li&gt;
-  &lt;li&gt;2020-7-13 增加文章自动生成目录功能, 增加livere评论系统&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;博客更新手册&quot;&gt;博客更新手册&lt;/h2&gt;
-
-&lt;p&gt;如果你已经在使我的博客模板了，现在又想继续更新新版的博客，你下载博客后只需要修改两个各方&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;_config.yml 文件&lt;/li&gt;
-  &lt;li&gt;_posts 目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 文件里面的内容设置成你自己的，也可以用你原来的，最好是更新版的字段做一下对比。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 目录里面的文章全部删掉，把你自己的文章放进来&lt;/p&gt;
-
-&lt;p&gt;修改以上两个地方新版的博客便更新完成，快看看效果吧！&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 10 Jul 2020 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2020/07/ReleaseNode/</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/07/ReleaseNode/</guid>
         
         <category>jekyll</category>
         
@@ -513,6 +461,300 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
         <guid isPermaLink="true">http://localhost:4000/2016/10/jekyll_tutorials1/</guid>
         
         <category>jekyll</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Who is Jonce?</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/veda-vyasa-ganesha.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can watch the battle here.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 19 Sep 2016 02:04:56 +0800</pubDate>
+        <link>http://localhost:4000/2016/09/vyaasa/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/vyaasa/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 18 Sep 2016 02:04:56 +0800</pubDate>
+        <link>http://localhost:4000/2016/09/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/welcome-to-jekyll/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>A sample post</title>
+        <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.&lt;/p&gt;
+
+&lt;p&gt;Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wall.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.&lt;/p&gt;
+
+&lt;p&gt;Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.&lt;/p&gt;
+
+&lt;p&gt;Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.&lt;/p&gt;
+
+&lt;p&gt;Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.&lt;/p&gt;
+
+&lt;p&gt;Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/sky.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.&lt;/p&gt;
+
+&lt;p&gt;Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit.&lt;/p&gt;
+
+&lt;p&gt;Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque.&lt;/p&gt;
+
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/snow.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit.&lt;/p&gt;
+
+&lt;p&gt;Phasellus gravida semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.&lt;/p&gt;
+
+&lt;p&gt;Nunc nulla. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Donec venenatis vulputate lorem. Morbi nec metus. Phasellus blandit leo ut odio. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. In auctor lobortis lacus.&lt;/p&gt;
+
+&lt;p&gt;Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Vestibulum ullamcorper mauris at ligula. Fusce fermentum. Nullam cursus lacinia erat. Praesent blandit laoreet nibh. Fusce convallis metus id felis luctus adipiscing. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Quisque id mi.&lt;/p&gt;
+
+&lt;p&gt;Ut tincidunt tincidunt erat. Etiam feugiat lorem non metus. Vestibulum dapibus nunc ac augue. Curabitur vestibulum aliquam leo. Praesent egestas neque eu enim. In hac habitasse platea dictumst. Fusce a quam. Etiam ut purus mattis mauris sodales aliquam. Curabitur nisi. Quisque malesuada placerat nisl.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/windows.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Mauris sollicitudin fermentum libero. Praesent nonummy mi in odio. Nunc interdum lacus sit amet orci.&lt;/p&gt;
+
+&lt;p&gt;Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Morbi mollis tellus ac sapien. Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Fusce vel dui. Sed in libero ut nibh placerat accumsan. Proin faucibus arcu quis ante. In consectetuer turpis ut velit.&lt;/p&gt;
+
+&lt;p&gt;Nulla sit amet est. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Suspendisse feugiat. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Praesent nec nisl a purus blandit viverra. Praesent ac massa at ligula laoreet iaculis. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Fusce pharetra convallis urna. Quisque ut nisi. Donec mi odio, faucibus at, scelerisque quis,&lt;/p&gt;
+
+&lt;p&gt;Picture Credits - &lt;a href=&quot;http://unsplash.com&quot;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Sep 2016 02:04:56 +0800</pubDate>
+        <link>http://localhost:4000/2016/09/all-text/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/all-text/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>How use tools:overrideLibrary in a build.gradle file</title>
+        <description>&lt;p&gt;引用了一个同包名的library,编译时报错&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error:Execution failed for task ':app:processDebugManifest'.
+&amp;gt; Manifest merger failed : uses-sdk:minSdkVersion 8 cannot be smaller than version 9 declared in library [com.alipay.euler:andfix:0.5.0] /Users/apple/Documents/GitHub/AndFixDemo/app/build/intermediates/exploded-aar/com.alipay.euler/andfix/0.5.0/AndroidManifest.xml
+  	Suggestion: use tools:overrideLibrary=&quot;com.alipay.euler.andfix&quot; to force usage
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/how-use-override-library/61366099-399A-481E-83CE-046A2FC7B19C.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;manifest 标签下添加 
+xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+
+uses-sdk 标签下添加
+tools:overrideLibrary=&quot;you library package&quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 16 Sep 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/09/how-to-use-overrideLibrary/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/how-to-use-overrideLibrary/</guid>
+        
+        <category>新建,模板</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Java Serializable serialVersionUID问题</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;前言：项目升级新版本时，保存在SharedPreferences中用户信息丢失了。升级上来调试的时候取不到值，log中也没有看到其它信息，先后查看了上来的文件都是存在的，于是定位到取值的方法上面，进过调试发现我取对象时出现(java.io.InvalidClassException: …; local class incompatible: stream classdesc serialVersionUID = xxL, local class serialVersionUID = xxxL)异常。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SharedPreferences中保存User 我是以对象的方式保存的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;kp&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cipher&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;no&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TAG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; put: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;edit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ByteUtil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;objectToByte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encrypt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+                &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HexUtil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;encodeHexStr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;var5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SharedPreferences中取出&lt;em&gt;User&lt;/em&gt;的Object对象进行强制转换为User。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;kp&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cipher&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;no&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HexUtil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decodeHex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;toCharArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;decrypt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+                &lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ByteUtil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;byteToObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;no&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TAG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; get: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;var6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;问题已经很明确了，类转换异常
+查了一下 User的修改记录，里面加了个没有使用到的方法，导致User的序列化编号不一致。此时就到值了转化异常，取不到值。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 07 Sep 2016 18:38:24 +0800</pubDate>
+        <link>http://localhost:4000/2016/09/java-serializable-serialVersionUID/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/java-serializable-serialVersionUID/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Linux(Centos6.5)安装jenkyll</title>
+        <description>&lt;p&gt;安装jekyll之前要先安装依赖库ruby,gem&lt;/p&gt;
+
+&lt;h3 id=&quot;步骤&quot;&gt;步骤&lt;/h3&gt;
+&lt;p&gt;1.安装前先安装gcc&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum install gcc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;2.推荐使用rvm来安装ruby和gem(https://ruby-china.org/wiki/install_ruby_guide)最后安装成功。然后需要重启一下终端，甚至需要重启一下系统，然后查rvm， ruby， gem版本信息如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@iZ231xhruwmZ jonce]# rvm -v
+rvm 1.27.0 (latest) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]
+[root@iZ231xhruwmZ jonce]# ruby -v
+ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
+[root@iZ231xhruwmZ jonce]# gem -v
+2.5.1
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.安装jekyll&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注：如系统报错：Unable to download data from https://rubygems.org/ 等类似错误，请更换ruby的源。我用的是淘宝的ruby源&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;删除默认的官方源
+gem sources -r https://rubygems.org/
+添加淘宝源
+gem sources -a https://ruby.taobao.org/
+查看当前源
+gem sources -l # https://ruby.taobao.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;成功安装后，查看：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@iZ231xhruwmZ jonce]# jekyll -v
+jekyll 3.3.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;站点目录下运行服务：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;写完文章上传到_posts目录下运行下面的命令发布&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;发布的目录下 jekyll build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 21 Aug 2016 06:45:23 +0800</pubDate>
+        <link>http://localhost:4000/2016/08/jekyll-install-sample-for-centos6.5/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/08/jekyll-install-sample-for-centos6.5/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>android gradle manifestPlaceholders简单实用</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;项目开发中，时常要切换到不同的服务器，app包的配置也是时常变化&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;androidmanifestxml&quot;&gt;AndroidManifest.xml&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;配置的第三方参数属性&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPID}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPKEY}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPSECRET}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;主项目build文件&quot;&gt;主项目build文件&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;buildTypes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ 配置
+                 buildConfigField &quot;String&quot;, &quot;API_HOST_V1&quot;, &quot;\&quot;http:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;                &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggssH9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTsBtV3h74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;
+                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;release&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;minifyEnabled&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;shrinkResources&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;proguardFiles&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getDefaultProguardFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'proguard-android.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'proguard-rules.pro'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;  &lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ 配置
+                 buildConfigField &quot;String&quot;, &quot;API_HOST_V1&quot;, &quot;\&quot;http:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;                &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggHs9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTBtV3sh74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Fri, 10 Jun 2016 18:38:24 +0800</pubDate>
+        <link>http://localhost:4000/2016/06/andriod-gradle-manifestPlaceholders/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/06/andriod-gradle-manifestPlaceholders/</guid>
         
         
       </item>
