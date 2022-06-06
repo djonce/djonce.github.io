@@ -15,14 +15,14 @@ date: 2016-06-10 10:38:24
 
 <!-- 配置的第三方参数属性 -->
 <meta-data
-     android:name="PUSH_APPID"
-         android:value="${PUSH_APPID}" />
+    android:name="PUSH_APPID"
+        android:value="${PUSH_APPID}" />
 <meta-data
-     android:name="PUSH_APPKEY"
-     android:value="${PUSH_APPKEY}" />
+    android:name="PUSH_APPKEY"
+    android:value="${PUSH_APPKEY}" />
 <meta-data
-     android:name="PUSH_APPSECRET"
-     android:value="${PUSH_APPSECRET}" />
+    android:name="PUSH_APPSECRET"
+    android:value="${PUSH_APPSECRET}" />
 
 {% endhighlight %}
 
@@ -32,26 +32,26 @@ date: 2016-06-10 10:38:24
 {% highlight ruby %}
 
 buildTypes {
-     debug {
-             // 配置
-                 buildConfigField "String", "API_HOST_V1", "\"http://test.19ba.cn/api/user.json\""
-                 manifestPlaceholders = [
-                         "PUSH_APPID"     : "RwMRBLFggssH9VXPhG4EGwA3",
-                         "PUSH_APPKEY"    : "NI8gTsBtV3h74uYkIo3JCv2",
-                         "PUSH_APPSECRET" : "UzLbqt5HUZ6lAUAzFRlKn"
-                         ]
-             } 
-     release {
-             minifyEnabled true
-                 shrinkResources true
-                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'          // 配置
-                 buildConfigField "String", "API_HOST_V1", "\"http://release.19ba.cn/api/user.json\""
-                 manifestPlaceholders = [
-                         "PUSH_APPID"     : "RwMRBLFggHs9VXPhG4EGwA3",
-                         "PUSH_APPKEY"    : "NI8gTBtV3sh74uYkIo3JCv2",
-                         "PUSH_APPSECRET" : "UzLbqt5HUZ6lAUAzFRlKn"         ]
-             }
-     }
+    debug {
+            // 配置
+                buildConfigField "String", "API_HOST_V1", "\"http://test.19ba.cn/api/user.json\""
+                manifestPlaceholders = [
+                        "PUSH_APPID"     : "RwMRBLFggssH9VXPhG4EGwA3",
+                        "PUSH_APPKEY"    : "NI8gTsBtV3h74uYkIo3JCv2",
+                        "PUSH_APPSECRET" : "UzLbqt5HUZ6lAUAzFRlKn"
+                        ]
+            }
+    release {
+            minifyEnabled true
+                shrinkResources true
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'        // 配置
+                buildConfigField "String", "API_HOST_V1", "\"http://release.19ba.cn/api/user.json\""
+                manifestPlaceholders = [
+                        "PUSH_APPID"     : "RwMRBLFggHs9VXPhG4EGwA3",
+                        "PUSH_APPKEY"    : "NI8gTBtV3sh74uYkIo3JCv2",
+                        "PUSH_APPSECRET" : "UzLbqt5HUZ6lAUAzFRlKn"        ]
+            }
+    }
 
 {% endhighlight %}
 

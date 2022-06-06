@@ -5,81 +5,9 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 May 2022 13:20:39 +0800</pubDate>
-    <lastBuildDate>Fri, 20 May 2022 13:20:39 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Jun 2022 21:25:36 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Jun 2022 21:25:36 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
-    
-      <item>
-        <title>博客模板功能介绍</title>
-        <description>&lt;p&gt;在此之前我有写过一篇&lt;a href=&quot;http://leopardpan.cn/2016/10/jekyll_tutorials1/&quot;&gt;如何使用我博客模板的文章&lt;/a&gt; 请先看这篇基础集成，这篇文章主要讲的是如何使用和修改我的博客主题，文章内容含以下几点：&lt;/p&gt;
-
-&lt;h2 id=&quot;博客特性&quot;&gt;博客特性&lt;/h2&gt;
-
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;适配电脑、手机、平板等各屏幕&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;响应式设计&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;个性化头像&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;每篇文章自动添加打赏功能&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持Disqus、livere评论系统&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持站点总数访问统计，每篇文章访问统计&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持文章自动生成目录&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持标签分类&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持代码高亮&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持文章H1、H2、H3、H4标题样式多样化&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持多种三方社交icon展示，能从博客直接跳转到自己的三方社交主页&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持三方社交分享(facebook、twitter)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;博客主要模块介绍&quot;&gt;博客主要模块介绍&lt;/h2&gt;
-
-&lt;h3 id=&quot;_configyml&quot;&gt;_config.yml&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 是博客的配置文件，整个站点的信息都在这修改，想要把我的模板改成你自己的也需要修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;重要字段说明&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;enableToc: 是否开启文章自动生成目录，设置为false文章不会自动生成目录&lt;/li&gt;
-  &lt;li&gt;comment/livere: livere评论系统，支持微信、qq、微博、豆瓣、twitter等登录后可以直接评论&lt;/li&gt;
-  &lt;li&gt;comment/disqus: disqus评论系统，支持facebook、twitter等登录后可以直接评论&lt;/li&gt;
-  &lt;li&gt;social/weibo、github、zhihu、jianshu等: 个人站底部展示的微博等三方社交按钮，点击后直接跳转到个人微博或其他社交主页&lt;/li&gt;
-  &lt;li&gt;baidu/id: 百度统计，用来统计你个人站点的用户访问情况&lt;/li&gt;
-  &lt;li&gt;ga/id: google统计，用来统计你个人站点的用户访问情况&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;_config.yml 文件除以上字段还有一些可以自行修改，例如title之类的字段&lt;/p&gt;
-
-&lt;h3 id=&quot;_posts&quot;&gt;_posts&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 目录是用来存放文章的目录，写新文章，直接放在这个目录即可&lt;/p&gt;
-
-&lt;p&gt;使用博客模板时，请把博客自带的文章给去掉，如果想使用博客自带的文章请 &lt;code class=&quot;highlighter-rouge&quot;&gt;注明出处&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;自定义页面&quot;&gt;自定义页面&lt;/h3&gt;
-
-&lt;p&gt;about.md、support.md 等为自定义页面，如果你想添加自动以页面可以直接复制about.md 文件修改文件名和里面的内容即可。&lt;/p&gt;
-
-&lt;p&gt;如果需要在导航显示你新增的页面，直接在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 文件的nav字段中添加你新页面配置即可&lt;/p&gt;
-
-&lt;h3 id=&quot;修改说明&quot;&gt;修改说明&lt;/h3&gt;
-
-&lt;p&gt;如果要修改博客模板信息建议只修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 文件内容和 &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 里面的文章信息。因为博客模板一直在更新迭代，改动多了以免你后期更新博客模板的时候不方便。&lt;/p&gt;
-
-&lt;p&gt;如果你想改动模板的样式又想继续更新迭代博客模板，你可以提交在github上提交&lt;code class=&quot;highlighter-rouge&quot;&gt;pull request&lt;/code&gt; 或者直接给我发邮件建议改成什么样，如果你的提议确实可以，我会采纳的，并且非常感谢你的建议。&lt;/p&gt;
-
-&lt;p&gt;博客迭代信息请看&lt;a href=&quot;http://leopardpan.cn/2020/07/ReleaseNode/&quot;&gt;ReleaseNode&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;遇到解决不了的问题可以找 &lt;a href=&quot;http://leopardpan.cn/support/&quot;&gt;技术支持&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 11 Jul 2020 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2020/07/blog_info/</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/07/blog_info/</guid>
-        
-        <category>jekyll</category>
-        
-        
-      </item>
     
       <item>
         <title>文档支持的Markdown语法</title>
@@ -123,10 +51,6 @@ H6 :###### Header 6    &lt;br /&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;插入一张图片&quot;&gt;插入一张图片&lt;/h3&gt;
-
-&lt;p&gt;打赏一个吧&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/payimg/weipayimg.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;css 的大部分语法同样可以在 markdown 上使用，但不同的渲染器渲染出来的 markdown 内容样式也不一样，下面这些链接里面有 markdown 基本语法，你也可以在下面几个平台上尝试着写一些。&lt;/p&gt;
 
@@ -195,11 +119,7 @@ H6 :###### Header 6    &lt;br /&gt;
     
       <item>
         <title>Jekyll搭建个人博客</title>
-        <description>&lt;p&gt;　之前写了一篇&lt;a href=&quot;http://leopardpan.cn/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&quot;&gt;HEXO搭建个人博客&lt;/a&gt;的教程获得了很好评，尤其是在&lt;a href=&quot;http://www.jianshu.com/p/465830080ea9&quot;&gt;简书&lt;/a&gt;上目前已经累积了10W+的阅读量了，也有好心的读者主动给我打赏，在此感谢。&lt;/p&gt;
-
-&lt;p&gt;　如果你看过我的文章会发现我现在的博客样式跟之前是有很大的区别的，之前我也是使用 HEXO 搭建的博客，后来发现使用 HEXO 在多台电脑上发布博客，操作起来并不是那么方便，果断就转到了 Jekyll 上，接下来我会讲如何使用 Jekyll 搭建博客，&lt;a href=&quot;http://leopardpan.cn/#blog&quot;&gt;博客模板效果&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;介绍&quot;&gt;介绍&lt;/h3&gt;
 
 &lt;p&gt;　Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的&lt;/p&gt;
 
@@ -427,7 +347,7 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
 
 &lt;p&gt;表示本地服务部署成功。&lt;/p&gt;
 
-&lt;p&gt;在浏览器输入 &lt;a href=&quot;127.0.0.1:4000&quot;&gt;127.0.0.1:4000&lt;/a&gt; ， 就可以看到&lt;a href=&quot;http://leopardpan.cn&quot;&gt;leopardpan.cn&lt;/a&gt;博客效果了。&lt;/p&gt;
+&lt;p&gt;在浏览器输入 &lt;a href=&quot;127.0.0.1:4000&quot;&gt;127.0.0.1:4000&lt;/a&gt; ， 就可以看到博客效果了。&lt;/p&gt;
 
 &lt;h3 id=&quot;修改成你自己的博客&quot;&gt;修改成你自己的博客&lt;/h3&gt;
 
@@ -442,18 +362,7 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
 
 &lt;h3 id=&quot;为什么要是用-jekyll&quot;&gt;为什么要是用 Jekyll&lt;/h3&gt;
 
-&lt;p&gt;使用了 Jekyll 你会发现如果你想使用多台电脑发博客都很方便，只要把远端 github 仓库里的博客 clone 下来，写文章后再提交就可以了，Hexo 由于远端提交的是静态网页，所有无法直接写 Markdown 的文章。如果你想看 Hexo 搭建博客，可以看看我的另一篇&lt;a href=&quot;http://leopardpan.cn/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/&quot;&gt;HEXO搭建个人博客&lt;/a&gt;的教程。&lt;/p&gt;
-
-&lt;p&gt;如果你在搭建博客遇到问题，可以在&lt;a href=&quot;http://leopardpan.cn/2016/10/jekyll_tutorials1/&quot;&gt;原文博客&lt;/a&gt;的评论里给我提问。&lt;/p&gt;
-
-&lt;p&gt;后面会继续介绍，在我的博客基础上，如何修改成你自己喜欢的 Style，欢迎继续关注我博客的更新。&lt;/p&gt;
-
-&lt;h3 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;问题：最近很多朋友使用我的模板报警告：The CNAME &lt;code class=&quot;highlighter-rouge&quot;&gt;leopardpan.cn&lt;/code&gt; is already taken 
-解决：把CNAME里面的baixin.io修改成你自己的域名，如果你暂时没有域名，CNAME里面就什么都不用谢。（之前没人反馈过这个问题，应该是github page最近才最的限制。）&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;使用了 Jekyll 你会发现如果你想使用多台电脑发博客都很方便，只要把远端 github 仓库里的博客 clone 下来，写文章后再提交就可以了，Hexo 由于远端提交的是静态网页，所有无法直接写 Markdown 的文章。&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 14 Oct 2016 00:00:00 +0800</pubDate>
@@ -718,43 +627,140 @@ jekyll 3.3.1
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;配置的第三方参数属性&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPID}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPID}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPKEY}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPKEY}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPSECRET}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPSECRET}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;主项目build文件&quot;&gt;主项目build文件&lt;/h3&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;buildTypes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ 配置
-                 buildConfigField &quot;String&quot;, &quot;API_HOST_V1&quot;, &quot;\&quot;http:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;                &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggssH9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTsBtV3h74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;
-                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;release&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;minifyEnabled&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;shrinkResources&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;proguardFiles&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getDefaultProguardFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'proguard-android.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'proguard-rules.pro'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;  &lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ 配置
-                 buildConfigField &quot;String&quot;, &quot;API_HOST_V1&quot;, &quot;\&quot;http:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;                &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggHs9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTBtV3sh74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;配置&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;buildConfigField&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;String&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;API_HOST_V1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http://test.19ba.cn/api/user.json&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggssH9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTsBtV3h74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;release&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;minifyEnabled&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;shrinkResources&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;proguardFiles&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getDefaultProguardFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'proguard-android.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'proguard-rules.pro'&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ 配置
+                buildConfigField &quot;String&quot;, &quot;API_HOST_V1&quot;, &quot;\&quot;http:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggHs9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTBtV3sh74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Fri, 10 Jun 2016 18:38:24 +0800</pubDate>
         <link>http://localhost:4000/2016/06/andriod-gradle-manifestPlaceholders/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/06/andriod-gradle-manifestPlaceholders/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Example Post</title>
+        <description>&lt;h1 id=&quot;header-1&quot;&gt;Header 1&lt;/h1&gt;
+
+&lt;h2 id=&quot;header-2&quot;&gt;Header 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;header-3&quot;&gt;Header 3&lt;/h3&gt;
+
+&lt;h4 id=&quot;header-4&quot;&gt;Header 4&lt;/h4&gt;
+
+&lt;h5 id=&quot;header-5&quot;&gt;Header 5&lt;/h5&gt;
+
+&lt;h6 id=&quot;header-6&quot;&gt;Header 6&lt;/h6&gt;
+
+&lt;h2 id=&quot;paragraphs&quot;&gt;Paragraphs&lt;/h2&gt;
+
+&lt;p&gt;These are sample paragraphs showing &lt;em&gt;italics&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt; text style. Here is an unordered  list&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and an ordered list&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A blockquote would look like this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;another one&lt;/p&gt;
+
+  &lt;p&gt;with multiple lines&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
+
+&lt;p&gt;A code block would look like this.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Contact&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Project&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.&lt;/p&gt;
+
+&lt;p&gt;This is a simple markdown table&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tables&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Are&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Cool&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;col 3 is&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;right-aligned&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1600&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;col 2 is&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;centered&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;zebra stripes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;are neat&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Use below code to show &lt;strong&gt;Table of Contents&lt;/strong&gt; on a page&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;Do&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;displayed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:toc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Sat, 07 May 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/05/example/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/05/example/</guid>
         
         
       </item>
