@@ -2,7 +2,7 @@
 layout: post
 title: "jekyll docker 部署"
 description: ""
-category: 
+category: jekyll
 tags: []
 ---
 {% include JB/setup %}

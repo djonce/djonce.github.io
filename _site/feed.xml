@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Jun 2022 22:51:33 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Jun 2022 22:51:33 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Jun 2022 23:04:39 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Jun 2022 23:04:39 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -31,6 +31,8 @@ docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&qu
         <link>http://localhost:4000/2022/06/jekyll-docker-setup/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/jekyll-docker-setup/</guid>
         
+        
+        <category>jekyll</category>
         
       </item>
     
