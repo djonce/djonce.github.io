@@ -11,10 +11,10 @@ date: 2015-10-24 11:38:24
 
 {% highlight ruby %}
 runUiThreadDelay(new Runnable(){
-     @Override 
-     public void run() { 
-        finish();     
-     } }, 300L);
+    @Override
+    public void run() {
+       finish();    
+    }}, 300L);
 
 {% endhighlight %}   
 
@@ -22,11 +22,11 @@ runUiThreadDelay(new Runnable(){
 
 {% highlight ruby %}
 
-@Override 
+@Override
 public void finish() {
-     closeSoftKeyBoard();
-      super.finish();
- }
+    closeSoftKeyBoard();
+    super.finish();
+}
 
 {% endhighlight %}
 
@@ -35,15 +35,15 @@ public void finish() {
 {% highlight ruby %}
 
 private void closeSoftKeyBoard() {
-     hideSoftInput(activity);
-  }
+    hideSoftInput(activity);
+}
 
 public static boolean hideSoftInput(Activity activity) {
-     if(activity.getCurrentFocus() != null) {
+    if(activity.getCurrentFocus() != null) {
         return imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
     } else {
-         return false;
-    } 
+        return false;
+    }
 }
 
 {% endhighlight %}
@@ -52,16 +52,16 @@ public static boolean hideSoftInput(Activity activity) {
 
 {% highlight ruby %}
 
-public void runUiThreadDelay(Runnable runnable, long delayMillis) { 
+public void runUiThreadDelay(Runnable runnable, long delayMillis) {
     getHandler().postDelayed(runnable, delayMillis);
- }
+}
 
 public Handler getHandler() {
-     if (mHandler == null) { 
-             mHandler = new Handler(Looper.getMainLooper());
-     }
-      return mHandler;
- }
+    if (mHandler == null) {
+            mHandler = new Handler(Looper.getMainLooper());
+    }
+    return mHandler;
+}
 
 {% endhighlight %}
 

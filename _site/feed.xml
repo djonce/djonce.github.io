@@ -5,9 +5,40 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Jun 2022 23:04:39 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Jun 2022 23:04:39 +0800</lastBuildDate>
+    <pubDate>Tue, 07 Jun 2022 00:46:24 +0800</pubDate>
+    <lastBuildDate>Tue, 07 Jun 2022 00:46:24 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>简历注意事项</title>
+        <description>
+&lt;h2 id=&quot;简历注意事项&quot;&gt;简历注意事项&lt;/h2&gt;
+
+&lt;p&gt;1、简历不要太长&lt;/p&gt;
+
+&lt;p&gt;2、简历一定要真实客观&lt;/p&gt;
+
+&lt;p&gt;3、不要过分谦虚&lt;/p&gt;
+
+&lt;p&gt;4、简历要写上求职的职位&lt;/p&gt;
+
+&lt;p&gt;5、在文字、排版、格式上不要出现错误&lt;/p&gt;
+
+&lt;p&gt;6、 简历不必做得太花哨&lt;/p&gt;
+
+&lt;p&gt;7、简历言辞要简洁直白&lt;/p&gt;
+
+&lt;p&gt;8、不要写上对薪水的要求&lt;/p&gt;
+
+&lt;p&gt;9、不要写太多个人情况&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 07 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/jianli-views/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/jianli-views/</guid>
+        
+        
+      </item>
     
       <item>
         <title>jekyll docker 部署</title>
@@ -21,11 +52,38 @@
 docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/srv/jekyll:Z&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;--publish&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::1]:4000:4000 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   jekyll/jekyll &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  jekyll serve
-
+  jekyll serve &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;p&gt;docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/ -it jekyll/jekyll:3.5 jekyll server&lt;/p&gt;
+
+&lt;p&gt;adduser jekyll –password jekyll000&lt;/p&gt;
+
+&lt;p&gt;chmod -v u+w /etc/sudoers 修改为可编辑&lt;/p&gt;
+
+&lt;p&gt;vi /etc/sudoers 在root下添加一行jekyll
+root    ALL=(ALL)       ALL
+jekyll  ALL=(ALL)       ALL&lt;/p&gt;
+
+&lt;p&gt;chmod -v u-w /etc/sudoers 再修改为不可编辑&lt;/p&gt;
+
+&lt;p&gt;sudo groupadd docker 添加docker用户组
+sudo gpasswd -a jekyll docker 将jekyll用户加入到docker用户组中
+newgrp docker 更新用户组&lt;/p&gt;
+
+&lt;p&gt;chown -R jekyll:jekyll /home/jekyll/ 更新jekyll所有文件所属&lt;/p&gt;
+
+&lt;p&gt;su jekyll 使用jekyll登录继续下一步&lt;/p&gt;
+
+&lt;p&gt;docker run -it –rm -p 4000:4000 -v /home/jekyll/www:/srv/jekyll/ jekyll/jekyll:4.1.0 jekyll server -w&lt;/p&gt;
+
+&lt;p&gt;docker run -it –rm -p 4000:4000 -v /home/jekyll/www/temp:/srv/jekyll/ jekyll/jekyll:4.1.0 jekyll server&lt;/p&gt;
+
+&lt;p&gt;docker run –rm –volume=”$PWD:/srv/jekyll” -it jekyll/jekyll:3.5 jekyll new .&lt;/p&gt;
+
+&lt;p&gt;docker run –name newblog –volume=”$PWD:/srv/jekyll” -p 4000:4000 -it jekyll/jekyll:3.5 jekyll serve –watch –drafts&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/jekyll-docker-setup/</link>
@@ -639,58 +697,6 @@ jekyll 3.3.1
         <pubDate>Sun, 21 Aug 2016 06:45:23 +0800</pubDate>
         <link>http://localhost:4000/2016/08/jekyll-install-sample-for-centos6.5/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/08/jekyll-install-sample-for-centos6.5/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>android gradle manifestPlaceholders简单实用</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;项目开发中，时常要切换到不同的服务器，app包的配置也是时常变化&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;androidmanifestxml&quot;&gt;AndroidManifest.xml&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;配置的第三方参数属性&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPID}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPKEY}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;${PUSH_APPSECRET}&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;主项目build文件&quot;&gt;主项目build文件&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;buildTypes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;配置&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;buildConfigField&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;String&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;API_HOST_V1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http://test.19ba.cn/api/user.json&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggssH9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTsBtV3h74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;release&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;minifyEnabled&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;shrinkResources&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;proguardFiles&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getDefaultProguardFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'proguard-android.txt'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'proguard-rules.pro'&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ 配置
-                buildConfigField &quot;String&quot;, &quot;API_HOST_V1&quot;, &quot;\&quot;http:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;release&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;manifestPlaceholders&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPID&quot;&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;RwMRBLFggHs9VXPhG4EGwA3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPKEY&quot;&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NI8gTBtV3sh74uYkIo3JCv2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;s2&quot;&gt;&quot;PUSH_APPSECRET&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UzLbqt5HUZ6lAUAzFRlKn&quot;&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-</description>
-        <pubDate>Fri, 10 Jun 2016 18:38:24 +0800</pubDate>
-        <link>http://localhost:4000/2016/06/andriod-gradle-manifestPlaceholders/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/06/andriod-gradle-manifestPlaceholders/</guid>
         
         
       </item>
