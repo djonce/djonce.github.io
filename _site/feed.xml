@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Jun 2022 01:04:50 +0800</pubDate>
-    <lastBuildDate>Tue, 07 Jun 2022 01:04:50 +0800</lastBuildDate>
+    <pubDate>Fri, 10 Jun 2022 00:57:14 +0800</pubDate>
+    <lastBuildDate>Fri, 10 Jun 2022 00:57:14 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -24,18 +24,45 @@
 
 &lt;p&gt;5、在文字、排版、格式上不要出现错误&lt;/p&gt;
 
-&lt;p&gt;6、 简历不必做得太花哨&lt;/p&gt;
+&lt;p&gt;6、简历不必做得太花哨&lt;/p&gt;
 
 &lt;p&gt;7、简历言辞要简洁直白&lt;/p&gt;
 
-&lt;p&gt;8、不要写上对薪水的要求&lt;/p&gt;
+&lt;p&gt;8、不要写太多个人情况&lt;/p&gt;
 
-&lt;p&gt;9、不要写太多个人情况&lt;/p&gt;
+&lt;p&gt;9、不要用怪字怪体&lt;/p&gt;
+
+&lt;p&gt;10、仔细措辞体现个人业绩&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 07 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/jianli-views/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/jianli-views/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>工作经历</title>
+        <description>
+&lt;p&gt;工作经历&lt;/p&gt;
+
+&lt;p&gt;2017-5-31 – 至今&lt;/p&gt;
+
+&lt;p&gt;淘宝大学App&lt;/p&gt;
+
+&lt;p&gt;云课堂 、&lt;/p&gt;
+
+&lt;p&gt;淘宝教育小程序&lt;/p&gt;
+
+&lt;p&gt;最高日活 150W  日活 20w&lt;/p&gt;
+
+&lt;p&gt;轻课堂&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 07 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/jian-li/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/jian-li/</guid>
         
         
       </item>
@@ -49,15 +76,15 @@
 &lt;h3 id=&quot;快速启动命令&quot;&gt;快速启动命令&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/srv/jekyll:Z&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;--publish&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::1]:4000:4000 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
   jekyll/jekyll &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  jekyll serve &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt;
+  jekyll serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/ -it jekyll/jekyll:3.5 jekyll server&lt;/p&gt;
+&lt;p&gt;sudo docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/ -it jekyll/jekyll:3.5 jekyll server&lt;/p&gt;
 
 &lt;p&gt;adduser jekyll –password jekyll000&lt;/p&gt;
 
@@ -163,7 +190,7 @@ H6 :###### Header 6    &lt;br /&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;3-绘制表格&quot;&gt;3. 绘制表格&lt;/h4&gt;
+&lt;h3 id=&quot;3-绘制表格&quot;&gt;3. 绘制表格&lt;/h3&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -648,55 +675,6 @@ tools:overrideLibrary=&quot;you library package&quot;
         <pubDate>Wed, 07 Sep 2016 18:38:24 +0800</pubDate>
         <link>http://localhost:4000/2016/09/java-serializable-serialVersionUID/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/java-serializable-serialVersionUID/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Linux(Centos6.5)安装jenkyll</title>
-        <description>&lt;p&gt;安装jekyll之前要先安装依赖库ruby,gem&lt;/p&gt;
-
-&lt;h3 id=&quot;步骤&quot;&gt;步骤&lt;/h3&gt;
-&lt;p&gt;1.安装前先安装gcc&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum install gcc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;2.推荐使用rvm来安装ruby和gem(https://ruby-china.org/wiki/install_ruby_guide)最后安装成功。然后需要重启一下终端，甚至需要重启一下系统，然后查rvm， ruby， gem版本信息如下：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@iZ231xhruwmZ jonce]# rvm -v
-rvm 1.27.0 (latest) by Wayne E. Seguin &amp;lt;wayneeseguin@gmail.com&amp;gt;, Michal Papis &amp;lt;mpapis@gmail.com&amp;gt; [https://rvm.io/]
-[root@iZ231xhruwmZ jonce]# ruby -v
-ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
-[root@iZ231xhruwmZ jonce]# gem -v
-2.5.1
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;3.安装jekyll&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;注：如系统报错：Unable to download data from https://rubygems.org/ 等类似错误，请更换ruby的源。我用的是淘宝的ruby源&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;删除默认的官方源
-gem sources -r https://rubygems.org/
-添加淘宝源
-gem sources -a https://ruby.taobao.org/
-查看当前源
-gem sources -l # https://ruby.taobao.org
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;成功安装后，查看：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@iZ231xhruwmZ jonce]# jekyll -v
-jekyll 3.3.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;站点目录下运行服务：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;写完文章上传到_posts目录下运行下面的命令发布&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;发布的目录下 jekyll build
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 21 Aug 2016 06:45:23 +0800</pubDate>
-        <link>http://localhost:4000/2016/08/jekyll-install-sample-for-centos6.5/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/08/jekyll-install-sample-for-centos6.5/</guid>
         
         
       </item>
