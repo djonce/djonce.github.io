@@ -18,5 +18,4 @@ tags: []
   -u "$(id -u):$(id -g)" \
   -e "DOCKER_USER=$USER" \
   codercom/code-server:latest
-
 ```

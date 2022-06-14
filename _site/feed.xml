@@ -5,9 +5,86 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Jun 2022 20:41:47 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Jun 2022 20:41:47 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2022 20:54:11 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2022 20:54:11 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>docker install nginx</title>
+        <description>
+&lt;h3 id=&quot;docker官方镜像仓库&quot;&gt;docker官方镜像仓库&lt;/h3&gt;
+&lt;p&gt;地址： https://hub.docker.com&lt;/p&gt;
+
+&lt;h3 id=&quot;选择合适的nginx镜像版本&quot;&gt;选择合适的nginx镜像版本&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/docker/install-nginx-1.png&quot; alt=&quot;搜索nginx镜像&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/docker/install-nginx-2.png&quot; alt=&quot;查看nginx版本&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;下载nginx镜像&quot;&gt;下载nginx镜像&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;命令&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;docker pull nginx&lt;/td&gt;
+      &lt;td&gt;下载最新版本（等同于：docker pull nginx:latest&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;docker pull nginx:版本号&lt;/td&gt;
+      &lt;td&gt;下载制定版本&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;查看nginx镜像信息&quot;&gt;查看nginx镜像信息&lt;/h3&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker images
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/docker/install-nginx-3.png&quot; alt=&quot;下载nginx镜像&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;创建nginx配置文件&quot;&gt;创建nginx配置文件&lt;/h3&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --name nginx -p 80:80 -d nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;两种创建配置方式&lt;/p&gt;
+
+&lt;h4 id=&quot;第一种参考nginx配置文档纯手撸&quot;&gt;第一种参考nginx配置文档，纯手撸&lt;/h4&gt;
+&lt;p&gt;地址：https://nginx.org/en/docs/http/configuring_https_servers.html&lt;/p&gt;
+
+&lt;h4 id=&quot;第二种使用nginx默认配置文件&quot;&gt;第二种使用nginx默认配置文件&lt;/h4&gt;
+&lt;p&gt;这里通过docker cp把容器里的nginx配置拷贝&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/etc/nginx/nginx.conf /home/nginx/nginx.conf
+docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/etc/nginx/conf.d /home/nginx/conf/
+docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/html /home/nginx/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;创建nginx容器并运行&quot;&gt;创建Nginx容器并运行&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nginx &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/nginx/nginx.conf:/etc/nginx/nginx.conf &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/nginx/conf.d:/etc/nginx/conf.d &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/nginx/log:/var/log/nginx &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /home/nginx/html:/usr/share/nginx/html &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; nginx:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;验证结果&quot;&gt;验证结果&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 14 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/docker-install-nginx/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/docker-install-nginx/</guid>
+        
+        
+      </item>
     
       <item>
         <title>coder server搭建</title>
@@ -22,7 +99,6 @@
   -u &quot;$(id -u):$(id -g)&quot; \
   -e &quot;DOCKER_USER=$USER&quot; \
   codercom/code-server:latest
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 13 Jun 2022 00:00:00 +0800</pubDate>
@@ -570,33 +646,6 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
         <pubDate>Sat, 17 Sep 2016 02:04:56 +0800</pubDate>
         <link>http://localhost:4000/2016/09/all-text/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/09/all-text/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>How use tools:overrideLibrary in a build.gradle file</title>
-        <description>&lt;p&gt;引用了一个同包名的library,编译时报错&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error:Execution failed for task ':app:processDebugManifest'.
-&amp;gt; Manifest merger failed : uses-sdk:minSdkVersion 8 cannot be smaller than version 9 declared in library [com.alipay.euler:andfix:0.5.0] /Users/apple/Documents/GitHub/AndFixDemo/app/build/intermediates/exploded-aar/com.alipay.euler/andfix/0.5.0/AndroidManifest.xml
-  	Suggestion: use tools:overrideLibrary=&quot;com.alipay.euler.andfix&quot; to force usage
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/how-use-override-library/61366099-399A-481E-83CE-046A2FC7B19C.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;manifest 标签下添加 
-xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-
-uses-sdk 标签下添加
-tools:overrideLibrary=&quot;you library package&quot;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Fri, 16 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/09/how-to-use-overrideLibrary/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/how-to-use-overrideLibrary/</guid>
-        
-        <category>新建,模板</category>
         
         
       </item>
