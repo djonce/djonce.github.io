@@ -55,9 +55,11 @@ docker cp nginx:/usr/share/nginx/html /home/nginx/
 ```shell
 docker run \
 -p 80:80 \
+-p 443:443 \
 --name nginx \
 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf \
 -v /home/nginx/conf.d:/etc/nginx/conf.d \
+-v /home/nginx/cert:/etc/nginx/cert \
 -v /home/nginx/log:/var/log/nginx \
 -v /home/nginx/html:/usr/share/nginx/html \
 -d nginx:latest
