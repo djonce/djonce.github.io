@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Jun 2022 03:27:09 +0800</pubDate>
-    <lastBuildDate>Fri, 17 Jun 2022 03:27:09 +0800</lastBuildDate>
+    <pubDate>Fri, 17 Jun 2022 16:29:56 +0800</pubDate>
+    <lastBuildDate>Fri, 17 Jun 2022 16:29:56 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -45,8 +45,14 @@
 &lt;h3 id=&quot;小程序注册&quot;&gt;小程序注册&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/wxopen/waregister?action=step1&quot;&gt;微信小程序注册&lt;/a&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;小程序解冻&quot;&gt;小程序解冻&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/cgi-bin/readtemplate?t=forgetpwd/index_tmpl&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;微信小程序解冻&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;小程序管理&quot;&gt;小程序管理&lt;/h3&gt;
-&lt;p&gt;(微信小程序管理)(https://mp.weixin.qq.com/wxamp/home/guide?lang=zh_CN&amp;amp;token=453053744)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/wxamp/home/guide?lang=zh_CN&amp;amp;token=453053744&quot;&gt;微信小程序管理&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;小程序数据分析&quot;&gt;小程序数据分析&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wedata.weixin.qq.com/mp2/basic-data/core-data?source=3&quot;&gt;微信小程序数据分析-We分析&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/weixin-miniapp-dev/</link>
