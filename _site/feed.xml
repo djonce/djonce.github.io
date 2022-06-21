@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Jun 2022 17:13:19 +0800</pubDate>
-    <lastBuildDate>Tue, 21 Jun 2022 17:13:19 +0800</lastBuildDate>
+    <pubDate>Tue, 21 Jun 2022 18:44:24 +0800</pubDate>
+    <lastBuildDate>Tue, 21 Jun 2022 18:44:24 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,142 +385,167 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>css content box</title>
+        <title>css box BFC</title>
         <description>
-&lt;h3 id=&quot;什么是盒模型&quot;&gt;什么是盒模型&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CSS规范的一个模块，定义了一个长方形的盒子，包括各自的content、padding、border、margin。常译为盒子模型、盒模型或框模型。
+&lt;h3 id=&quot;什么是bfc&quot;&gt;什么是BFC?&lt;/h3&gt;
+
+&lt;p&gt;块格式化上下文（Block Formatting Context, BFC)是web页面的可视CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。&lt;/p&gt;
+
+&lt;p&gt;它是 CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。&lt;/p&gt;
+
+&lt;p&gt;简单的说BFC是一个完全独立的空间，这个空间里子元素的渲染不会影响到外面的布局&lt;/p&gt;
+
+&lt;h3 id=&quot;触发bfc的条件&quot;&gt;触发BFC的条件&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;浮动元素&lt;/strong&gt;(float除了none以外的值)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;定位元素&lt;/strong&gt;(position: absolute / fixed)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;display&lt;/strong&gt;(值为inline-block/ table-cell/- table-caption/ flex/ inline-flex)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;overflow&lt;/strong&gt;(值为hidden/atuo/srcoll)设置有这些属性的box，都会产生BFC&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bfc-特性&quot;&gt;BFC 特性&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;内部的盒子在垂直方向上一个接一个地放置&lt;/li&gt;
+  &lt;li&gt;垂直方向上地距离由margin决定，在同一个BFC的box中，相邻的两个box边距会重叠&lt;/li&gt;
+  &lt;li&gt;BFC的区域不会与float box重叠&lt;/li&gt;
+  &lt;li&gt;计算BFC的高度时，浮动元素也参与计算&lt;/li&gt;
+  &lt;li&gt;BFC就是一个独立的容器，里面的子元素不受外面的元素影响&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bfc的作用&quot;&gt;BFC的作用&lt;/h3&gt;
+
+&lt;h4 id=&quot;1解决marginc重叠问题添加独立bfc&quot;&gt;1.解决marginc重叠问题（添加独立BFC)&lt;/h4&gt;
+
+&lt;p&gt;看下面例子&lt;/p&gt;
+
+&lt;p&gt;未设置BFC之前&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;CSS代码&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;orange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;Html代码&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;child&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;child&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;盒模型分类&quot;&gt;盒模型分类&lt;/h3&gt;
+&lt;p&gt;设置BFC后&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;从标准上分为&lt;strong&gt;标准盒模型&lt;/strong&gt;和&lt;strong&gt;替代（IE)盒模型&lt;/strong&gt;;&lt;/li&gt;
-  &lt;li&gt;从元素类型上分为&lt;strong&gt;块级盒子（block box)&lt;/strong&gt;和&lt;strong&gt;内联盒子（Inline box)&lt;/strong&gt;;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CSS代码
+.child{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  margin: 30px;
+}
+.bfc{
+  overflow: hidden;
+}
+​
+html代码
+&amp;lt;div class=&quot;child&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&quot;bfc&quot;&amp;gt;
+    &amp;lt;div class=&quot;child&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 
-&lt;h3 id=&quot;两种盒模型的区别&quot;&gt;两种盒模型的区别&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;W3C标准盒子模型(content-box): &lt;strong&gt;内容是盒子的边界&lt;/strong&gt;；&lt;/li&gt;
-  &lt;li&gt;W3C标准盒子模型(content-box): &lt;strong&gt;width=内容宽度&lt;/strong&gt;；&lt;/li&gt;
-  &lt;li&gt;IE盒子模型（border-box): &lt;strong&gt;边框才是盒子的边界&lt;/strong&gt;；&lt;/li&gt;
-  &lt;li&gt;IE盒子模型（border-box): &lt;strong&gt;width=内容宽度 + padding + border&lt;/strong&gt;；&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;如何设置两种盒子模型&quot;&gt;如何设置两种盒子模型&lt;/h3&gt;
-
-&lt;p&gt;在不设置&lt;strong&gt;box-sizing&lt;/strong&gt;的情况下，&lt;strong&gt;box-sizing&lt;/strong&gt;默认是&lt;strong&gt;coontent-box&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* 标准模型 */
-box-sizing: content-box;
-
-/* IE模型 */
-box-sizing: border-box;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;块级盒子和内联盒子&quot;&gt;块级盒子和内联盒子&lt;/h3&gt;
+&lt;p&gt;设置BFC后，第一个child的margin-bottom不会和第二个child的margin-top重叠，这也是BFC元素的另一个原则，不会影响到外边的box，是一个独立的区域。&lt;/p&gt;
 
-&lt;p&gt;这两种盒子会在&lt;strong&gt;页面流(page flow)&lt;/strong&gt; 和 元素之间的关系方面表现不同的行为：&lt;/p&gt;
+&lt;p&gt;效果图对比&lt;/p&gt;
 
-&lt;h4 id=&quot;块级盒子&quot;&gt;块级盒子&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/css/bfc-1.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;1、盒子可以占据父容器的所有可用空间；&lt;/p&gt;
+&lt;h4 id=&quot;2解决浮动高度塌陷问题在父元素添加overflowhidden&quot;&gt;2.解决浮动高度塌陷问题（在父元素添加overflow：hidden）&lt;/h4&gt;
 
-&lt;p&gt;2、每个盒子都会换行；&lt;/p&gt;
+&lt;p&gt;当我们不给父元素设置高度，子元素设置了浮动的时候，会发生高度塌陷，代码和效果图如下。&lt;/p&gt;
 
-&lt;p&gt;3、&lt;strong&gt;width&lt;/strong&gt;和&lt;strong&gt;height&lt;/strong&gt;属性可以发挥作用；&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/css/bfc-2.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;4、默认情况下，&lt;strong&gt;h1-h6,p,div,section&lt;/strong&gt;都处于block状态；&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+CSS代码
+.father {
+    border: 5px solid rgb(91, 243, 30);
+    width: 460px;
+    
+}
+.child{
+    width: 200px;
+    height: 200px;
+    border:5px solid orange;
+    float: left;
+}
+​
+html代码
+&amp;lt;div class=&quot;father&quot;&amp;gt;
+    &amp;lt;div class=&quot;child&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;child&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 
-&lt;h4 id=&quot;内联盒子&quot;&gt;内联盒子&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;1、盒子不会产生换行；&lt;/p&gt;
+&lt;p&gt;当我们在父元素的样式中加入overflow：hidden，就能解决float高度塌陷问题。&lt;/p&gt;
 
-&lt;p&gt;2、&lt;strong&gt;width&lt;/strong&gt;和&lt;strong&gt;height&lt;/strong&gt;属性将不起作用；&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+CSS代码
+.father {
+    border: 5px solid rgb(91, 243, 30);
+    width: 460px;
+    overflow: hidden;
+}
+.child{
+    width: 200px;
+    height: 200px;
+    border:5px solid orange;
+    float: left;
+}
+​
+html代码
+&amp;lt;div class=&quot;father&quot;&amp;gt;
+    &amp;lt;div class=&quot;child&quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div class=&quot;child&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
 
-&lt;p&gt;3、默认情况下用做链接的&lt;strong&gt;a&lt;/strong&gt;元素、&lt;strong&gt;span&lt;/strong&gt;、&lt;strong&gt;em&lt;/strong&gt;、以及&lt;strong&gt;strong&lt;/strong&gt;都处于inline状态。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;特殊的行内块inline-block&quot;&gt;特殊的行内块(inline-block)&lt;/h4&gt;
-&lt;p&gt;如果不希望&lt;strong&gt;一个项切换到新行&lt;/strong&gt;，但希望可以&lt;strong&gt;设定宽度和高度&lt;/strong&gt;，此时可以将元素为&lt;strong&gt;inline-block&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;效果图就会发生变化&lt;/p&gt;
 
-&lt;h4 id=&quot;元素类型切换&quot;&gt;元素类型切换&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;块级盒子，内联盒子以及行内盒子主要通过&lt;strong&gt;display属性&lt;/strong&gt;来设置对应的值分别为：&lt;/li&gt;
-  &lt;li&gt;块级盒子： &lt;strong&gt;display:block&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;内联盒子： &lt;strong&gt;display:inline&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;行内块盒子： &lt;strong&gt;display:inline-block&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/css/bfc-3.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;盒子型属性设置&quot;&gt;盒子型属性设置&lt;/h3&gt;
-
-&lt;p&gt;margin&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;margin:10px 50px;  //上下10px 左右50px&lt;/li&gt;
-  &lt;li&gt;margin:10px 50px 20px; //上:10px 左右50px 下20px&lt;/li&gt;
-  &lt;li&gt;margin:10px 50px 20px 0px; //上10px 右50px 下20px 左0px;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;padding属性:padding简写属性控制元素所有四条边的内边距区域。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;该属性是以下属性的简写:padding-bottom,padding-left,padding-right,padding-top。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;padding简写模式对应的值分别为&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;padding:10px 50px; //上下10px 左右50px&lt;/li&gt;
-  &lt;li&gt;padding:10px 50px 20px; //上:10px 左右50px 下20px&lt;/li&gt;
-  &lt;li&gt;padding:10px 50px 20px 0px; //上10px 右50px 下20px 左0px;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;border属性:CSS的border属性是一个用于设置各种单独的边界属性的简写属性。&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;border可以用于设置一个或多个以下属性的值：
-border-width,border-style,border-color。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;例子:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;border:solid;  //chrome下默认3px实线边框&lt;/li&gt;
-  &lt;li&gt;border:dashed red;  //chrom下默认3px红色虚线边框&lt;/li&gt;
-  &lt;li&gt;border:1px solid;  //1px实线边框&lt;/li&gt;
-  &lt;li&gt;border:10px double red;  //10px双实线红色边&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;引用： https://zhuanlan.zhihu.com/p/264250523&lt;/p&gt;
 
 &lt;h3 id=&quot;小结&quot;&gt;小结&lt;/h3&gt;
 
-&lt;p&gt;1、什么是盒模型?&lt;/p&gt;
+&lt;p&gt;讲清楚如下三点:&lt;/p&gt;
 
-&lt;p&gt;CSS基础框盒模型是CSS规范的一个模块,它定义了一种长方形的盒子。&lt;/p&gt;
+&lt;h4 id=&quot;1-什么是-bfc&quot;&gt;1. 什么是 BFC?&lt;/h4&gt;
 
-&lt;p&gt;2、盒模型的分类有？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BFC 是 Block Formatting Context，块格式化上下文的缩写，简单的说 BFC 是一个完全独立的空间, 这个空间里子元素的渲染不会影响到外面的布局。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;盒模型从标准定义上分为标准盒模型和替代（IE）盒模型,从元素类型上分为块级盒子和内联盒子&lt;/p&gt;
+&lt;h4 id=&quot;2-如何创建-bfc可以触发生成-bfc-的条件有哪些-我们只需记住如下常见的几种就可以&quot;&gt;2. 如何创建 BFC?(可以触发生成 BFC 的条件有哪些?) 我们只需记住如下常见的几种就可以:&lt;/h4&gt;
 
-&lt;p&gt;3、盒模型的切换:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;display: table-cell&lt;br /&gt;
+display: flex&lt;br /&gt;
+display: inline-block&lt;br /&gt;
+overflow: hidden&lt;br /&gt;
+position: absolute&lt;br /&gt;
+position: fixed&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;通过box-sizing属性进行切换：
-ie盒模型:box-sizing:border-box;
-标准盒模型:box-sizing:content-box;&lt;/p&gt;
+&lt;h4 id=&quot;3-bfc解决的什么问题&quot;&gt;3. BFC解决的什么问题?&lt;/h4&gt;
 
-&lt;p&gt;4、盒模型属性设置，margin和padding值的设置:&lt;/p&gt;
-
-&lt;p&gt;1个值的情况:如10px4个方向都为10px；&lt;/p&gt;
-
-&lt;p&gt;2个值的情况:如10px20px上下10px左右20px&lt;/p&gt;
-
-&lt;p&gt;3个值的情况:如10px20px30px上10px左右20px下30px&lt;/p&gt;
-
-&lt;p&gt;4个值的情况:如10px20px30px40px上10px右20px下30px左40px(顺时针)&lt;/p&gt;
-
-&lt;p&gt;border值:border:1pxsolidred三个值分别代表border-width,border-style,border-color.可设置一个或多个属性的值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.垂直方向margin重叠的问题。&lt;br /&gt;
+2.使用Float脱离文档流，父元素高度塌陷问题。&lt;/strong&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 21 Aug 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/08/css-content-box/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/08/css-content-box/</guid>
-        
-        <category>CSS</category>
+        <pubDate>Tue, 22 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/css-box-bfc/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/css-box-bfc/</guid>
         
         
       </item>
