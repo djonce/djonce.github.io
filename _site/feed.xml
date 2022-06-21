@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 00:34:53 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 00:34:53 +0800</lastBuildDate>
+    <pubDate>Wed, 22 Jun 2022 00:51:48 +0800</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2022 00:51:48 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,77 +385,29 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>css selector</title>
+        <title>css 选择器优先级规则</title>
         <description>
-&lt;h3 id=&quot;css选择器是什么&quot;&gt;CSS选择器是什么？&lt;/h3&gt;
+&lt;h3 id=&quot;优先级简述&quot;&gt;优先级简述&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;CSS选择器是CSS规则的一部分。它是元素和其他部分组合起来告诉浏览器那个HTML元素应当是选为应用规则中的CSS属性值的方式。选择器所选择的元素，叫做’选择器的对象‘。通俗的讲CSS选择器用来对选定的页面元素进行样式修改。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;浏览器通过优先级来判断哪些属性值与一个元素最为相关，从而在该元素上应用这些属性值。
+简单的说优先级是基于不同种类选择器组成的匹配规则。&lt;/p&gt;
 
-&lt;h3 id=&quot;css选择器有哪些&quot;&gt;CSS选择器有哪些？&lt;/h3&gt;
+&lt;h3 id=&quot;选择器优先级规则&quot;&gt;选择器优先级规则&lt;/h3&gt;
 
-&lt;p&gt;CSS选择器从种类上可以分为如下11中：&lt;/p&gt;
+&lt;p&gt;CSS选择器的优先级（权重如下）
+！important &amp;gt; 行内样式 &amp;gt; ID选择器 &amp;gt; 类、伪类、属性选择器 &amp;gt; 标签、伪元素选择器 &amp;gt; 通配符、子类选择器、兄弟选择器&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;选择器&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;式例&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;标签选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;h1{}&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;通配选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;* { }&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;类选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;.box { }&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ID 选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;#unique { }&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;标签属性选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;a[title] { }&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;伪类选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;p:first-child { }&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;伪元素选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;p::first-line { }&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;后代选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;article p&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;子代选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;article &amp;gt; p&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;相邻兄弟选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;h1 + p&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;通用兄弟选择器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;h1 ~ p&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;h3 id=&quot;小结&quot;&gt;小结&lt;/h3&gt;
+&lt;p&gt;讲清楚如下两点:&lt;/p&gt;
+
+&lt;p&gt;1、什么是 css 选择器优先级: css选择器优先级是基于不同种类选择器组成的匹配规则。&lt;/p&gt;
+
+&lt;p&gt;2、css 选择器的优先级: !important &amp;gt; 行内样式 &amp;gt; ID 选择器 &amp;gt; 类、伪类、属性选择器 &amp;gt; 标签、伪元素选择器 &amp;gt; 通配符、子类选择器、兄弟选择器&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 04 Sep 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/09/css-selector/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/css-selector/</guid>
-        
-        <category>CSS</category>
+        <pubDate>Fri, 22 Sep 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/css-selector-priority/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/css-selector-priority/</guid>
         
         
       </item>
