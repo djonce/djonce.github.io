@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Jun 2022 17:16:34 +0800</pubDate>
-    <lastBuildDate>Fri, 17 Jun 2022 17:16:34 +0800</lastBuildDate>
+    <pubDate>Tue, 21 Jun 2022 17:13:19 +0800</pubDate>
+    <lastBuildDate>Tue, 21 Jun 2022 17:13:19 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,109 +385,142 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>文档支持的Markdown语法</title>
-        <description>&lt;h2 id=&quot;什么是-markdown&quot;&gt;什么是 Markdown&lt;/h2&gt;
-
-&lt;p&gt;Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：如您正在阅读的这篇文章。它使用简单的符号标记不同的标题，分割不同的段落，&lt;strong&gt;粗体&lt;/strong&gt; 或者 &lt;em&gt;斜体&lt;/em&gt; 某些文字.&lt;/p&gt;
-
-&lt;p&gt;很多产品的文档也是用markdown编写的，并且以“README.MD”的文件名保存在软件的目录下面。
-　　&lt;/p&gt;
-&lt;h2 id=&quot;一些基本语法&quot;&gt;一些基本语法&lt;/h2&gt;
-
-&lt;p&gt;标题          &lt;br /&gt;
-H1 :# Header 1          &lt;br /&gt;
-H2 :## Header 2         &lt;br /&gt;
-H3 :### Header 3         &lt;br /&gt;
-H4 :#### Header 4         &lt;br /&gt;
-H5 :##### Header 5          &lt;br /&gt;
-H6 :###### Header 6    &lt;br /&gt;
-链接 :&lt;a href=&quot;URL&quot;&gt;Title&lt;/a&gt;      &lt;br /&gt;
-加粗 :&lt;strong&gt;Bold&lt;/strong&gt;      &lt;br /&gt;
-斜体字 :&lt;em&gt;Italics&lt;/em&gt;       &lt;br /&gt;
-*删除线 :&lt;del&gt;text&lt;/del&gt;        &lt;br /&gt;
-内嵌代码 : &lt;code class=&quot;highlighter-rouge&quot;&gt;alert('Hello World');&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;列表&quot;&gt;列表&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;列表1&lt;/li&gt;
-  &lt;li&gt;列表2&lt;/li&gt;
-  &lt;li&gt;列表3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;列表引用&quot;&gt;列表引用&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;列表1&lt;/li&gt;
-    &lt;li&gt;列表2&lt;/li&gt;
-    &lt;li&gt;列表3&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;插入一张图片&quot;&gt;插入一张图片&lt;/h3&gt;
-
-&lt;p&gt;css 的大部分语法同样可以在 markdown 上使用，但不同的渲染器渲染出来的 markdown 内容样式也不一样，下面这些链接里面有 markdown 基本语法，你也可以在下面几个平台上尝试着写一些。&lt;/p&gt;
-
-&lt;h2 id=&quot;博客支持的高级语法&quot;&gt;博客支持的高级语法&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-制作一份待办事宜&quot;&gt;1. 制作一份待办事宜&lt;/h3&gt;
-
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;支持以 PDF 格式导出文稿&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;新增 Todo 列表功能&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;修复 图标功能&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-高亮一段代码&quot;&gt;2. 高亮一段代码&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requires_authorization&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# A comment
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello world'&lt;/span&gt;
-
+        <title>css content box</title>
+        <description>
+&lt;h3 id=&quot;什么是盒模型&quot;&gt;什么是盒模型&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CSS规范的一个模块，定义了一个长方形的盒子，包括各自的content、padding、border、margin。常译为盒子模型、盒模型或框模型。
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;3-绘制表格&quot;&gt;3. 绘制表格&lt;/h3&gt;
+&lt;h3 id=&quot;盒模型分类&quot;&gt;盒模型分类&lt;/h3&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;项目&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;价格&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;数量&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;计算机&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$1600&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;手机&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$12&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;管线&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;234&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;ul&gt;
+  &lt;li&gt;从标准上分为&lt;strong&gt;标准盒模型&lt;/strong&gt;和&lt;strong&gt;替代（IE)盒模型&lt;/strong&gt;;&lt;/li&gt;
+  &lt;li&gt;从元素类型上分为&lt;strong&gt;块级盒子（block box)&lt;/strong&gt;和&lt;strong&gt;内联盒子（Inline box)&lt;/strong&gt;;&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;h3 id=&quot;两种盒模型的区别&quot;&gt;两种盒模型的区别&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;W3C标准盒子模型(content-box): &lt;strong&gt;内容是盒子的边界&lt;/strong&gt;；&lt;/li&gt;
+  &lt;li&gt;W3C标准盒子模型(content-box): &lt;strong&gt;width=内容宽度&lt;/strong&gt;；&lt;/li&gt;
+  &lt;li&gt;IE盒子模型（border-box): &lt;strong&gt;边框才是盒子的边界&lt;/strong&gt;；&lt;/li&gt;
+  &lt;li&gt;IE盒子模型（border-box): &lt;strong&gt;width=内容宽度 + padding + border&lt;/strong&gt;；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;如何设置两种盒子模型&quot;&gt;如何设置两种盒子模型&lt;/h3&gt;
+
+&lt;p&gt;在不设置&lt;strong&gt;box-sizing&lt;/strong&gt;的情况下，&lt;strong&gt;box-sizing&lt;/strong&gt;默认是&lt;strong&gt;coontent-box&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* 标准模型 */
+box-sizing: content-box;
+
+/* IE模型 */
+box-sizing: border-box;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;块级盒子和内联盒子&quot;&gt;块级盒子和内联盒子&lt;/h3&gt;
+
+&lt;p&gt;这两种盒子会在&lt;strong&gt;页面流(page flow)&lt;/strong&gt; 和 元素之间的关系方面表现不同的行为：&lt;/p&gt;
+
+&lt;h4 id=&quot;块级盒子&quot;&gt;块级盒子&lt;/h4&gt;
+
+&lt;p&gt;1、盒子可以占据父容器的所有可用空间；&lt;/p&gt;
+
+&lt;p&gt;2、每个盒子都会换行；&lt;/p&gt;
+
+&lt;p&gt;3、&lt;strong&gt;width&lt;/strong&gt;和&lt;strong&gt;height&lt;/strong&gt;属性可以发挥作用；&lt;/p&gt;
+
+&lt;p&gt;4、默认情况下，&lt;strong&gt;h1-h6,p,div,section&lt;/strong&gt;都处于block状态；&lt;/p&gt;
+
+&lt;h4 id=&quot;内联盒子&quot;&gt;内联盒子&lt;/h4&gt;
+
+&lt;p&gt;1、盒子不会产生换行；&lt;/p&gt;
+
+&lt;p&gt;2、&lt;strong&gt;width&lt;/strong&gt;和&lt;strong&gt;height&lt;/strong&gt;属性将不起作用；&lt;/p&gt;
+
+&lt;p&gt;3、默认情况下用做链接的&lt;strong&gt;a&lt;/strong&gt;元素、&lt;strong&gt;span&lt;/strong&gt;、&lt;strong&gt;em&lt;/strong&gt;、以及&lt;strong&gt;strong&lt;/strong&gt;都处于inline状态。&lt;/p&gt;
+
+&lt;h4 id=&quot;特殊的行内块inline-block&quot;&gt;特殊的行内块(inline-block)&lt;/h4&gt;
+&lt;p&gt;如果不希望&lt;strong&gt;一个项切换到新行&lt;/strong&gt;，但希望可以&lt;strong&gt;设定宽度和高度&lt;/strong&gt;，此时可以将元素为&lt;strong&gt;inline-block&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;元素类型切换&quot;&gt;元素类型切换&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;块级盒子，内联盒子以及行内盒子主要通过&lt;strong&gt;display属性&lt;/strong&gt;来设置对应的值分别为：&lt;/li&gt;
+  &lt;li&gt;块级盒子： &lt;strong&gt;display:block&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;内联盒子： &lt;strong&gt;display:inline&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;行内块盒子： &lt;strong&gt;display:inline-block&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;盒子型属性设置&quot;&gt;盒子型属性设置&lt;/h3&gt;
+
+&lt;p&gt;margin&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;margin:10px 50px;  //上下10px 左右50px&lt;/li&gt;
+  &lt;li&gt;margin:10px 50px 20px; //上:10px 左右50px 下20px&lt;/li&gt;
+  &lt;li&gt;margin:10px 50px 20px 0px; //上10px 右50px 下20px 左0px;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;padding属性:padding简写属性控制元素所有四条边的内边距区域。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;该属性是以下属性的简写:padding-bottom,padding-left,padding-right,padding-top。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;padding简写模式对应的值分别为&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;padding:10px 50px; //上下10px 左右50px&lt;/li&gt;
+  &lt;li&gt;padding:10px 50px 20px; //上:10px 左右50px 下20px&lt;/li&gt;
+  &lt;li&gt;padding:10px 50px 20px 0px; //上10px 右50px 下20px 左0px;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;border属性:CSS的border属性是一个用于设置各种单独的边界属性的简写属性。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;border可以用于设置一个或多个以下属性的值：
+border-width,border-style,border-color。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;例子:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;border:solid;  //chrome下默认3px实线边框&lt;/li&gt;
+  &lt;li&gt;border:dashed red;  //chrom下默认3px红色虚线边框&lt;/li&gt;
+  &lt;li&gt;border:1px solid;  //1px实线边框&lt;/li&gt;
+  &lt;li&gt;border:10px double red;  //10px双实线红色边&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;小结&quot;&gt;小结&lt;/h3&gt;
+
+&lt;p&gt;1、什么是盒模型?&lt;/p&gt;
+
+&lt;p&gt;CSS基础框盒模型是CSS规范的一个模块,它定义了一种长方形的盒子。&lt;/p&gt;
+
+&lt;p&gt;2、盒模型的分类有？&lt;/p&gt;
+
+&lt;p&gt;盒模型从标准定义上分为标准盒模型和替代（IE）盒模型,从元素类型上分为块级盒子和内联盒子&lt;/p&gt;
+
+&lt;p&gt;3、盒模型的切换:&lt;/p&gt;
+
+&lt;p&gt;通过box-sizing属性进行切换：
+ie盒模型:box-sizing:border-box;
+标准盒模型:box-sizing:content-box;&lt;/p&gt;
+
+&lt;p&gt;4、盒模型属性设置，margin和padding值的设置:&lt;/p&gt;
+
+&lt;p&gt;1个值的情况:如10px4个方向都为10px；&lt;/p&gt;
+
+&lt;p&gt;2个值的情况:如10px20px上下10px左右20px&lt;/p&gt;
+
+&lt;p&gt;3个值的情况:如10px20px30px上10px左右20px下30px&lt;/p&gt;
+
+&lt;p&gt;4个值的情况:如10px20px30px40px上10px右20px下30px左40px(顺时针)&lt;/p&gt;
+
+&lt;p&gt;border值:border:1pxsolidred三个值分别代表border-width,border-style,border-color.可设置一个或多个属性的值&lt;/p&gt;
 </description>
-        <pubDate>Sun, 20 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/11/markdownTool/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/markdownTool/</guid>
+        <pubDate>Mon, 21 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/css-content-box/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/css-content-box/</guid>
         
-        <category>markdown</category>
+        <category>CSS</category>
         
         
       </item>
