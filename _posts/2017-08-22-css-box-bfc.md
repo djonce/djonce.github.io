@@ -35,7 +35,7 @@ tags: [CSS]
 
 ### BFC的作用
 
-#### 1.解决marginc重叠问题（添加独立BFC)
+#### 1.解决margin重叠问题（添加独立BFC)
 
 看下面例子
 

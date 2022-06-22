@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 00:51:48 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 00:51:48 +0800</lastBuildDate>
+    <pubDate>Wed, 22 Jun 2022 14:30:15 +0800</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2022 14:30:15 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,29 +385,54 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>css 选择器优先级规则</title>
+        <title>CSS哪些属性可以继承</title>
         <description>
-&lt;h3 id=&quot;优先级简述&quot;&gt;优先级简述&lt;/h3&gt;
+&lt;h3 id=&quot;css哪些属性可以继承&quot;&gt;CSS哪些属性可以继承&lt;/h3&gt;
 
-&lt;p&gt;浏览器通过优先级来判断哪些属性值与一个元素最为相关，从而在该元素上应用这些属性值。
-简单的说优先级是基于不同种类选择器组成的匹配规则。&lt;/p&gt;
+&lt;h4 id=&quot;1字体&quot;&gt;1、字体&lt;/h4&gt;
 
-&lt;h3 id=&quot;选择器优先级规则&quot;&gt;选择器优先级规则&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;font&lt;/li&gt;
+  &lt;li&gt;font-family&lt;/li&gt;
+  &lt;li&gt;font-size&lt;/li&gt;
+  &lt;li&gt;font-style&lt;/li&gt;
+  &lt;li&gt;font-style&lt;/li&gt;
+  &lt;li&gt;font-variant&lt;/li&gt;
+  &lt;li&gt;font-weight&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;CSS选择器的优先级（权重如下）
-！important &amp;gt; 行内样式 &amp;gt; ID选择器 &amp;gt; 类、伪类、属性选择器 &amp;gt; 标签、伪元素选择器 &amp;gt; 通配符、子类选择器、兄弟选择器&lt;/p&gt;
+&lt;h4 id=&quot;2字母间距&quot;&gt;2、字母间距&lt;/h4&gt;
 
-&lt;h3 id=&quot;小结&quot;&gt;小结&lt;/h3&gt;
-&lt;p&gt;讲清楚如下两点:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;letter-spacing&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;1、什么是 css 选择器优先级: css选择器优先级是基于不同种类选择器组成的匹配规则。&lt;/p&gt;
+&lt;h4 id=&quot;3字母间距&quot;&gt;3、字母间距&lt;/h4&gt;
 
-&lt;p&gt;2、css 选择器的优先级: !important &amp;gt; 行内样式 &amp;gt; ID 选择器 &amp;gt; 类、伪类、属性选择器 &amp;gt; 标签、伪元素选择器 &amp;gt; 通配符、子类选择器、兄弟选择器&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;word-spacing&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;h4 id=&quot;4文字展示&quot;&gt;4、文字展示&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;line-height&lt;/li&gt;
+  &lt;li&gt;text-align&lt;/li&gt;
+  &lt;li&gt;text-indent&lt;/li&gt;
+  &lt;li&gt;text-transform&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;5可见性&quot;&gt;5、可见性&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;visibility&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Fri, 22 Sep 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/09/css-selector-priority/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/css-selector-priority/</guid>
+        <pubDate>Sat, 23 Sep 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/css-some-selector-extends/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/css-some-selector-extends/</guid>
+        
+        <category>CSS</category>
         
         
       </item>
