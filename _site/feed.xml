@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 14:30:15 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 14:30:15 +0800</lastBuildDate>
+    <pubDate>Wed, 22 Jun 2022 14:53:17 +0800</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2022 14:53:17 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,52 +385,40 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>CSS哪些属性可以继承</title>
+        <title>css px em rem vw vh</title>
         <description>
-&lt;h3 id=&quot;css哪些属性可以继承&quot;&gt;CSS哪些属性可以继承&lt;/h3&gt;
+&lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
 
-&lt;h4 id=&quot;1字体&quot;&gt;1、字体&lt;/h4&gt;
+&lt;h3 id=&quot;px的概念&quot;&gt;PX的概念&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;font&lt;/li&gt;
-  &lt;li&gt;font-family&lt;/li&gt;
-  &lt;li&gt;font-size&lt;/li&gt;
-  &lt;li&gt;font-style&lt;/li&gt;
-  &lt;li&gt;font-style&lt;/li&gt;
-  &lt;li&gt;font-variant&lt;/li&gt;
-  &lt;li&gt;font-weight&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;pixel像素的缩写，可以简单理解为网页开发的基本长度单位。&lt;/p&gt;
 
-&lt;h4 id=&quot;2字母间距&quot;&gt;2、字母间距&lt;/h4&gt;
+&lt;h3 id=&quot;em的概念&quot;&gt;em的概念&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;letter-spacing&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;em是一个相对长度单位，相对于当前元素内文本的字体尺寸。&lt;/p&gt;
 
-&lt;h4 id=&quot;3字母间距&quot;&gt;3、字母间距&lt;/h4&gt;
+&lt;h3 id=&quot;rem的概念&quot;&gt;rem的概念&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;word-spacing&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;rem是CSS3新增的一个相对单位，基于html元素的字体大小来决定，通常配合媒体查询用于解决移动端适配问题。&lt;/p&gt;
 
-&lt;h4 id=&quot;4文字展示&quot;&gt;4、文字展示&lt;/h4&gt;
+&lt;h3 id=&quot;vw和vh的概念&quot;&gt;vw和vh的概念&lt;/h3&gt;
+&lt;p&gt;vw和vh是相对于视口的长度单位，1vw即值为视口宽度的1%,1vh意味着值为视口高度的1%。&lt;/p&gt;
+
+&lt;h2 id=&quot;速记&quot;&gt;速记&lt;/h2&gt;
+
+&lt;h3 id=&quot;一绝三相&quot;&gt;一绝三相&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;line-height&lt;/li&gt;
-  &lt;li&gt;text-align&lt;/li&gt;
-  &lt;li&gt;text-indent&lt;/li&gt;
-  &lt;li&gt;text-transform&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;px： 绝对单位，网页开发基本长度单位&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;em： 相对单位，相对当前盒子字体大小进行计算&lt;/strong&gt;  （不设置浏览器默认值，chorme 16）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;px： 相对单位，相对根元素html字体大小进行计算&lt;/strong&gt;  （不设置浏览器默认值，chorme 16）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;vw vh: 相对单位，相对当前网页视口宽度和高度进行计算&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;5可见性&quot;&gt;5、可见性&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;visibility&lt;/li&gt;
-&lt;/ul&gt;
 </description>
-        <pubDate>Sat, 23 Sep 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/09/css-some-selector-extends/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/css-some-selector-extends/</guid>
+        <pubDate>Tue, 24 Sep 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/09/css-px-em-rem-vw-vh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/09/css-px-em-rem-vw-vh/</guid>
         
         <category>CSS</category>
         

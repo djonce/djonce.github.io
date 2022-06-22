@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "css box BFC"
-description: "css block formatting context"
+title: "CSS box BFC"
+description: "CSS block formatting context"
 category: 
 tags: [CSS]
 ---
