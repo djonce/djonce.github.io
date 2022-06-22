@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 14:53:17 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 14:53:17 +0800</lastBuildDate>
+    <pubDate>Wed, 22 Jun 2022 16:07:28 +0800</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2022 16:07:28 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,42 +385,187 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>css px em rem vw vh</title>
+        <title>CSS如何实现左边定宽，右边自适应</title>
         <description>
-&lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
+&lt;h2 id=&quot;主要有六种方式&quot;&gt;主要有六种方式&lt;/h2&gt;
 
-&lt;h3 id=&quot;px的概念&quot;&gt;PX的概念&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;html代码&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;pixel像素的缩写，可以简单理解为网页开发的基本长度单位。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width,&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;左边定宽右边自适应&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
 
-&lt;h3 id=&quot;em的概念&quot;&gt;em的概念&lt;/h3&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        left-box
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        right-box
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;em是一个相对长度单位，相对于当前元素内文本的字体尺寸。&lt;/p&gt;
+&lt;h3 id=&quot;float--calc&quot;&gt;float + calc&lt;/h3&gt;
 
-&lt;h3 id=&quot;rem的概念&quot;&gt;rem的概念&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;样式如下&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;rem是CSS3新增的一个相对单位，基于html元素的字体大小来决定，通常配合媒体查询用于解决移动端适配问题。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
+  width: 600px;
+  height: 400px;
+  border: 1px solic #000;
+}
 
-&lt;h3 id=&quot;vw和vh的概念&quot;&gt;vw和vh的概念&lt;/h3&gt;
-&lt;p&gt;vw和vh是相对于视口的长度单位，1vw即值为视口宽度的1%,1vh意味着值为视口高度的1%。&lt;/p&gt;
+.left {
+  float: left;
+  width: 200px;
+  height: 100%;
+  background: red;
+}
 
-&lt;h2 id=&quot;速记&quot;&gt;速记&lt;/h2&gt;
+.right {
+  float: right;
+  width: calc(100% - 200px);
+  height: 100%;
+  background: blue;
+}
 
-&lt;h3 id=&quot;一绝三相&quot;&gt;一绝三相&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;inline-block--calc&quot;&gt;inline-block + calc&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
+  width: 600px;
+  height: 400px;
+  border: 1px solic #000;
+}
+
+.left {
+  display: inline-block;
+  width: 200px;
+  height: 100%;
+  background: red;
+}
+
+.right {
+  display: inline-block;
+  width: calc(100% - 200px);
+  height: 100%;
+  background: blue;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;position--padding&quot;&gt;position + padding&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  border: 1px solic #000;
+}
+
+.left {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background: red;
+}
+
+.right {
+  padding-left: 200px;
+  height: 100%;
+  background: blue;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;flex-布局&quot;&gt;flex 布局&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
+  display: flex;
+  width: 600px;
+  height: 400px;
+  border: 1px solic #000;
+}
+
+.left {
+  width: 200px;
+  height: 100%;
+  background: red;
+}
+
+.right {
+  flex: 1;
+  background: blue;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;table-布局&quot;&gt;table 布局&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
+  display: table;
+  width: 600px;
+  height: 400px;
+  border: 1px solic #000;
+}
+
+.left {
+  display: table-cell;
+  width: 200px;
+  height: 100%;
+  background: red;
+}
+
+.right {
+  display: table-cell;
+  height: 100%;
+  background: blue;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;grid-布局&quot;&gt;grid 布局&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
+  display: grid;
+  grid-template-columns: 200px auto;
+  width: 600px;
+  height: 400px;
+  border: 1px solic #000;
+}
+
+.left {
+  background: red;
+}
+
+.right {
+  background: blue;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;小结&quot;&gt;小结&lt;/h2&gt;
+
+&lt;h3 id=&quot;不严格实现方案&quot;&gt;不严格实现方案&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;px： 绝对单位，网页开发基本长度单位&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;em： 相对单位，相对当前盒子字体大小进行计算&lt;/strong&gt;  （不设置浏览器默认值，chorme 16）&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;px： 相对单位，相对根元素html字体大小进行计算&lt;/strong&gt;  （不设置浏览器默认值，chorme 16）&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;vw vh: 相对单位，相对当前网页视口宽度和高度进行计算&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;float + calc&lt;/li&gt;
+  &lt;li&gt;inline-block + calc&lt;/li&gt;
+  &lt;li&gt;position + padding&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;严格实现方案&quot;&gt;严格实现方案&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;flex 布局&lt;/li&gt;
+  &lt;li&gt;table 布局&lt;/li&gt;
+  &lt;li&gt;grid 布局&lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Tue, 24 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/09/css-px-em-rem-vw-vh/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/09/css-px-em-rem-vw-vh/</guid>
-        
-        <category>CSS</category>
+        <pubDate>Sat, 28 Sep 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/09/css-left-fixed-right-auto/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/09/css-left-fixed-right-auto/</guid>
         
         
       </item>
