@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 16:07:28 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 16:07:28 +0800</lastBuildDate>
+    <pubDate>Wed, 22 Jun 2022 16:43:26 +0800</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2022 16:43:26 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -385,187 +385,12 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
       </item>
     
       <item>
-        <title>CSS如何实现左边定宽，右边自适应</title>
+        <title>css div 绝对居中</title>
         <description>
-&lt;h2 id=&quot;主要有六种方式&quot;&gt;主要有六种方式&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;html代码&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width,&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;左边定宽右边自适应&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        left-box
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        right-box
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;float--calc&quot;&gt;float + calc&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;样式如下&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
-  width: 600px;
-  height: 400px;
-  border: 1px solic #000;
-}
-
-.left {
-  float: left;
-  width: 200px;
-  height: 100%;
-  background: red;
-}
-
-.right {
-  float: right;
-  width: calc(100% - 200px);
-  height: 100%;
-  background: blue;
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;inline-block--calc&quot;&gt;inline-block + calc&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
-  width: 600px;
-  height: 400px;
-  border: 1px solic #000;
-}
-
-.left {
-  display: inline-block;
-  width: 200px;
-  height: 100%;
-  background: red;
-}
-
-.right {
-  display: inline-block;
-  width: calc(100% - 200px);
-  height: 100%;
-  background: blue;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;position--padding&quot;&gt;position + padding&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
-  position: relative;
-  width: 600px;
-  height: 400px;
-  border: 1px solic #000;
-}
-
-.left {
-  position: absolute;
-  width: 200px;
-  height: 100%;
-  background: red;
-}
-
-.right {
-  padding-left: 200px;
-  height: 100%;
-  background: blue;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;flex-布局&quot;&gt;flex 布局&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
-  display: flex;
-  width: 600px;
-  height: 400px;
-  border: 1px solic #000;
-}
-
-.left {
-  width: 200px;
-  height: 100%;
-  background: red;
-}
-
-.right {
-  flex: 1;
-  background: blue;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;table-布局&quot;&gt;table 布局&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
-  display: table;
-  width: 600px;
-  height: 400px;
-  border: 1px solic #000;
-}
-
-.left {
-  display: table-cell;
-  width: 200px;
-  height: 100%;
-  background: red;
-}
-
-.right {
-  display: table-cell;
-  height: 100%;
-  background: blue;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;grid-布局&quot;&gt;grid 布局&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.box {
-  display: grid;
-  grid-template-columns: 200px auto;
-  width: 600px;
-  height: 400px;
-  border: 1px solic #000;
-}
-
-.left {
-  background: red;
-}
-
-.right {
-  background: blue;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;小结&quot;&gt;小结&lt;/h2&gt;
-
-&lt;h3 id=&quot;不严格实现方案&quot;&gt;不严格实现方案&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;float + calc&lt;/li&gt;
-  &lt;li&gt;inline-block + calc&lt;/li&gt;
-  &lt;li&gt;position + padding&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;严格实现方案&quot;&gt;严格实现方案&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;flex 布局&lt;/li&gt;
-  &lt;li&gt;table 布局&lt;/li&gt;
-  &lt;li&gt;grid 布局&lt;/li&gt;
-&lt;/ul&gt;
 </description>
-        <pubDate>Sat, 28 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/09/css-left-fixed-right-auto/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/09/css-left-fixed-right-auto/</guid>
+        <pubDate>Mon, 30 Sep 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/09/css-div-position-center/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/09/css-div-position-center/</guid>
         
         
       </item>

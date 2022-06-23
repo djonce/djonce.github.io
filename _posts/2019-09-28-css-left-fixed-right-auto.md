@@ -10,6 +10,10 @@ tags: []
 
 ## 主要有六种方式
 
+**效果如下**
+
+![](/images/posts/css/css-right-auto.png)
+
 **html代码**
 
 
