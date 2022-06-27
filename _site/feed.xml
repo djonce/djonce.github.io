@@ -5,9 +5,84 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 16:43:26 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 16:43:26 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Jun 2022 23:56:39 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2022 23:56:39 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Calibre电子书管理工具</title>
+        <description>
+&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;Calibre 是一款强大且易用的电子书本地管理工具，可以在 Windows、macOS 和 Linux 平台集中整理各种格式的电子书……&lt;/p&gt;
+
+&lt;p&gt;https://calibre-ebook.com/zh_CN/download&lt;/p&gt;
+
+&lt;h2 id=&quot;搭建私人电子书平台&quot;&gt;搭建私人电子书平台&lt;/h2&gt;
+
+&lt;h3 id=&quot;1下载镜像&quot;&gt;1、下载镜像&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull johngong/calibre-web:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2创建calibre-web容器&quot;&gt;2、创建calibre-web容器&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker create  \
+    --name=calibre-web  \
+    -p 8083:8083  \
+    -p 8080:8080  \
+    -v /配置文件位置:/config  \
+    -v /书库:/library  \
+    -v /自动添加文件夹:/autoaddbooks  \
+    -e UID=1000  \
+    -e GID=1000  \
+    -e CALIBRE_SERVER_USER=用户名  \
+    -e CALIBRE_SERVER_PASSWORD=用户密码 \
+    --restart unless-stopped  \
+    johngong/calibre-web:latest
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3运行&quot;&gt;3、运行&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker start calibre-web
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4停止&quot;&gt;4、停止&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker stop calibre-web
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5删除容器&quot;&gt;5、删除容器&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm calibre-web
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6删除镜像&quot;&gt;6、删除镜像&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker image &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;johngong/calibre-web:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;参考： https://hub.docker.com/r/johngong/calibre-web&lt;/p&gt;
+
+&lt;h2 id=&quot;管理&quot;&gt;管理&lt;/h2&gt;
+
+&lt;h3 id=&quot;上传书籍&quot;&gt;上传书籍&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;上传数据地址在8080端口&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;用户端&quot;&gt;用户端&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;用户端阅读地址在8083端口&lt;/strong&gt;
+&lt;strong&gt;默认管理员登录账号admin，密码admin123, 详细见文档&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 27 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/calibre/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/calibre/</guid>
+        
+        
+      </item>
     
       <item>
         <title>好用的工具网站</title>
@@ -381,17 +456,6 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
         
         
         <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>css div 绝对居中</title>
-        <description>
-</description>
-        <pubDate>Mon, 30 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/09/css-div-position-center/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/09/css-div-position-center/</guid>
-        
         
       </item>
     
