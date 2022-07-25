@@ -5,9 +5,87 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Jun 2022 23:56:39 +0800</pubDate>
-    <lastBuildDate>Mon, 27 Jun 2022 23:56:39 +0800</lastBuildDate>
+    <pubDate>Thu, 30 Jun 2022 17:41:18 +0800</pubDate>
+    <lastBuildDate>Thu, 30 Jun 2022 17:41:18 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>oprnfire install</title>
+        <description>
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+
+&lt;p&gt;Dockerhub上提供了映像的自动构建，这是推荐的安装方法。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull nasqueron/openfire:4.7.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者，您可以自己构建图像。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t nasqueron/openfire github.com/nasqueron/docker-openfire
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;快速开始&quot;&gt;快速开始&lt;/h2&gt;
+&lt;p&gt;使用以下命令启动 Openfire：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --name openfire -d --restart=always \
+  --publish 9090:9090 --publish 5222:5222 --publish 7777:7777 \
+  --volume /srv/docker/openfire:/var/lib/openfire \
+  nasqueron/openfire:4.7.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者，您可以使用示例docker-compose.yml文件来使用Docker Compose启动容器&lt;/p&gt;
+
+&lt;p&gt;将浏览器指向http://localhost:9090并按照设置过程完成安装。HAKK5 的在 10 分钟内构建免费的 Jabber 服务器视频应该可以帮助您进行配置，还可以向您介绍它的一些功能。&lt;/p&gt;
+
+&lt;h2 id=&quot;持久性&quot;&gt;持久性&lt;/h2&gt;
+&lt;p&gt;为了让 Openfire 在容器关闭和启动期间保持其状态，您应该在/var/lib/openfire.&lt;/p&gt;
+
+&lt;p&gt;快速启动命令已经安装了一个卷以进行持久化。&lt;/p&gt;
+
+&lt;p&gt;SELinux 用户应该更新主机挂载点的安全上下文，以便它可以很好地与 Docker 配合使用：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir -p /srv/docker/openfire
+chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Java 虚拟机选项
+您可以将选项附加到启动命令以配置 JVM：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -name openfire -d \
+  [DOCKER_OPTIONS] \
+  nasqueron/openfire:4.7.1 \
+  -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;日志&quot;&gt;日志&lt;/h2&gt;
+&lt;p&gt;要访问位于 的 Openfire 日志，&lt;strong&gt;/var/log/openfire&lt;/strong&gt;您可以使用docker exec. 例如，如果您想跟踪日志：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it openfire tail -f /var/log/openfire/info.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;维护&quot;&gt;维护&lt;/h2&gt;
+&lt;h3 id=&quot;升级&quot;&gt;升级&lt;/h3&gt;
+&lt;p&gt;要升级到较新版本：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.下载更新的 Docker 镜像：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull nasqueron/openfire:4.7.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;2.停止当前运行的镜像：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker stop openfire
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;3.移除停止的容器&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm -v openfire
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;4.开始更新镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -name openfire -d \
+  [OPTIONS] \
+  nasqueron/openfire:4.7.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;外壳访问&quot;&gt;外壳访问&lt;/h3&gt;
+&lt;p&gt;出于调试和维护目的，您可能需要访问容器外壳。如果您使用的是 Docker 版本或更高版本，则可以通过开始使用1.3.0来访问正在运行的容器外壳：bashdocker exec&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it openfire bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 30 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/oprnfire-install/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/oprnfire-install/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Calibre电子书管理工具</title>
@@ -428,34 +506,6 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
         <link>http://localhost:4000/2022/06/jian-li/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/jian-li/</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>jekyll docker 部署</title>
-        <description>
-&lt;h3 id=&quot;文档&quot;&gt;文档&lt;/h3&gt;
-&lt;p&gt;https://github.com/envygeeks/jekyll-docker/blob/master/README.md&lt;/p&gt;
-
-&lt;h3 id=&quot;快速启动命令&quot;&gt;快速启动命令&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/srv/jekyll:Z&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;--publish&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::1]:4000:4000 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  jekyll/jekyll &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;sudo docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/ -it jekyll/jekyll:3.5 jekyll server&lt;/p&gt;
-</description>
-        <pubDate>Mon, 06 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/jekyll-docker-setup/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/jekyll-docker-setup/</guid>
-        
-        
-        <category>jekyll</category>
         
       </item>
     

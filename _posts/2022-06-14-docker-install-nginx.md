@@ -70,3 +70,12 @@ docker run \
 ```shell
 curl http://127.0.0.1
 ```
+
+### 注意点
+
+注：
+1、站点目录，最好不要建在root目录，防止出现权限不足问题 
+（"/root/wwwroot/demo.19ba.cn/index.html" is forbidden (13: Permission denied)）
+2、将网站的目录挂载到容器，解决文件not found.
+（*47 "/wwwroot/demo.19ba.cn/index.html" is not found (2: No such file or directory)）
+
