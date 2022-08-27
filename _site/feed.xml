@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jun 2022 17:41:18 +0800</pubDate>
-    <lastBuildDate>Thu, 30 Jun 2022 17:41:18 +0800</lastBuildDate>
+    <pubDate>Sat, 27 Aug 2022 12:40:29 +0800</pubDate>
+    <lastBuildDate>Sat, 27 Aug 2022 12:40:29 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -158,6 +158,17 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
         <pubDate>Mon, 27 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/calibre/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/calibre/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>前端工程化</title>
+        <description>
+</description>
+        <pubDate>Mon, 20 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/front-end-engineering/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/front-end-engineering/</guid>
         
         
       </item>
@@ -421,6 +432,15 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://127.0.0.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;注意点&quot;&gt;注意点&lt;/h3&gt;
+
+&lt;p&gt;注：
+1、站点目录，最好不要建在root目录，防止出现权限不足问题 
+（”/root/wwwroot/demo.19ba.cn/index.html” is forbidden (13: Permission denied)）
+2、将网站的目录挂载到容器，解决文件not found.
+（*47 “/wwwroot/demo.19ba.cn/index.html” is not found (2: No such file or directory)）&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 14 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/docker-install-nginx/</link>
@@ -480,31 +500,6 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
         <pubDate>Tue, 07 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/jianli-views/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/jianli-views/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>工作经历</title>
-        <description>
-&lt;p&gt;工作经历&lt;/p&gt;
-
-&lt;p&gt;2017-5-31 – 至今&lt;/p&gt;
-
-&lt;p&gt;淘宝大学App&lt;/p&gt;
-
-&lt;p&gt;云课堂 、&lt;/p&gt;
-
-&lt;p&gt;淘宝教育小程序&lt;/p&gt;
-
-&lt;p&gt;最高日活 150W  日活 20w&lt;/p&gt;
-
-&lt;p&gt;轻课堂&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 07 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/jian-li/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/jian-li/</guid>
         
         
       </item>
