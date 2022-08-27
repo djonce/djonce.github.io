@@ -113,6 +113,10 @@
 <lastmod>2016-11-20T00:00:00+08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2019/08/node-package-version/</loc>
+<lastmod>2019-08-01T00:00:00+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/2019/08/css-content-box/</loc>
 <lastmod>2019-08-21T00:00:00+08:00</lastmod>
 </url>
@@ -157,14 +161,6 @@
 <lastmod>2022-06-06T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2022/06/jian-li/</loc>
-<lastmod>2022-06-07T00:00:00+08:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2022/06/jianli-views/</loc>
-<lastmod>2022-06-07T00:00:00+08:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/2022/06/coder-server/</loc>
 <lastmod>2022-06-13T00:00:00+08:00</lastmod>
 </url>
@@ -187,10 +183,6 @@
 <url>
 <loc>http://localhost:4000/2022/06/some-good-dev-tools/</loc>
 <lastmod>2022-06-17T00:00:00+08:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2022/06/front-end-engineering/</loc>
-<lastmod>2022-06-20T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2022/06/calibre/</loc>
