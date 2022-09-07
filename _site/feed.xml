@@ -5,9 +5,57 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Sep 2022 16:45:50 +0800</pubDate>
-    <lastBuildDate>Wed, 07 Sep 2022 16:45:50 +0800</lastBuildDate>
+    <pubDate>Wed, 07 Sep 2022 17:18:35 +0800</pubDate>
+    <lastBuildDate>Wed, 07 Sep 2022 17:18:35 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>vscode前端插件</title>
+        <description>
+&lt;h2 id=&quot;live-server&quot;&gt;Live server&lt;/h2&gt;
+&lt;p&gt;静态服务器&lt;/p&gt;
+
+&lt;h2 id=&quot;rest-client&quot;&gt;REST Client&lt;/h2&gt;
+
+&lt;h2 id=&quot;gitlens&quot;&gt;GitLens&lt;/h2&gt;
+&lt;p&gt;git日志增强&lt;/p&gt;
+
+&lt;h2 id=&quot;css-peek&quot;&gt;CSS Peek&lt;/h2&gt;
+&lt;p&gt;快捷查看css样式&lt;/p&gt;
+
+&lt;h2 id=&quot;quokkajs&quot;&gt;Quokka.js&lt;/h2&gt;
+&lt;p&gt;快捷调试js代码&lt;/p&gt;
+
+&lt;h2 id=&quot;codesnap&quot;&gt;CodeSnap&lt;/h2&gt;
+&lt;p&gt;代码截图&lt;/p&gt;
+
+&lt;h2 id=&quot;auto-rename-tag&quot;&gt;Auto Rename tag&lt;/h2&gt;
+&lt;p&gt;改标签&lt;/p&gt;
+
+&lt;h2 id=&quot;snippets&quot;&gt;Snippets&lt;/h2&gt;
+&lt;p&gt;代码缩写&lt;/p&gt;
+
+&lt;h2 id=&quot;indent-rainbow&quot;&gt;indent-rainbow&lt;/h2&gt;
+&lt;p&gt;彩虹缩进，提高辨识&lt;/p&gt;
+
+&lt;h2 id=&quot;vscode-icons&quot;&gt;vscode-icons&lt;/h2&gt;
+&lt;p&gt;文件图标&lt;/p&gt;
+
+&lt;h2 id=&quot;prettier&quot;&gt;Prettier&lt;/h2&gt;
+&lt;p&gt;文件代码格式化&lt;/p&gt;
+
+&lt;h2 id=&quot;color-highlight&quot;&gt;Color Highlight&lt;/h2&gt;
+&lt;p&gt;颜色标识&lt;/p&gt;
+
+&lt;p&gt;设置 Settings -&amp;gt; marker type -&amp;gt; User&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 07 Sep 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/09/vscode-%E6%8F%92%E4%BB%B6/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/09/vscode-%E6%8F%92%E4%BB%B6/</guid>
+        
+        
+      </item>
     
       <item>
         <title>css相关工具</title>
@@ -487,34 +535,6 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
         <link>http://localhost:4000/2022/06/coder-server/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/coder-server/</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>jekyll docker 部署</title>
-        <description>
-&lt;h3 id=&quot;文档&quot;&gt;文档&lt;/h3&gt;
-&lt;p&gt;https://github.com/envygeeks/jekyll-docker/blob/master/README.md&lt;/p&gt;
-
-&lt;h3 id=&quot;快速启动命令&quot;&gt;快速启动命令&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;--volume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/srv/jekyll:Z&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;--publish&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::1]:4000:4000 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  jekyll/jekyll &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;sudo docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/ -it jekyll/jekyll:3.5 jekyll server&lt;/p&gt;
-</description>
-        <pubDate>Mon, 06 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/jekyll-docker-setup/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/jekyll-docker-setup/</guid>
-        
-        
-        <category>jekyll</category>
         
       </item>
     
