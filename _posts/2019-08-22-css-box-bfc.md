@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "CSS box BFC"
+title: "css box BFC"
 description: "CSS block formatting context"
 category: 
-tags: [CSS]
+tags: [css]
 ---
 {% include JB/setup %}
 

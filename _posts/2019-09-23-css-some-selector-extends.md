@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "CSS哪些属性可以继承"
+title: "css哪些属性可以继承"
 description: ""
 category: 
-tags: [CSS]
+tags: [css]
 ---
 {% include JB/setup %}
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "CSS如何实现左边定宽，右边自适应"
+title: "css如何实现左边定宽，右边自适应"
 description: ""
 category: 
-tags: []
+tags: [css]
 ---
 {% include JB/setup %}
 

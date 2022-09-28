@@ -11,4 +11,4 @@ bundle exec jekyll serve
 
 ### 快捷生成文章结构命令
 
-rake post
+rake post title="demo"

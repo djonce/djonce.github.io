@@ -3,7 +3,7 @@ layout: post
 title: "css 选择器"
 description: ""
 category: 
-tags: [CSS]
+tags: [css]
 ---
 {% include JB/setup %}
 

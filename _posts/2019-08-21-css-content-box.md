@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "CSS盒子模型"
-description: "CSS盒子模型"
+title: "css盒子模型"
+description: "css盒子模型"
 category: []
-tags: [CSS]
+tags: [css]
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,7 @@ layout: post
 title: "css 选择器优先级规则"
 description: ""
 category: 
-tags: [CSS]
+tags: [css]
 ---
 {% include JB/setup %}
 
