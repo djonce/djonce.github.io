@@ -169,42 +169,63 @@
   <ol class="post-list">
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2022/09/pm2/" title="访问 pm2使用教程">pm2使用教程</a></h2>
-      <p class="excerpt">简介PM2 是 node 进程管理工具，可以利用它来简化很多 node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。安装npm install -g pm2快速使用pm2 start app.js常用命令启动参数说明：--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。-i --instances：启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。--ignore-...&hellip;</p>
+      <h2 class="post-list__post-title post-title"><a href="/2022/10/event-looppromisesettimeoutasync/" title="访问 事件循环（Event Loop）promise、setTimeout、async的先后执行顺序">事件循环（Event Loop）promise、setTimeout、async的先后执行顺序</a></h2>
+      <p class="excerpt">javaScript 的特点就是单线程，在这个线程中拥有唯一的一个事件循环。  JS 分为同步任务和异步任务，同步任务都在主线程上执行。前一个任务执行完毕之后，执行后一个任务，形成一个执行栈；  主线程之外，事件触发线程管理着一个任务队列，异步任务会被主线程挂起，不会进入主线程，而是进入任务队列。只要异步任务有了运行结果，就会在队列任务中放置一个事件；  一旦执行栈中所有的同步任务执行完毕后，系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行。为什么 JS 是单线程的？？J...&hellip;</p>
       <div class="post-list__meta">        
-        <time datetime="2022-09-18 00:00:00 +0800" class="post-list__meta--date date">
+        <time datetime="2022-10-31 00:00:00 +0800" class="post-list__meta--date date">
           <img src="/images/calendar.png" width="20px" /> 
-          2022-09-18</time> 
+          2022-10-31</time> 
         <div class = "tag-img-icon">
           <img src="/images/tag-icon.svg" width="20px" /> 
         </div>
         <a href="/tags">
           <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">pm2</span>
+            <span class="post-list__meta--tags-right"></span>
           </div>
           <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2022/09/pm2/>阅读全文 » </a>
+          <a class="btn-border-small" href=/2022/10/event-looppromisesettimeoutasync/>阅读全文 » </a>
           </div>
       </div>
       <hr class="post-list__divider" />
     </li>
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2022/09/koa-jwt/" title="访问 koa-jwt">koa-jwt</a></h2>
-      <p class="excerpt">Koa-jwt什么是JWTJWT（JSON Web Token） 是一种方便地实现服务器与客户端安全通讯的规范，是目前最流行的跨域认证解决方案。JWT原理在介绍 JWT 之前，先来看看如何使用 session 和 cookie 做用户验证，流程一般如下：服务器验证客户端发送的用户名和密码后，在当前对话（session）保存用户信息相关数据并返回一个 session_id 给用户，写入用户 cookie。之后用户的每次请求都会通过 cookie 将 session_id 传回服务器，服务器收...&hellip;</p>
+      <h2 class="post-list__post-title post-title"><a href="/2022/10/react-h5-template/" title="访问 react h5 template">react h5 template</a></h2>
+      <p class="excerpt">##&hellip;</p>
       <div class="post-list__meta">        
-        <time datetime="2022-09-18 00:00:00 +0800" class="post-list__meta--date date">
+        <time datetime="2022-10-27 00:00:00 +0800" class="post-list__meta--date date">
           <img src="/images/calendar.png" width="20px" /> 
-          2022-09-18</time> 
+          2022-10-27</time> 
         <div class = "tag-img-icon">
           <img src="/images/tag-icon.svg" width="20px" /> 
         </div>
         <a href="/tags">
           <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">koa</span>
+            <span class="post-list__meta--tags-right"></span>
           </div>
           <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2022/09/koa-jwt/>阅读全文 » </a>
+          <a class="btn-border-small" href=/2022/10/react-h5-template/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2022/10/js-precompiled/" title="访问 js预编译">js预编译</a></h2>
+      <p class="excerpt">预编译预编译简单理解就是，在代码执行前一刻发生的事情。预编译的过程，也就是 GO 和 AO 创建的过程。GO-&gt; var -&gt; function -&gt; 执行  创建 GO（Global Object）对象；  1、寻找变量声明作为 GO 的属性名，并赋值为 undefined；  2、寻找函数声明，放入作为 GO 的属性，并赋值为其函数体。AOvar 和形参 -&gt; 赋值 -&gt; function -&gt; 执行  1、再函数被调用之前，创建 AO（Activa...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2022-10-27 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2022-10-27</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">js</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2022/10/js-precompiled/>阅读全文 » </a>
           </div>
       </div>
       <hr class="post-list__divider" />
@@ -226,48 +247,6 @@
           </div>
           <div class = "post-list-small-mate">
           <a class="btn-border-small" href=/2022/09/react-create-update/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2022/09/vscode-%E6%8F%92%E4%BB%B6/" title="访问 vscode前端插件">vscode前端插件</a></h2>
-      <p class="excerpt">Live server静态服务器REST ClientGitLensgit日志增强CSS Peek快捷查看css样式Quokka.js快捷调试js代码CodeSnap代码截图Auto Rename tag改标签Snippets代码缩写indent-rainbow彩虹缩进，提高辨识vscode-icons文件图标Prettier文件代码格式化Color Highlight颜色标识设置 Settings -&gt; marker type -&gt; User&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2022-09-07 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2022-09-07</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right"></span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2022/09/vscode-%E6%8F%92%E4%BB%B6/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2022/09/css-tools/" title="访问 css相关工具">css相关工具</a></h2>
-      <p class="excerpt">cssgr.id生成布局样式地址： https://cssgr.idcsslayout.io地址： https://csslayout.ioloading.io弹性盒生成器地址：https://loading.io/flexboxgrid layout地址： https://grid.layoutit.com&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2022-09-07 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2022-09-07</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">css</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2022/09/css-tools/>阅读全文 » </a>
           </div>
       </div>
       <hr class="post-list__divider" />
@@ -463,6 +442,48 @@
     </li>
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2022/04/pm2/" title="访问 pm2使用教程">pm2使用教程</a></h2>
+      <p class="excerpt">简介PM2 是 node 进程管理工具，可以利用它来简化很多 node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。安装npm install -g pm2快速使用pm2 start app.js常用命令启动参数说明：--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。-i --instances：启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。--ignore-...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2022-04-18 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2022-04-18</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">pm2</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2022/04/pm2/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2022/04/koa-jwt/" title="访问 koa-jwt">koa-jwt</a></h2>
+      <p class="excerpt">Koa-jwt什么是JWTJWT（JSON Web Token） 是一种方便地实现服务器与客户端安全通讯的规范，是目前最流行的跨域认证解决方案。JWT原理在介绍 JWT 之前，先来看看如何使用 session 和 cookie 做用户验证，流程一般如下：服务器验证客户端发送的用户名和密码后，在当前对话（session）保存用户信息相关数据并返回一个 session_id 给用户，写入用户 cookie。之后用户的每次请求都会通过 cookie 将 session_id 传回服务器，服务器收...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2022-04-18 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2022-04-18</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">koa</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2022/04/koa-jwt/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2021/10/nodejs-awesome-lib/" title="访问 nodejs 相关工具">nodejs 相关工具</a></h2>
       <p class="excerpt">官方资源  官网  文档  仓库  文章教程资源工具  openbase - 让你每次都要找到合适的包。目前支持 JavaScript，即将推出更多语言。  npm.devtool - 找到最适合您的包，分析您的项目技术栈。书籍  狼书（卷2）：Node.js Web应用开发 - 2020-01-01 - @狼叔          本书主要讲解Node.js Web应用开发涉及的HTTP基础知识、常用开发框架、源码原理、数据库和项目实战，旨在向读者展示如何通过Node.js和Koa编写出更...&hellip;</p>
       <div class="post-list__meta">        
@@ -484,12 +505,54 @@
     </li>
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2020/07/typeofinstanceof/" title="访问 typeof和instanceof的区别">typeof和instanceof的区别</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2021/09/vscode-%E6%8F%92%E4%BB%B6/" title="访问 vscode前端插件">vscode前端插件</a></h2>
+      <p class="excerpt">Live server静态服务器REST ClientGitLensgit日志增强CSS Peek快捷查看css样式Quokka.js快捷调试js代码CodeSnap代码截图Auto Rename tag改标签Snippets代码缩写indent-rainbow彩虹缩进，提高辨识vscode-icons文件图标Prettier文件代码格式化Color Highlight颜色标识设置 Settings -&gt; marker type -&gt; User&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2021-09-07 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2021-09-07</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right"></span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2021/09/vscode-%E6%8F%92%E4%BB%B6/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2021/09/css-tools/" title="访问 css相关工具">css相关工具</a></h2>
+      <p class="excerpt">cssgr.id生成布局样式地址： https://cssgr.idcsslayout.io地址： https://csslayout.ioloading.io弹性盒生成器地址：https://loading.io/flexboxgrid layout地址： https://grid.layoutit.com&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2021-09-07 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2021-09-07</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2021/09/css-tools/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2021/07/typeofinstanceof/" title="访问 typeof和instanceof的区别">typeof和instanceof的区别</a></h2>
       <p class="excerpt">前言虽然 typeof 和 instanceof 是 JavaScript 中的基础知识，但这个知识点却有很多的小细节。数据类型js 中有 7 种数据类型，其中有 6 种基本数据类型：1、undefined2、Null3、Boolean4、Number5、String6、Symbol(在 es10 中加入了第 7 种原始类型 BigInt，现已被最新 Chrome 支持)其中 Symbol 是 ES6 新增的，还有一种复杂类型（引用类型）Object。我们常用 typeof 和 insta...&hellip;</p>
       <div class="post-list__meta">        
-        <time datetime="2020-07-24 00:00:00 +0800" class="post-list__meta--date date">
+        <time datetime="2021-07-24 00:00:00 +0800" class="post-list__meta--date date">
           <img src="/images/calendar.png" width="20px" /> 
-          2020-07-24</time> 
+          2021-07-24</time> 
         <div class = "tag-img-icon">
           <img src="/images/tag-icon.svg" width="20px" /> 
         </div>
@@ -498,91 +561,28 @@
             <span class="post-list__meta--tags-right">javascript</span>
           </div>
           <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2020/07/typeofinstanceof/>阅读全文 » </a>
+          <a class="btn-border-small" href=/2021/07/typeofinstanceof/>阅读全文 » </a>
           </div>
       </div>
       <hr class="post-list__divider" />
     </li>
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/10/array-flat/" title="访问 数组拍平">数组拍平</a></h2>
-      <p class="excerpt">什么是数组拍平数组拍平方法 Array.prototype.flat() 也叫数组扁平化、数组拉平、数组降维。指的是把多维数组变成一维数组。数组拍平的使用场景复杂场景下的数据处理 （例如：echarts 大屏数据展示）常用实现数组拍平 3 种方法const array = [1,3,4,[4,5,12,67],  [7,8,[6,90,5]]];使用 reduce 函数代码如下function flatten(array) {  return array.reduce((prev, cur...&hellip;</p>
+      <h2 class="post-list__post-title post-title"><a href="/2021/06/pm2-logrotate/" title="访问 pm2 logrotate">pm2 logrotate</a></h2>
+      <p class="excerpt">pm2-logrotate是一个 pm2 的插件, 日志管理。安装使用1. 安装pm2 install pm2-logrotate2. 查看默认配置pm2 conf可看到默认配置如下图所示，其配置文件一般在:/root/.pm2/module_conf.json：$ pm2 set pm2-logrotate:max_size 10M$ pm2 set pm2-logrotate:retain 30$ pm2 set pm2-logrotate:compress false$ pm2 se...&hellip;</p>
       <div class="post-list__meta">        
-        <time datetime="2019-10-10 00:00:00 +0800" class="post-list__meta--date date">
+        <time datetime="2021-06-05 00:00:00 +0800" class="post-list__meta--date date">
           <img src="/images/calendar.png" width="20px" /> 
-          2019-10-10</time> 
+          2021-06-05</time> 
         <div class = "tag-img-icon">
           <img src="/images/tag-icon.svg" width="20px" /> 
         </div>
         <a href="/tags">
           <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">javascript</span>
+            <span class="post-list__meta--tags-right"></span>
           </div>
           <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2019/10/array-flat/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-div-position-center/" title="访问 css div 绝对居中">css div 绝对居中</a></h2>
-      <p class="excerpt">&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2019-09-30 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2019-09-30</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">css</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2019/09/css-div-position-center/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-left-fixed-right-auto/" title="访问 css如何实现左边定宽，右边自适应">css如何实现左边定宽，右边自适应</a></h2>
-      <p class="excerpt">主要有六种方式效果如下html代码&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;  &lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport" content="width=device-width,"&gt;    &lt;title&gt;左边定宽右边自适应&lt;/title&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;di...&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2019-09-28 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2019-09-28</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">css</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2019/09/css-left-fixed-right-auto/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-px-em-rem-vw-vh/" title="访问 css px em rem vw vh">css px em rem vw vh</a></h2>
-      <p class="excerpt">概念PX的概念pixel像素的缩写，可以简单理解为网页开发的基本长度单位。em的概念em是一个相对长度单位，相对于当前元素内文本的字体尺寸。rem的概念rem是CSS3新增的一个相对单位，基于html元素的字体大小来决定，通常配合媒体查询用于解决移动端适配问题。vw和vh的概念vw和vh是相对于视口的长度单位，1vw即值为视口宽度的1%,1vh意味着值为视口高度的1%。速记一绝三相  px： 绝对单位，网页开发基本长度单位  em： 相对单位，相对当前盒子字体大小进行计算  （不设置浏览器...&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2019-09-24 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2019-09-24</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">css</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2019/09/css-px-em-rem-vw-vh/>阅读全文 » </a>
+          <a class="btn-border-small" href=/2021/06/pm2-logrotate/>阅读全文 » </a>
           </div>
       </div>
       <hr class="post-list__divider" />
@@ -659,7 +659,7 @@
 
       <div class = "footer_div" style="text-align: center">  
         <p class="copyright text-muted">
-          Copyright &copy; 泽柏 2015~2022 Theme by leopardpan |
+          Copyright &copy; 泽柏 2022 Theme by leopardpan |
           <iframe
               style="margin-left: 2px; margin-bottom:-5px;"
               frameborder="0" scrolling="0" width="91px" height="20px"

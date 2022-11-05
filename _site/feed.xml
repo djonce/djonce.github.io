@@ -5,157 +5,229 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Sep 2022 16:03:53 +0800</pubDate>
-    <lastBuildDate>Sun, 25 Sep 2022 16:03:53 +0800</lastBuildDate>
-    <generator>Jekyll v3.8.5</generator>
+    <pubDate>Sat, 05 Nov 2022 22:23:48 +0800</pubDate>
+    <lastBuildDate>Sat, 05 Nov 2022 22:23:48 +0800</lastBuildDate>
+    <generator>Jekyll v4.3.1</generator>
     
       <item>
-        <title>pm2使用教程</title>
+        <title>事件循环（Event Loop）promise、setTimeout、async的先后执行顺序</title>
         <description>
-&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
-&lt;p&gt;PM2 是 node 进程管理工具，可以利用它来简化很多 node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。&lt;/p&gt;
+&lt;p&gt;javaScript 的特点就是&lt;strong&gt;单线程&lt;/strong&gt;，在这个线程中拥有唯一的一个事件循环。&lt;/p&gt;
 
-&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;JS 分为同步任务和异步任务，同步任务都在主线程上执行。前一个任务执行完毕之后，执行后一个任务，形成一个&lt;strong&gt;执行栈&lt;/strong&gt;；&lt;/li&gt;
+  &lt;li&gt;主线程之外，事件触发线程管理着一个任务队列，异步任务会被主线程挂起，不会进入主线程，而是进入任务队列。只要异步任务有了运行结果，就会在队列任务中放置一个事件；&lt;/li&gt;
+  &lt;li&gt;一旦执行栈中所有的同步任务执行完毕后，系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行。&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g pm2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么 JS 是单线程的？？&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;快速使用&lt;/p&gt;
+&lt;p&gt;JS 的主要用途就是与用户交互，操作 DOM，假如 JS 同时有两个线程，一个线程中在某个 DOM 节点上添加内容，另一个线程需要执行删除该节点操作，就会产生冲突。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pm2 start app.js&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;事件循环机制告诉我们 JavaScript 的执行顺序。&lt;/p&gt;
 
-&lt;h2 id=&quot;常用命令&quot;&gt;常用命令&lt;/h2&gt;
-&lt;h3 id=&quot;启动&quot;&gt;启动&lt;/h3&gt;
-&lt;p&gt;参数说明：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。
--i --instances：启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。
---ignore-watch：排除监听的目录/文件，可以是特定的文件名，也可以是正则。比如--ignore-watch=&quot;test node_modules &quot;some scripts&quot;&quot;
--n --name：应用的名称。查看应用信息的时候可以用到。
--o --output &amp;lt;path&amp;gt;：标准输出日志文件的路径。
--e --error &amp;lt;path&amp;gt;：错误输出日志文件的路径。
---interpreter &amp;lt;interpreter&amp;gt;：the interpreter pm2 should use for executing app (bash, python...)。比如你用的coffee script来编写应用。
+&lt;p&gt;单线程意味着所有任务都需要排队，前一任务结束，才会执行后一个任务，如果前一个任务耗时很长，后一个任务就不得不一直等着。&lt;/p&gt;
+
+&lt;p&gt;JS 引擎执行异步代码不用等待，是因为有事件队列和事件循环。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事件循环&lt;/strong&gt;是指主线程重复从事件队列中取消息、执行的过程。指整个执行流程。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事件队列&lt;/strong&gt;是一个存储着待执行任务的序列，其中的任务严格按照时间先后顺序执行，排在队头的任务会率先执行，而排在队尾的任务会最后执行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://oss.19ba.cn/public/20221031/euk498as.png&quot; alt=&quot;1313634-20190727155718269-1808948786.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;事件队列：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一个线程中，事件循环是唯一的，但是任务队列可以有多个；&lt;/li&gt;
+  &lt;li&gt;任务队列又分 macro-task(宏任务)和 micro-task(微任务)；&lt;/li&gt;
+  &lt;li&gt;macro-task 包括：script（整体代码）、setTimeout、setInterval、setImmediate、I/O、UI rendering；&lt;/li&gt;
+  &lt;li&gt;micro-task 包括：process.nextTick, Promise, Object.observe(已废弃), MutationObserver(html5 新特性)&lt;/li&gt;
+  &lt;li&gt;setTimeout/Promise 等称为任务源，而进入任务队列的是他们制定的具体执行任务；&lt;strong&gt;来自不同任务源的任务会进入到不同的任务队列&lt;/strong&gt;，其中 setTimeout 与 setInterval 是同源的；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;宏任务可以理解成每次执行栈执行的代码就是一个宏任务。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事件循环运行机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;（1）执行一个宏任务（栈中没有就从事件队列中获取）&lt;/p&gt;
+
+&lt;p&gt;（2）执行过程中如果遇到微任务，就将它添加到微任务的任务队列中；&lt;/p&gt;
+
+&lt;p&gt;（3）宏任务执行完毕后，立即执行当前微任务队列的所有微任务；&lt;/p&gt;
+
+&lt;p&gt;（4）当前微任务执行完毕，开始检查渲染，然后 GUI 线程接管渲染；&lt;/p&gt;
+
+&lt;p&gt;（5）渲染完毕后，JS 线程继续接管，开始下一个宏任务。&lt;/p&gt;
+
+&lt;p&gt;例：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;                 async function async1() {
+                     console.log(&quot;async1 start&quot;);  //(2)
+                     await  async2();
+                     console.log(&quot;async1 end&quot;);   //(6)
+                 }
+                 async  function async2() {
+                     console.log( &apos;async2&apos;);   //(3)
+                 }
+                 console.log(&quot;script start&quot;);  //(1)
+                 setTimeout(function () {
+                     console.log(&quot;settimeout&quot;);  //(8)
+                 },0);
+                 async1();
+                 new Promise(function (resolve) {
+                     console.log(&quot;promise1&quot;);   //(4)
+                     resolve();
+                 }).then(function () {
+                     console.log(&quot;promise2&quot;);    //(7)
+                 });
+                 console.log(&apos;script end&apos;);//(5)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;重启&quot;&gt;重启&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 restart app.js
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;先按顺序执行同步代码   从‘script start‘开始，&lt;/p&gt;
 
-&lt;h3 id=&quot;停止&quot;&gt;停止&lt;/h3&gt;
-&lt;p&gt;停止特定的应用。可以先通过pm2 list获取应用的名字（–name指定的）或者进程id。&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 stop app_name|app_id
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;执行到 setTimeout 函数时，将其回调函数加入队列(此队列与 promise 队列不是同一个队列，执行的优先级低于 promise。&lt;/p&gt;
 
-&lt;p&gt;如果要停止所有应用，可以&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 stop all
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;然后调用 async1()方法，await async2();//执行这一句后，输出 async2 后，await 会让出当前线程，将后面的代码加到任务队列中，然后继续执行 test()函数后面的同步代码&lt;/p&gt;
 
-&lt;h3 id=&quot;从进程列表删除进程&quot;&gt;从进程列表删除进程&lt;/h3&gt;
+&lt;p&gt;继续执行创建 promise 对象里面的代码属于同步代码，promise 的异步性体现在 then 与 catch 处，所以 promise1 被输出，然后将 then 函数的代码加入队列，继续执行同步代码，输出 script end。至此同步代码执行完毕。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// pm2 delete [appname] | id
-pm2 delete app  // 指定进程名删除
-pm2 delete 0    // 指定进程id删除
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;开始从队列中调取任务执行，由于刚刚提到过，setTimeout 的任务队列优先级低于 promise 队列，所以首先执行 promise 队列的第一个任务，因为在 async 函数中有 await 表达式，会使 async 函数暂停执行，等待表达式中的 Promise 解析完成后继续执行 async 函数并返回解决结果。&lt;/p&gt;
 
-&lt;h3 id=&quot;删除进程列表中所有进程&quot;&gt;删除进程列表中所有进程&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 delete all
-查看进程状态
-pm2 list
-// 或者
-pm2 ls
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;所以先执行 then 方法的部分，输出 promise2，然后执行 async1 中 await 后面的代码，输出 async1 end。。最后 promise 队列中任务执行完毕，再执行 setTimeout 的任务队列，输出 settimeout。&lt;/p&gt;
 
-&lt;h3 id=&quot;查看某个进程的信息&quot;&gt;查看某个进程的信息&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 describe 0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;setTimeout(fn,0)的含义是指某个任务在主线程最早可得的空闲时间执行。它在“任务队列”的尾部添加一个事件，因此要等到同步任务和“任务队列”现有的时间处理完才会得到执行。&lt;/p&gt;
 
-&lt;h3 id=&quot;负载均衡&quot;&gt;负载均衡&lt;/h3&gt;
-&lt;p&gt;命令如下，表示开启三个进程。如果&lt;strong&gt;-i 0&lt;/strong&gt;，则会根据机器当前核数自动开启尽可能多的进程。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;按照事件循环机制分析以上代码运行流程：&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 start app.js -i 3 # 开启三个进程
-pm2 start app.js -i max # 根据机器CPU核数，开启对应数目的进程 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先，事件循环从宏任务(macrotask)队列开始，这个时候，宏任务队列中，只有一个 script(整体代码)任务；当遇到任务源(task source)时，则会先分发任务到对应的任务队列中去。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;然后我们看到首先定义了两个 async 函数，接着往下看，然后遇到了 `console` 语句，直接输出 `script start`。输出之后，script 任务继续往下执行，遇到 `setTimeout`，其作为一个宏任务源，则会先将其任务分发到对应的队列中。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;script 任务继续往下执行，执行了 async1()函数，前面讲过 async 函数中在 await 之前的代码是立即执行的，所以会立即输出`async1 start`。&lt;br /&gt;
+遇到了 await 时，会将 await 后面的表达式执行一遍，所以就紧接着输出`async2`，然后将 await 后面的代码也就是`console.log(‘async1 end’)`加入到 microtask 中的 Promise 队列中，接着跳出 async1 函数来执行后面的代码。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;script 任务继续往下执行，遇到 Promise 实例。由于 Promise 中的函数是立即执行的，而后续的 `.then` 则会被分发到 microtask 的 `Promise` 队列中去。所以会先输出 `promise1`，然后执行 `resolve`，将 `promise2` 分配到对应队列。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;script 任务继续往下执行，最后只有一句输出了 `script end`，至此，全局任务就执行完毕了。&lt;br /&gt;
+根据上述，每次执行完一个宏任务之后，会去检查是否存在 Microtasks；如果有，则执行 Microtasks 直至清空 Microtask Queue。&lt;br /&gt;
+因而在 script 任务执行完毕之后，开始查找清空微任务队列。此时，微任务中， `Promise` 队列有的两个任务`async1 end`和`promise2`，因此按先后顺序输出 `async1 end，promise2`。当所有的 Microtasks 执行完毕之后，表示第一轮的循环就结束了。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;h3 id=&quot;日志查看&quot;&gt;日志查看&lt;/h3&gt;
-&lt;p&gt;除了可以打开日志文件查看日志外，还可以通过&lt;strong&gt;pm2 logs&lt;/strong&gt;来查看实时日志。这点对于线上问题排查非常重要。&lt;/p&gt;
-
-&lt;p&gt;比如某个 node 服务突然异常重启了，那么可以通过 pm2 提供的日志工具来查看实时日志，看是不是脚本出错之类导致的异常重启。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 logs
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;开机自动启动&quot;&gt;开机自动启动&lt;/h3&gt;
-&lt;p&gt;可以通过&lt;strong&gt;pm2 startup&lt;/strong&gt;来实现开机自启动。细节可参考。大致流程如下&lt;/p&gt;
-
-&lt;p&gt;通过&lt;strong&gt;pm2 save&lt;/strong&gt;保存当前进程状态。
-通过&lt;strong&gt;pm2 startup [platform]&lt;/strong&gt;生成开机自启动的命令。（记得查看控制台输出）
-将步骤2生成的命令，粘贴到控制台进行，搞定。&lt;/p&gt;
-
-&lt;h3 id=&quot;监控monitor-查看进程的资源消耗情况&quot;&gt;监控(monitor)-查看进程的资源消耗情况&lt;/h3&gt;
-
-&lt;p&gt;运行如下命令，查看当前通过pm2运行的进程的状态。&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 monit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
+&lt;p&gt;6.  第二轮循环依旧从宏任务队列开始。此时宏任务中只有一个 `setTimeout`，取出直接输出即可，至此整个流程结束。&lt;/p&gt;
 </description>
-        <pubDate>Sun, 18 Sep 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/09/pm2/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/09/pm2/</guid>
-        
-        <category>pm2</category>
+        <pubDate>Mon, 31 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/event-looppromisesettimeoutasync/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/event-looppromisesettimeoutasync/</guid>
         
         
       </item>
     
       <item>
-        <title>koa-jwt</title>
+        <title>react h5 template</title>
         <description>
-&lt;h2 id=&quot;koa-jwt&quot;&gt;Koa-jwt&lt;/h2&gt;
-
-&lt;h3 id=&quot;什么是jwt&quot;&gt;什么是JWT&lt;/h3&gt;
-&lt;p&gt;JWT（JSON Web Token） 是一种方便地实现服务器与客户端安全通讯的规范，是目前最流行的跨域认证解决方案。&lt;/p&gt;
-
-&lt;h3 id=&quot;jwt原理&quot;&gt;JWT原理&lt;/h3&gt;
-
-&lt;p&gt;在介绍 JWT 之前，先来看看如何使用 session 和 cookie 做用户验证，流程一般如下：&lt;/p&gt;
-
-&lt;p&gt;服务器验证客户端发送的用户名和密码后，在当前对话（session）保存用户信息相关数据并返回一个 session_id 给用户，写入用户 cookie。&lt;/p&gt;
-
-&lt;p&gt;之后用户的每次请求都会通过 cookie 将 session_id 传回服务器，服务器收到 session_id，找到之前保存的数据并获得用户信息
-上面这种方式，session 数据共享不方便，不好实现跨域服务，如果是服务器集群，需要实现 session 共享才能让每台服务器都能够进行用户验证。&lt;/p&gt;
-
-&lt;p&gt;使用 JWT，服务器认证用户之后，会生成包含一个 JSON 对象信息的 token 返回给用户，如：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
-  &quot;name&quot;: &quot;xxx&quot;,
-  &quot;role&quot;: &quot;admin&quot;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;然后客户端请求服务的时候，都要带上该 token 以供服务器做验证。服务器还会为这个 JSON 添加签名以防止用户篡改数据。通过使用 JWT，服务端不再保存 session 数据，更加容易实现扩展。&lt;/p&gt;
-
-&lt;h3 id=&quot;jwt-结构&quot;&gt;JWT 结构&lt;/h3&gt;
-
-&lt;p&gt;JSON Web Tokens 由以点 ( .) 分隔的三部分组成。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Header&lt;/li&gt;
-  &lt;li&gt;Payload&lt;/li&gt;
-  &lt;li&gt;Signature&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Therefore, a JWT typically looks like the following.&lt;/p&gt;
-
-&lt;p&gt;xxxxx.yyyyy.zzzzz&lt;/p&gt;
-
-&lt;p&gt;参考： 
-https://jwt.io/introduction&lt;/p&gt;
-
-&lt;p&gt;https://www.jianshu.com/p/2552cdf35e66&lt;/p&gt;
-
-&lt;p&gt;https://juejin.cn/post/6881630034260393992&lt;/p&gt;
+&lt;p&gt;##&lt;/p&gt;
 </description>
-        <pubDate>Sun, 18 Sep 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/09/koa-jwt/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/09/koa-jwt/</guid>
+        <pubDate>Thu, 27 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/react-h5-template/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/react-h5-template/</guid>
         
-        <category>koa</category>
+        
+      </item>
+    
+      <item>
+        <title>js预编译</title>
+        <description>
+&lt;h2 id=&quot;预编译&quot;&gt;预编译&lt;/h2&gt;
+
+&lt;p&gt;预编译简单理解就是，在代码执行前一刻发生的事情。预编译的过程，也就是 GO 和 AO 创建的过程。&lt;/p&gt;
+
+&lt;h3 id=&quot;go&quot;&gt;GO&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;-&amp;gt; var -&amp;gt; function -&amp;gt; 执行&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;创建 GO（Global Object）对象；&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;1、寻找变量声明作为 GO 的属性名，并赋值为 undefined；&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2、寻找函数声明，放入作为 GO 的属性，并赋值为其函数体。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;ao&quot;&gt;AO&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;var 和形参 -&amp;gt; 赋值 -&amp;gt; function -&amp;gt; 执行&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;1、再函数被调用之前，创建 AO（Activation Object）对象，又叫执行期上下文；(上下文是唯一的，一个函数被多次被调用时会创建多个上下文)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2、寻找形式参数和变量声明作为 AO 的属性名，并赋值为 undefined；&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;3、传入实际参数的值；&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;4、在函数体内寻找函数声明，放入作为 AO 的属性，并赋值为其函数体。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;实例&quot;&gt;实例&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function test() {
+  console.log(b);
+  if (a) {
+    var b = 100;
+  }
+  console.log(b);
+  c =  234;
+  console.log(c);
+}
+
+var a;
+test();
+a = 10;
+console.log(c);
+
+
+-----------
+GO = {
+  // 1、var  2、function 3、 执行；
+  a: undefined,
+  test: fn,
+  c: 234
+}
+
+AO = {
+  // 1、var和形参  2、赋值 3、function 4、执行；
+  b: undefined
+}
+
+-&amp;gt; undefined
+-&amp;gt; undefined
+-&amp;gt; 234
+-&amp;gt; 234
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 27 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/js-precompiled/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/js-precompiled/</guid>
+        
+        <category>js</category>
         
         
       </item>
@@ -181,98 +253,20 @@ https://jwt.io/introduction&lt;/p&gt;
       </item>
     
       <item>
-        <title>vscode前端插件</title>
-        <description>
-&lt;h2 id=&quot;live-server&quot;&gt;Live server&lt;/h2&gt;
-&lt;p&gt;静态服务器&lt;/p&gt;
-
-&lt;h2 id=&quot;rest-client&quot;&gt;REST Client&lt;/h2&gt;
-
-&lt;h2 id=&quot;gitlens&quot;&gt;GitLens&lt;/h2&gt;
-&lt;p&gt;git日志增强&lt;/p&gt;
-
-&lt;h2 id=&quot;css-peek&quot;&gt;CSS Peek&lt;/h2&gt;
-&lt;p&gt;快捷查看css样式&lt;/p&gt;
-
-&lt;h2 id=&quot;quokkajs&quot;&gt;Quokka.js&lt;/h2&gt;
-&lt;p&gt;快捷调试js代码&lt;/p&gt;
-
-&lt;h2 id=&quot;codesnap&quot;&gt;CodeSnap&lt;/h2&gt;
-&lt;p&gt;代码截图&lt;/p&gt;
-
-&lt;h2 id=&quot;auto-rename-tag&quot;&gt;Auto Rename tag&lt;/h2&gt;
-&lt;p&gt;改标签&lt;/p&gt;
-
-&lt;h2 id=&quot;snippets&quot;&gt;Snippets&lt;/h2&gt;
-&lt;p&gt;代码缩写&lt;/p&gt;
-
-&lt;h2 id=&quot;indent-rainbow&quot;&gt;indent-rainbow&lt;/h2&gt;
-&lt;p&gt;彩虹缩进，提高辨识&lt;/p&gt;
-
-&lt;h2 id=&quot;vscode-icons&quot;&gt;vscode-icons&lt;/h2&gt;
-&lt;p&gt;文件图标&lt;/p&gt;
-
-&lt;h2 id=&quot;prettier&quot;&gt;Prettier&lt;/h2&gt;
-&lt;p&gt;文件代码格式化&lt;/p&gt;
-
-&lt;h2 id=&quot;color-highlight&quot;&gt;Color Highlight&lt;/h2&gt;
-&lt;p&gt;颜色标识&lt;/p&gt;
-
-&lt;p&gt;设置 Settings -&amp;gt; marker type -&amp;gt; User&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 07 Sep 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/09/vscode-%E6%8F%92%E4%BB%B6/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/09/vscode-%E6%8F%92%E4%BB%B6/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>css相关工具</title>
-        <description>
-&lt;h2 id=&quot;cssgrid&quot;&gt;cssgr.id&lt;/h2&gt;
-&lt;p&gt;生成布局样式&lt;/p&gt;
-
-&lt;p&gt;地址： https://cssgr.id&lt;/p&gt;
-
-&lt;h2 id=&quot;csslayoutio&quot;&gt;csslayout.io&lt;/h2&gt;
-
-&lt;p&gt;地址： https://csslayout.io&lt;/p&gt;
-
-&lt;h2 id=&quot;loadingio&quot;&gt;loading.io&lt;/h2&gt;
-&lt;p&gt;弹性盒生成器&lt;/p&gt;
-
-&lt;p&gt;地址：https://loading.io/flexbox&lt;/p&gt;
-
-&lt;h2 id=&quot;grid-layout&quot;&gt;grid layout&lt;/h2&gt;
-
-&lt;p&gt;地址： https://grid.layoutit.com&lt;/p&gt;
-</description>
-        <pubDate>Wed, 07 Sep 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/09/css-tools/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/09/css-tools/</guid>
-        
-        <category>css</category>
-        
-        
-      </item>
-    
-      <item>
         <title>oprnfire install</title>
         <description>
 &lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
 
 &lt;p&gt;Dockerhub上提供了映像的自动构建，这是推荐的安装方法。&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull nasqueron/openfire:4.7.1
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull nasqueron/openfire:4.7.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;或者，您可以自己构建图像。&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t nasqueron/openfire github.com/nasqueron/docker-openfire
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t nasqueron/openfire github.com/nasqueron/docker-openfire
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;快速开始&quot;&gt;快速开始&lt;/h2&gt;
 &lt;p&gt;使用以下命令启动 Openfire：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --name openfire -d --restart=always \
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --name openfire -d --restart=always \
   --publish 9090:9090 --publish 5222:5222 --publish 7777:7777 \
   --volume /srv/docker/openfire:/var/lib/openfire \
   nasqueron/openfire:4.7.1
@@ -287,12 +281,12 @@ https://jwt.io/introduction&lt;/p&gt;
 &lt;p&gt;快速启动命令已经安装了一个卷以进行持久化。&lt;/p&gt;
 
 &lt;p&gt;SELinux 用户应该更新主机挂载点的安全上下文，以便它可以很好地与 Docker 配合使用：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir -p /srv/docker/openfire
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir -p /srv/docker/openfire
 chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Java 虚拟机选项
 您可以将选项附加到启动命令以配置 JVM：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -name openfire -d \
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -name openfire -d \
   [DOCKER_OPTIONS] \
   nasqueron/openfire:4.7.1 \
   -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode
@@ -300,7 +294,7 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 
 &lt;h2 id=&quot;日志&quot;&gt;日志&lt;/h2&gt;
 &lt;p&gt;要访问位于 的 Openfire 日志，&lt;strong&gt;/var/log/openfire&lt;/strong&gt;您可以使用docker exec. 例如，如果您想跟踪日志：&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it openfire tail -f /var/log/openfire/info.log
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it openfire tail -f /var/log/openfire/info.log
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;维护&quot;&gt;维护&lt;/h2&gt;
@@ -308,25 +302,25 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;p&gt;要升级到较新版本：&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;1.下载更新的 Docker 镜像：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull nasqueron/openfire:4.7.1
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull nasqueron/openfire:4.7.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;2.停止当前运行的镜像：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker stop openfire
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker stop openfire
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;3.移除停止的容器&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm -v openfire
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm -v openfire
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;4.开始更新镜像&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -name openfire -d \
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -name openfire -d \
   [OPTIONS] \
   nasqueron/openfire:4.7.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;外壳访问&quot;&gt;外壳访问&lt;/h3&gt;
 &lt;p&gt;出于调试和维护目的，您可能需要访问容器外壳。如果您使用的是 Docker 版本或更高版本，则可以通过开始使用1.3.0来访问正在运行的容器外壳：bashdocker exec&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it openfire bash
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker exec -it openfire bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 30 Jun 2022 00:00:00 +0800</pubDate>
@@ -349,12 +343,12 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 
 &lt;h3 id=&quot;1下载镜像&quot;&gt;1、下载镜像&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull johngong/calibre-web:latest
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull johngong/calibre-web:latest
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;2创建calibre-web容器&quot;&gt;2、创建calibre-web容器&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker create  \
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker create  \
     --name=calibre-web  \
     -p 8083:8083  \
     -p 8080:8080  \
@@ -372,17 +366,17 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 
 &lt;h3 id=&quot;3运行&quot;&gt;3、运行&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker start calibre-web
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker start calibre-web
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;4停止&quot;&gt;4、停止&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker stop calibre-web
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker stop calibre-web
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;5删除容器&quot;&gt;5、删除容器&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm calibre-web
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker rm calibre-web
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;6删除镜像&quot;&gt;6、删除镜像&lt;/h3&gt;
@@ -471,7 +465,7 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
 
 &lt;h3 id=&quot;node项目&quot;&gt;node项目&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
 ├── Dockerfile
 ├── _eng.traineddata
 ├── app.js
@@ -499,7 +493,7 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;简单的脚本&quot;&gt;简单的脚本&lt;/h3&gt;
-&lt;p&gt;简单将本地已经安装，可以运行的项目&lt;code class=&quot;highlighter-rouge&quot;&gt;直接打包成镜像&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;简单将本地已经安装，可以运行的项目&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;直接打包成镜像&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM node:12
 
@@ -535,6 +529,66 @@ CMD npm start
         <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/node-project-package-docker-images/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/node-project-package-docker-images/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>https证书申请</title>
+        <description>
+&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;h3 id=&quot;免费申请https证书&quot;&gt;免费申请HTTPS证书&lt;/h3&gt;
+&lt;p&gt;https://zhuanlan.zhihu.com/p/138792764&lt;/p&gt;
+
+&lt;h3 id=&quot;配置&quot;&gt;配置&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server {
+    #SSL 访问端口号为 443
+    listen 443 ssl;
+    #填写绑定证书的域名
+    server_name api.19ba.cn;
+    #证书文件名称，容器中的路径
+    ssl_certificate /etc/nginx/cert/fullchain.cer;
+    #私钥文件名称， 容器中的路径
+    ssl_certificate_key /etc/nginx/cert/cert.key;
+    ssl_session_timeout 5m;
+    #请按照以下协议配置
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+    location / {
+    #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
+        # root /usr/share/nginx/html;
+        # index  index.html;
+        proxy_pass http://xxx:3000;
+    }
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;多域名配置&quot;&gt;多域名配置&lt;/h3&gt;
+
+&lt;h3 id=&quot;验证配置&quot;&gt;验证配置&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  openssl s_client &lt;span class=&quot;nt&quot;&gt;-connect&lt;/span&gt; www.example.com:443
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/https-cert-apply/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/https-cert-apply/</guid>
         
         
       </item>
