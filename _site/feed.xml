@@ -5,9 +5,55 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Nov 2022 22:23:48 +0800</pubDate>
-    <lastBuildDate>Sat, 05 Nov 2022 22:23:48 +0800</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2022 09:09:14 +0800</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2022 09:09:14 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
+    
+      <item>
+        <title>组件库搭建</title>
+        <description>
+&lt;h2 id=&quot;为什么需要组件库&quot;&gt;为什么需要组件库&lt;/h2&gt;
+
+&lt;h2 id=&quot;搭建思路&quot;&gt;搭建思路&lt;/h2&gt;
+
+&lt;h2 id=&quot;实战&quot;&gt;实战&lt;/h2&gt;
+</description>
+        <pubDate>Sun, 06 Nov 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/11/react-components-library/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/11/react-components-library/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>组件工程化工具</title>
+        <description>
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;h2 id=&quot;工程化思路&quot;&gt;工程化思路&lt;/h2&gt;
+
+&lt;h2 id=&quot;工程四件套&quot;&gt;工程四件套&lt;/h2&gt;
+
+&lt;p&gt;Node.js : path global fs-extra chalk&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;新建目录。认识 process&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;读取模版&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;写文件&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 06 Nov 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/11/build-react-components-library-tools/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/11/build-react-components-library-tools/</guid>
+        
+        
+      </item>
     
       <item>
         <title>事件循环（Event Loop）promise、setTimeout、async的先后执行顺序</title>
@@ -62,26 +108,26 @@
 
 &lt;p&gt;例：&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;                 async function async1() {
-                     console.log(&quot;async1 start&quot;);  //(2)
-                     await  async2();
-                     console.log(&quot;async1 end&quot;);   //(6)
-                 }
-                 async  function async2() {
-                     console.log( &apos;async2&apos;);   //(3)
-                 }
-                 console.log(&quot;script start&quot;);  //(1)
-                 setTimeout(function () {
-                     console.log(&quot;settimeout&quot;);  //(8)
-                 },0);
-                 async1();
-                 new Promise(function (resolve) {
-                     console.log(&quot;promise1&quot;);   //(4)
-                     resolve();
-                 }).then(function () {
-                     console.log(&quot;promise2&quot;);    //(7)
-                 });
-                 console.log(&apos;script end&apos;);//(5)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    async function async1() {
+        console.log(&quot;async1 start&quot;);  //(2)
+        await  async2();
+        console.log(&quot;async1 end&quot;);   //(6)
+    }
+    async  function async2() {
+        console.log( &apos;async2&apos;);   //(3)
+    }
+    console.log(&quot;script start&quot;);  //(1)
+    setTimeout(function () {
+        console.log(&quot;settimeout&quot;);  //(8)
+    },0);
+    async1();
+    new Promise(function (resolve) {
+        console.log(&quot;promise1&quot;);   //(4)
+        resolve();
+    }).then(function () {
+        console.log(&quot;promise2&quot;);    //(7)
+    });
+    console.log(&apos;script end&apos;);//(5)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;先按顺序执行同步代码   从‘script start‘开始，&lt;/p&gt;
@@ -248,6 +294,681 @@ AO = {
         <guid isPermaLink="true">http://localhost:4000/2022/09/react-create-update/</guid>
         
         <category>react</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>vscode short command</title>
+        <description>
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf&quot;&gt;点击查看官方快捷键文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;常规-general&quot;&gt;常规 General&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + P，F1&lt;/td&gt;
+      &lt;td&gt;显示命令面板 Show Command Palette&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + P&lt;/td&gt;
+      &lt;td&gt;快速打开 Quick Open&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + N&lt;/td&gt;
+      &lt;td&gt;新窗口/实例 New window/instance&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + W&lt;/td&gt;
+      &lt;td&gt;关闭窗口/实例 Close window/instance&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;基础编辑-basic-editing&quot;&gt;基础编辑 Basic editing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+X&lt;/td&gt;
+      &lt;td&gt;剪切行（空选定） Cut line (empty selection)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+C&lt;/td&gt;
+      &lt;td&gt;复制行（空选定）Copy line (empty selection)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt+ ↑ / ↓&lt;/td&gt;
+      &lt;td&gt;向上/向下移动行 Move line up/down&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift+Alt + ↓ / ↑&lt;/td&gt;
+      &lt;td&gt;向上/向下复制行 Copy line up/down&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+K&lt;/td&gt;
+      &lt;td&gt;删除行 Delete line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Enter&lt;/td&gt;
+      &lt;td&gt;在下面插入行 Insert line below&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+Enter&lt;/td&gt;
+      &lt;td&gt;在上面插入行 Insert line above&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+\&lt;/td&gt;
+      &lt;td&gt;跳到匹配的括号 Jump to matching bracket&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+] / [&lt;/td&gt;
+      &lt;td&gt;缩进/缩进行 Indent/outdent line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Home&lt;/td&gt;
+      &lt;td&gt;转到行首 Go to beginning of line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;End&lt;/td&gt;
+      &lt;td&gt;转到行尾 Go to end of line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Home&lt;/td&gt;
+      &lt;td&gt;转到文件开头 Go to beginning of file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+End&lt;/td&gt;
+      &lt;td&gt;转到文件末尾 Go to end of file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+↑ / ↓&lt;/td&gt;
+      &lt;td&gt;向上/向下滚动行 Scroll line up/down&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt+PgUp / PgDown&lt;/td&gt;
+      &lt;td&gt;向上/向下滚动页面 Scroll page up/down&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+[&lt;/td&gt;
+      &lt;td&gt;折叠（折叠）区域 Fold (collapse) region&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+]&lt;/td&gt;
+      &lt;td&gt;展开（未折叠）区域 Unfold (uncollapse) region&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+[&lt;/td&gt;
+      &lt;td&gt;折叠（未折叠）所有子区域 Fold (collapse) all subregions&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+]&lt;/td&gt;
+      &lt;td&gt;展开（未折叠）所有子区域 Unfold (uncollapse) all subregions&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+0&lt;/td&gt;
+      &lt;td&gt;折叠（折叠）所有区域 Fold (collapse) all regions&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+J&lt;/td&gt;
+      &lt;td&gt;展开（未折叠）所有区域 Unfold (uncollapse) all regions&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+C&lt;/td&gt;
+      &lt;td&gt;添加行注释 Add line comment&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+U&lt;/td&gt;
+      &lt;td&gt;删除行注释 Remove line comment&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+/&lt;/td&gt;
+      &lt;td&gt;切换行注释 Toggle line comment&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift+Alt+A&lt;/td&gt;
+      &lt;td&gt;切换块注释 Toggle block comment&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt+Z&lt;/td&gt;
+      &lt;td&gt;切换换行 Toggle word wrap&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;导航-navigation&quot;&gt;导航 Navigation&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + T&lt;/td&gt;
+      &lt;td&gt;显示所有符号 Show all Symbols&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + G&lt;/td&gt;
+      &lt;td&gt;转到行… Go to Line…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + P&lt;/td&gt;
+      &lt;td&gt;转到文件… Go to File…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + O&lt;/td&gt;
+      &lt;td&gt;转到符号… Go to Symbol…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + M&lt;/td&gt;
+      &lt;td&gt;显示问题面板 Show Problems panel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F8&lt;/td&gt;
+      &lt;td&gt;转到下一个错误或警告 Go to next error or warning&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + F8&lt;/td&gt;
+      &lt;td&gt;转到上一个错误或警告 Go to previous error or warning&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + Tab&lt;/td&gt;
+      &lt;td&gt;导航编辑器组历史记录 Navigate editor group history&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt + ←/→&lt;/td&gt;
+      &lt;td&gt;返回/前进 Go back / forward&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + M&lt;/td&gt;
+      &lt;td&gt;切换选项卡移动焦点 Toggle Tab moves focus&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;搜索和替换-search-and-replace&quot;&gt;搜索和替换 Search and replace&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + F&lt;/td&gt;
+      &lt;td&gt;查找 Find&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + H&lt;/td&gt;
+      &lt;td&gt;替换 Replace&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F3 / Shift + F3&lt;/td&gt;
+      &lt;td&gt;查找下一个/上一个 Find next/previous&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt + Enter&lt;/td&gt;
+      &lt;td&gt;选择查找匹配的所有出现 Select all occurences of Find match&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + D&lt;/td&gt;
+      &lt;td&gt;将选择添加到下一个查找匹配 Add selection to next Find match&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + K Ctrl + D&lt;/td&gt;
+      &lt;td&gt;将最后一个选择移至下一个查找匹配项 Move last selection to next Find match&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt + C / R / W&lt;/td&gt;
+      &lt;td&gt;切换区分大小写/正则表达式/整个词 Toggle case-sensitive / regex / whole word&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;多光标和选择-multi-cursor-and-selection&quot;&gt;多光标和选择 Multi-cursor and selection&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt +单击&lt;/td&gt;
+      &lt;td&gt;插入光标 Insert cursor&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Alt +↑/↓&lt;/td&gt;
+      &lt;td&gt;在上/下插入光标 Insert cursor above / below&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + U&lt;/td&gt;
+      &lt;td&gt;撤消上一个光标操作 Undo last cursor operation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + Alt + I&lt;/td&gt;
+      &lt;td&gt;在选定的每一行的末尾插入光标 Insert cursor at end of each line selected&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + I&lt;/td&gt;
+      &lt;td&gt;选择当前行 Select current line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + L&lt;/td&gt;
+      &lt;td&gt;选择当前选择的所有出现 Select all occurrences of current selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + F2&lt;/td&gt;
+      &lt;td&gt;选择当前字的所有出现 Select all occurrences of current word&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + Alt + →&lt;/td&gt;
+      &lt;td&gt;展开选择 Expand selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + Alt + ←&lt;/td&gt;
+      &lt;td&gt;缩小选择 Shrink selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + Alt + （拖动鼠标）&lt;/td&gt;
+      &lt;td&gt;列（框）选择 Column (box) selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + Alt +（箭头键）&lt;/td&gt;
+      &lt;td&gt;列（框）选择 Column (box) selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + Alt + PgUp / PgDown&lt;/td&gt;
+      &lt;td&gt;列（框）选择页上/下 Column (box) selection page up/down&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;丰富的语言编辑-rich-languages-editing&quot;&gt;丰富的语言编辑 Rich languages editing&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + 空格&lt;/td&gt;
+      &lt;td&gt;触发建议 Trigger suggestion&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + Space&lt;/td&gt;
+      &lt;td&gt;触发器参数提示 Trigger parameter hints&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tab&lt;/td&gt;
+      &lt;td&gt;Emmet 展开缩写 Emmet expand abbreviation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + Alt + F&lt;/td&gt;
+      &lt;td&gt;格式化文档 Format document&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + K Ctrl + F&lt;/td&gt;
+      &lt;td&gt;格式选定区域 Format selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F12&lt;/td&gt;
+      &lt;td&gt;转到定义 Go to Definition&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alt + F12&lt;/td&gt;
+      &lt;td&gt;Peek 定义 Peek Definition&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + K F12&lt;/td&gt;
+      &lt;td&gt;打开定义到边 Open Definition to the side&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + .&lt;/td&gt;
+      &lt;td&gt;快速解决 Quick Fix&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift + F12&lt;/td&gt;
+      &lt;td&gt;显示引用 Show References&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F2&lt;/td&gt;
+      &lt;td&gt;重命名符号 Rename Symbol&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + . /，&lt;/td&gt;
+      &lt;td&gt;替换为下一个/上一个值 Replace with next/previous value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + K Ctrl + X&lt;/td&gt;
+      &lt;td&gt;修剪尾随空格 Trim trailing whitespace&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + K M&lt;/td&gt;
+      &lt;td&gt;更改文件语言 Change file language&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;编辑器管理-editor-management&quot;&gt;编辑器管理 Editor management&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+F4, Ctrl+W&lt;/td&gt;
+      &lt;td&gt;关闭编辑器 Close editor&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K F&lt;/td&gt;
+      &lt;td&gt;关闭文件夹 Close folder&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+\&lt;/td&gt;
+      &lt;td&gt;拆分编辑器 Split editor&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+ 1 / 2 / 3&lt;/td&gt;
+      &lt;td&gt;聚焦到第 1，第 2 或第 3 编辑器组 Focus into 1st, 2nd or 3rd editor group&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+ ←/→&lt;/td&gt;
+      &lt;td&gt;聚焦到上一个/下一个编辑器组 Focus into previous/next editor group&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+PgUp / PgDown&lt;/td&gt;
+      &lt;td&gt;向左/向右移动编辑器 Move editor left/right&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K ← / →&lt;/td&gt;
+      &lt;td&gt;移动活动编辑器组 Move active editor group&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;文件管理-file-management&quot;&gt;文件管理 File management&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+N&lt;/td&gt;
+      &lt;td&gt;新文件 New File&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+O&lt;/td&gt;
+      &lt;td&gt;打开文件… Open File…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+S&lt;/td&gt;
+      &lt;td&gt;保存 Save&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+S&lt;/td&gt;
+      &lt;td&gt;另存为… Save As…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K S&lt;/td&gt;
+      &lt;td&gt;全部保存 Save All&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+F4&lt;/td&gt;
+      &lt;td&gt;关闭 Close&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+W&lt;/td&gt;
+      &lt;td&gt;关闭所有 Close All&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+T&lt;/td&gt;
+      &lt;td&gt;重新打开关闭的编辑器 Reopen closed editor&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K&lt;/td&gt;
+      &lt;td&gt;输入保持打开 Enter Keep Open&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Tab&lt;/td&gt;
+      &lt;td&gt;打开下一个 Open next&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+Tab&lt;/td&gt;
+      &lt;td&gt;打开上一个 Open previous&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K P&lt;/td&gt;
+      &lt;td&gt;复制活动文件的路径 Copy path of active file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K R&lt;/td&gt;
+      &lt;td&gt;显示资源管理器中的活动文件 Reveal active file in Explorer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K O&lt;/td&gt;
+      &lt;td&gt;显示新窗口/实例中的活动文件 Show active file in new window/instance&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;显示-display&quot;&gt;显示 Display&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F11&lt;/td&gt;
+      &lt;td&gt;切换全屏 Toggle full screen&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift+Alt+1&lt;/td&gt;
+      &lt;td&gt;切换编辑器布局 Toggle editor layout&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+ = / -&lt;/td&gt;
+      &lt;td&gt;放大/缩小 Zoom in/out&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+B&lt;/td&gt;
+      &lt;td&gt;切换侧栏可见性 Toggle Sidebar visibility&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+E&lt;/td&gt;
+      &lt;td&gt;显示浏览器/切换焦点 Show Explorer / Toggle focus&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+F&lt;/td&gt;
+      &lt;td&gt;显示搜索 Show Search&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+G&lt;/td&gt;
+      &lt;td&gt;显示 Git Show Git&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+D&lt;/td&gt;
+      &lt;td&gt;显示调试 Show Debug&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+X&lt;/td&gt;
+      &lt;td&gt;显示扩展 Show Extensions&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+H&lt;/td&gt;
+      &lt;td&gt;替换文件 Replace in files&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+J&lt;/td&gt;
+      &lt;td&gt;切换搜索详细信息 Toggle Search details&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+C&lt;/td&gt;
+      &lt;td&gt;打开新命令提示符/终端 Open new command prompt/terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+U&lt;/td&gt;
+      &lt;td&gt;显示输出面板 Show Output panel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+V&lt;/td&gt;
+      &lt;td&gt;切换 Markdown 预览 Toggle Markdown preview&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K V&lt;/td&gt;
+      &lt;td&gt;从旁边打开 Markdown 预览 Open Markdown preview to the side&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;调试-debug&quot;&gt;调试 Debug&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F9&lt;/td&gt;
+      &lt;td&gt;切换断点 Toggle breakpoint&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F5&lt;/td&gt;
+      &lt;td&gt;开始/继续 Start/Continue&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift+F5&lt;/td&gt;
+      &lt;td&gt;停止 Stop&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F11 / Shift+F11&lt;/td&gt;
+      &lt;td&gt;下一步/上一步 Step into/out&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;F10&lt;/td&gt;
+      &lt;td&gt;跳过 Step over&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+K Ctrl+I&lt;/td&gt;
+      &lt;td&gt;显示悬停 Show hover&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;集成终端-integrated-terminal&quot;&gt;集成终端 Integrated terminal&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+`&lt;/td&gt;
+      &lt;td&gt;显示集成终端 Show integrated terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+`&lt;/td&gt;
+      &lt;td&gt;创建新终端 Create new terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+C&lt;/td&gt;
+      &lt;td&gt;复制选定 Copy selection&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Shift+V&lt;/td&gt;
+      &lt;td&gt;粘贴到活动端子 Paste into active terminal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+↑ / ↓&lt;/td&gt;
+      &lt;td&gt;向上/向下滚动 Scroll up/down&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shift+PgUp / PgDown&lt;/td&gt;
+      &lt;td&gt;向上/向下滚动页面 Scroll page up/down&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl+Home / End&lt;/td&gt;
+      &lt;td&gt;滚动到顶部/底部 Scroll to top/bottom&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;按 Press&lt;/th&gt;
+      &lt;th&gt;功能 Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + P，F1&lt;/td&gt;
+      &lt;td&gt;显示命令面板 Show Command Palette&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + P&lt;/td&gt;
+      &lt;td&gt;快速打开 Quick Open&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + N&lt;/td&gt;
+      &lt;td&gt;新窗口/实例 New window/instance&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ctrl + Shift + W&lt;/td&gt;
+      &lt;td&gt;关闭窗口/实例 Close window/instance&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;参考：
+&lt;a href=&quot;https://blog.csdn.net/SEAYEHIN/article/details/92964450&quot;&gt;https://blog.csdn.net/SEAYEHIN/article/details/92964450&lt;/a&gt;，如有侵权，请联系删除。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 07 Sep 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/09/vscode-short-command/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/09/vscode-short-command/</guid>
         
         
       </item>
@@ -423,172 +1144,6 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
         <guid isPermaLink="true">http://localhost:4000/2022/06/some-good-dev-tools/</guid>
         
         <category>工具</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>微信小程序开发整理</title>
-        <description>
-&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-
-&lt;h3 id=&quot;常用文档链接&quot;&gt;常用文档链接&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/https://developers.weixin.qq.com/miniprogram/dev/framework/&quot;&gt;微信小程序开发文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html&quot;&gt;微信云开发参考文档&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;小程序注册&quot;&gt;小程序注册&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/wxopen/waregister?action=step1&quot;&gt;微信小程序注册&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;小程序解冻&quot;&gt;小程序解冻&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/cgi-bin/readtemplate?t=forgetpwd/index_tmpl&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;微信小程序解冻&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;小程序管理&quot;&gt;小程序管理&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/wxamp/home/guide?lang=zh_CN&amp;amp;token=453053744&quot;&gt;微信小程序管理&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;小程序数据分析&quot;&gt;小程序数据分析&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://wedata.weixin.qq.com/mp2/basic-data/core-data?source=3&quot;&gt;微信小程序数据分析-We分析&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/weixin-miniapp-dev/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/weixin-miniapp-dev/</guid>
-        
-        <category>小程序</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>node project package docker images</title>
-        <description>
-&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-
-&lt;h3 id=&quot;node项目&quot;&gt;node项目&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
-├── Dockerfile
-├── _eng.traineddata
-├── app.js
-├── bin
-│   └── www
-├── chi_sim_vert.traineddata
-├── chi_tra.traineddata
-├── eng.traineddata
-├── osd.traineddata
-├── package-lock.json
-├── package.json
-├── public
-│   ├── javascripts
-│   ├── stylesheets
-│   └── upload
-├── routes
-│   ├── index.js
-│   ├── ocr.js
-│   └── upload.js
-└── views
-    ├── error.pug
-    ├── index.pug
-    └── layout.pug
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;简单的脚本&quot;&gt;简单的脚本&lt;/h3&gt;
-&lt;p&gt;简单将本地已经安装，可以运行的项目&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;直接打包成镜像&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM node:12
-
-RUN &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /usr/ocr/app/
-
-WORKDIR /usr/ocr/app/
-
-COPY &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /usr/ocr/app/
-
-EXPOSE 3000
-
-CMD npm start
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;构建镜像&quot;&gt;构建镜像&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; ocr
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;查看镜像构建成功&quot;&gt;查看镜像构建成功&lt;/h3&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker images
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/docker/node-package-image-1.png&quot; alt=&quot;查看镜像详情&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;启动镜像容器&quot;&gt;启动镜像容器&lt;/h3&gt;
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; ocr &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3000:3000 ocr
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/node-project-package-docker-images/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/node-project-package-docker-images/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>https证书申请</title>
-        <description>
-&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-
-&lt;h3 id=&quot;免费申请https证书&quot;&gt;免费申请HTTPS证书&lt;/h3&gt;
-&lt;p&gt;https://zhuanlan.zhihu.com/p/138792764&lt;/p&gt;
-
-&lt;h3 id=&quot;配置&quot;&gt;配置&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server {
-    #SSL 访问端口号为 443
-    listen 443 ssl;
-    #填写绑定证书的域名
-    server_name api.19ba.cn;
-    #证书文件名称，容器中的路径
-    ssl_certificate /etc/nginx/cert/fullchain.cer;
-    #私钥文件名称， 容器中的路径
-    ssl_certificate_key /etc/nginx/cert/cert.key;
-    ssl_session_timeout 5m;
-    #请按照以下协议配置
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
-    ssl_prefer_server_ciphers on;
-    location / {
-    #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
-        # root /usr/share/nginx/html;
-        # index  index.html;
-        proxy_pass http://xxx:3000;
-    }
-
-    #access_log  /var/log/nginx/host.access.log  main;
-
-    #error_page  404              /404.html;
-
-    # redirect server error pages to the static page /50x.html
-    #
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html {
-        root   /usr/share/nginx/html;
-    }
-}
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;多域名配置&quot;&gt;多域名配置&lt;/h3&gt;
-
-&lt;h3 id=&quot;验证配置&quot;&gt;验证配置&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  openssl s_client &lt;span class=&quot;nt&quot;&gt;-connect&lt;/span&gt; www.example.com:443
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/https-cert-apply/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/https-cert-apply/</guid>
         
         
       </item>
