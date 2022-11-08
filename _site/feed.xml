@@ -5,14 +5,14 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2022 09:09:14 +0800</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2022 09:09:14 +0800</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2022 13:05:47 +0800</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2022 13:05:47 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
         <title>组件库搭建</title>
         <description>
-&lt;h2 id=&quot;为什么需要组件库&quot;&gt;为什么需要组件库&lt;/h2&gt;
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 
 &lt;h2 id=&quot;搭建思路&quot;&gt;搭建思路&lt;/h2&gt;
 
@@ -29,6 +29,8 @@
         <title>组件工程化工具</title>
         <description>
 &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;组件名称 lightd&lt;/p&gt;
 
 &lt;h2 id=&quot;工程化思路&quot;&gt;工程化思路&lt;/h2&gt;
 
@@ -51,6 +53,8 @@
         <pubDate>Sun, 06 Nov 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/11/build-react-components-library-tools/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/11/build-react-components-library-tools/</guid>
+        
+        <category>工程化</category>
         
         
       </item>
@@ -299,7 +303,7 @@ AO = {
       </item>
     
       <item>
-        <title>vscode short command</title>
+        <title>vscode快捷键</title>
         <description>
 &lt;blockquote&gt;
   &lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf&quot;&gt;点击查看官方快捷键文档&lt;/a&gt;&lt;/p&gt;
@@ -969,6 +973,8 @@ AO = {
         <pubDate>Wed, 07 Sep 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/09/vscode-short-command/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/09/vscode-short-command/</guid>
+        
+        <category>vscode</category>
         
         
       </item>

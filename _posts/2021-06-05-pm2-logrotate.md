@@ -3,7 +3,7 @@ layout: post
 title: "pm2 logrotate"
 description: ""
 category:
-tags: []
+tags: [pm2]
 ---
 
 {% include JB/setup %}

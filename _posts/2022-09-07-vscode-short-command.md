@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "vscode short command"
+title: "vscode快捷键"
 description: ""
 category:
-tags: []
+tags: [vscode]
 ---
 
 {% include JB/setup %}

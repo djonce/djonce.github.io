@@ -3,12 +3,14 @@ layout: post
 title: "组件工程化工具"
 description: ""
 category:
-tags: []
+tags: [工程化]
 ---
 
 {% include JB/setup %}
 
 ## 前言
+
+组件名称 lightd
 
 ## 工程化思路
 
