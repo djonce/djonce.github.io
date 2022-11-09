@@ -253,27 +253,6 @@
     </li>
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2022/10/js-precompiled/" title="访问 js预编译">js预编译</a></h2>
-      <p class="excerpt">预编译预编译简单理解就是，在代码执行前一刻发生的事情。预编译的过程，也就是 GO 和 AO 创建的过程。GO-&gt; var -&gt; function -&gt; 执行  创建 GO（Global Object）对象；  1、寻找变量声明作为 GO 的属性名，并赋值为 undefined；  2、寻找函数声明，放入作为 GO 的属性，并赋值为其函数体。AOvar 和形参 -&gt; 赋值 -&gt; function -&gt; 执行  1、再函数被调用之前，创建 AO（Activa...&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2022-10-27 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2022-10-27</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">js</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2022/10/js-precompiled/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
       <h2 class="post-list__post-title post-title"><a href="/2022/09/react-create-update/" title="访问 React创建更新的方式">React创建更新的方式</a></h2>
       <p class="excerpt">三种更新方式ReactDOM.render||hydratesetStateforceUpdate&hellip;</p>
       <div class="post-list__meta">        
@@ -484,6 +463,48 @@
     </li>
     
     <li>
+      <h2 class="post-list__post-title post-title"><a href="/2022/06/docker-env-redis-cluster-deployment/" title="访问 Docker环境下的前后端分离redis集群部署">Docker环境下的前后端分离redis集群部署</a></h2>
+      <p class="excerpt">安装 Redis，配置 RedisCluster 集群1. 安装 Redis 镜像docker pull yyyyttttwwww/redis2. 创建 net2 网段docker network create --subnet=172.19.0.0/16 net23. 创建 6 节点 Redis 容器docker run -it -d --name r1 -p 5001:6379 --net=net2 --ip 172.19.0.2 redis bashdocker run -it -d...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2022-06-09 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2022-06-09</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">docker</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2022/06/docker-env-redis-cluster-deployment/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2022/06/docker-env-mysql-cluster-deployment-copy/" title="访问 Docker环境下的前后端分离mysql集群部署">Docker环境下的前后端分离mysql集群部署</a></h2>
+      <p class="excerpt">安装 PXC 集群，负载均衡，双机热备1. 安装 PXC 镜像docker pull percona/percona-xtradb-cluster2. 为 PXC 镜像改名docker tag percona/percona-xtradb-cluster pxc3. 创建 net1 网段docker network create --subnet=172.18.0.0/16 net14. 创建 5 个数据卷docker volume create --name v1docker volum...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2022-06-09 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2022-06-09</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">docker</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2022/06/docker-env-mysql-cluster-deployment-copy/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
       <h2 class="post-list__post-title post-title"><a href="/2022/06/jekyll-docker-setup/" title="访问 jekyll docker 部署">jekyll docker 部署</a></h2>
       <p class="excerpt">文档https://github.com/envygeeks/jekyll-docker/blob/master/README.md快速启动命令sudo docker run --rm \  --volume="$PWD:/srv/jekyll:Z" \  --publish [::1]:4000:4000 \  -it \  jekyll/jekyll \  jekyll servesudo docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/...&hellip;</p>
       <div class="post-list__meta">        
@@ -547,42 +568,21 @@
     </li>
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2021/10/nodejs-awesome-lib/" title="访问 nodejs 相关工具">nodejs 相关工具</a></h2>
-      <p class="excerpt">官方资源  官网  文档  仓库  文章教程资源工具  openbase - 让你每次都要找到合适的包。目前支持 JavaScript，即将推出更多语言。  npm.devtool - 找到最适合您的包，分析您的项目技术栈。书籍  狼书（卷2）：Node.js Web应用开发 - 2020-01-01 - @狼叔          本书主要讲解Node.js Web应用开发涉及的HTTP基础知识、常用开发框架、源码原理、数据库和项目实战，旨在向读者展示如何通过Node.js和Koa编写出更...&hellip;</p>
+      <h2 class="post-list__post-title post-title"><a href="/2021/10/js-precompiled/" title="访问 js预编译">js预编译</a></h2>
+      <p class="excerpt">预编译预编译简单理解就是，在代码执行前一刻发生的事情。预编译的过程，也就是 GO 和 AO 创建的过程。GO-&gt; var -&gt; function -&gt; 执行  创建 GO（Global Object）对象；  1、寻找变量声明作为 GO 的属性名，并赋值为 undefined；  2、寻找函数声明，放入作为 GO 的属性，并赋值为其函数体。AOvar 和形参 -&gt; 赋值 -&gt; function -&gt; 执行  1、再函数被调用之前，创建 AO（Activa...&hellip;</p>
       <div class="post-list__meta">        
-        <time datetime="2021-10-19 00:00:00 +0800" class="post-list__meta--date date">
+        <time datetime="2021-10-27 00:00:00 +0800" class="post-list__meta--date date">
           <img src="/images/calendar.png" width="20px" /> 
-          2021-10-19</time> 
+          2021-10-27</time> 
         <div class = "tag-img-icon">
           <img src="/images/tag-icon.svg" width="20px" /> 
         </div>
         <a href="/tags">
           <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">nodejs</span>
+            <span class="post-list__meta--tags-right">js</span>
           </div>
           <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2021/10/nodejs-awesome-lib/>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2021/09/vscode-%E6%8F%92%E4%BB%B6/" title="访问 vscode前端插件">vscode前端插件</a></h2>
-      <p class="excerpt">Live server静态服务器REST ClientGitLensgit日志增强CSS Peek快捷查看css样式Quokka.js快捷调试js代码CodeSnap代码截图Auto Rename tag改标签Snippets代码缩写indent-rainbow彩虹缩进，提高辨识vscode-icons文件图标Prettier文件代码格式化Color Highlight颜色标识设置 Settings -&gt; marker type -&gt; User&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="2021-09-07 00:00:00 +0800" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          2021-09-07</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
-        </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right"></span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href=/2021/09/vscode-%E6%8F%92%E4%BB%B6/>阅读全文 » </a>
+          <a class="btn-border-small" href=/2021/10/js-precompiled/>阅读全文 » </a>
           </div>
       </div>
       <hr class="post-list__divider" />

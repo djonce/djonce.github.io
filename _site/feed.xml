@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Nov 2022 13:05:47 +0800</pubDate>
-    <lastBuildDate>Tue, 08 Nov 2022 13:05:47 +0800</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2022 09:37:01 +0800</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2022 09:37:01 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -188,96 +188,6 @@
         <pubDate>Thu, 27 Oct 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/10/react-h5-template/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/10/react-h5-template/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>js预编译</title>
-        <description>
-&lt;h2 id=&quot;预编译&quot;&gt;预编译&lt;/h2&gt;
-
-&lt;p&gt;预编译简单理解就是，在代码执行前一刻发生的事情。预编译的过程，也就是 GO 和 AO 创建的过程。&lt;/p&gt;
-
-&lt;h3 id=&quot;go&quot;&gt;GO&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;-&amp;gt; var -&amp;gt; function -&amp;gt; 执行&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;创建 GO（Global Object）对象；&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;1、寻找变量声明作为 GO 的属性名，并赋值为 undefined；&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;2、寻找函数声明，放入作为 GO 的属性，并赋值为其函数体。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;ao&quot;&gt;AO&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;var 和形参 -&amp;gt; 赋值 -&amp;gt; function -&amp;gt; 执行&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;1、再函数被调用之前，创建 AO（Activation Object）对象，又叫执行期上下文；(上下文是唯一的，一个函数被多次被调用时会创建多个上下文)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;2、寻找形式参数和变量声明作为 AO 的属性名，并赋值为 undefined；&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;3、传入实际参数的值；&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;4、在函数体内寻找函数声明，放入作为 AO 的属性，并赋值为其函数体。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;实例&quot;&gt;实例&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function test() {
-  console.log(b);
-  if (a) {
-    var b = 100;
-  }
-  console.log(b);
-  c =  234;
-  console.log(c);
-}
-
-var a;
-test();
-a = 10;
-console.log(c);
-
-
------------
-GO = {
-  // 1、var  2、function 3、 执行；
-  a: undefined,
-  test: fn,
-  c: 234
-}
-
-AO = {
-  // 1、var和形参  2、赋值 3、function 4、执行；
-  b: undefined
-}
-
--&amp;gt; undefined
--&amp;gt; undefined
--&amp;gt; 234
--&amp;gt; 234
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Thu, 27 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/js-precompiled/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/js-precompiled/</guid>
-        
-        <category>js</category>
         
         
       </item>
@@ -1150,6 +1060,38 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
         <guid isPermaLink="true">http://localhost:4000/2022/06/some-good-dev-tools/</guid>
         
         <category>工具</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>微信小程序开发整理</title>
+        <description>
+&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;h3 id=&quot;常用文档链接&quot;&gt;常用文档链接&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/https://developers.weixin.qq.com/miniprogram/dev/framework/&quot;&gt;微信小程序开发文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html&quot;&gt;微信云开发参考文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;小程序注册&quot;&gt;小程序注册&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/wxopen/waregister?action=step1&quot;&gt;微信小程序注册&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;小程序解冻&quot;&gt;小程序解冻&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/cgi-bin/readtemplate?t=forgetpwd/index_tmpl&amp;amp;token=&amp;amp;lang=zh_CN&quot;&gt;微信小程序解冻&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;小程序管理&quot;&gt;小程序管理&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/wxamp/home/guide?lang=zh_CN&amp;amp;token=453053744&quot;&gt;微信小程序管理&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;小程序数据分析&quot;&gt;小程序数据分析&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wedata.weixin.qq.com/mp2/basic-data/core-data?source=3&quot;&gt;微信小程序数据分析-We分析&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jun 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/06/weixin-miniapp-dev/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/06/weixin-miniapp-dev/</guid>
+        
+        <category>小程序</category>
         
         
       </item>
