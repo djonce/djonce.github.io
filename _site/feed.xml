@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Nov 2022 09:37:01 +0800</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2022 09:37:01 +0800</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2022 09:59:28 +0800</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2022 09:59:28 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -976,6 +976,10 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 
 &lt;p&gt;https://calibre-ebook.com/zh_CN/download&lt;/p&gt;
 
+&lt;h2 id=&quot;效果&quot;&gt;效果&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://19ba.oss-cn-hangzhou.aliyuncs.com/open/20220923/19f370560068822.png&quot; alt=&quot;查看nginx版本&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;搭建私人电子书平台&quot;&gt;搭建私人电子书平台&lt;/h2&gt;
 
 &lt;h3 id=&quot;1下载镜像&quot;&gt;1、下载镜像&lt;/h3&gt;
@@ -983,7 +987,7 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker pull johngong/calibre-web:latest
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;2创建calibre-web容器&quot;&gt;2、创建calibre-web容器&lt;/h3&gt;
+&lt;h3 id=&quot;2创建-calibre-web-容器&quot;&gt;2、创建 calibre-web 容器&lt;/h3&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker create  \
     --name=calibre-web  \
@@ -1027,13 +1031,12 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 
 &lt;h3 id=&quot;上传书籍&quot;&gt;上传书籍&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;上传数据地址在8080端口&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;上传数据地址在 8080 端口&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;用户端&quot;&gt;用户端&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;用户端阅读地址在8083端口&lt;/strong&gt;
-&lt;strong&gt;默认管理员登录账号admin，密码admin123, 详细见文档&lt;/strong&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;用户端阅读地址在 8083 端口&lt;/strong&gt;
+&lt;strong&gt;默认管理员登录账号 admin，密码 admin123, 详细见文档&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/calibre/</link>
