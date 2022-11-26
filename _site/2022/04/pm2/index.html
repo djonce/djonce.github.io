@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>pm2使用教程</title>
+  <meta name="description" content="">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="pm2使用教程">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="pm2使用教程">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2022/04/pm2/">
+  <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f7c35025ac3816ec9b20ec884106bd3b";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+
+  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 泽柏 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                jonce
+                            
+                        </h2>
+                        <p>
+                           
+                                Android / 机器学习
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 泽柏" class="blog-button">泽柏</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎来到我的个人站~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <head>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">pm2使用教程</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2022-04-18 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-04-18</time>  
+
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  
+    <h2 class="post-title">目录</h2>
+    <ul>
+  <li><a href="#简介">简介</a></li>
+  <li><a href="#安装">安装</a></li>
+  <li><a href="#常用命令">常用命令</a>
+    <ul>
+      <li><a href="#启动">启动</a></li>
+      <li><a href="#重启">重启</a></li>
+      <li><a href="#停止">停止</a></li>
+      <li><a href="#从进程列表删除进程">从进程列表删除进程</a></li>
+      <li><a href="#删除进程列表中所有进程">删除进程列表中所有进程</a></li>
+      <li><a href="#查看某个进程的信息">查看某个进程的信息</a></li>
+      <li><a href="#负载均衡">负载均衡</a></li>
+      <li><a href="#日志查看">日志查看</a></li>
+      <li><a href="#开机自动启动">开机自动启动</a></li>
+      <li><a href="#监控monitor-查看进程的资源消耗情况">监控(monitor)-查看进程的资源消耗情况</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  <section class="post">
+    
+<h2 id="简介">简介</h2>
+<p>PM2 是 node 进程管理工具，可以利用它来简化很多 node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。</p>
+
+<h2 id="安装">安装</h2>
+
+<p><code class="language-plaintext highlighter-rouge">npm install -g pm2</code></p>
+
+<p>快速使用</p>
+
+<p><code class="language-plaintext highlighter-rouge">pm2 start app.js</code></p>
+
+<h2 id="常用命令">常用命令</h2>
+<h3 id="启动">启动</h3>
+<p>参数说明：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。
+-i --instances：启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。
+--ignore-watch：排除监听的目录/文件，可以是特定的文件名，也可以是正则。比如--ignore-watch="test node_modules "some scripts""
+-n --name：应用的名称。查看应用信息的时候可以用到。
+-o --output &lt;path&gt;：标准输出日志文件的路径。
+-e --error &lt;path&gt;：错误输出日志文件的路径。
+--interpreter &lt;interpreter&gt;：the interpreter pm2 should use for executing app (bash, python...)。比如你用的coffee script来编写应用。
+</code></pre></div></div>
+
+<h3 id="重启">重启</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 restart app.js
+</code></pre></div></div>
+
+<h3 id="停止">停止</h3>
+<p>停止特定的应用。可以先通过pm2 list获取应用的名字（–name指定的）或者进程id。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 stop app_name|app_id
+</code></pre></div></div>
+
+<p>如果要停止所有应用，可以</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 stop all
+</code></pre></div></div>
+
+<h3 id="从进程列表删除进程">从进程列表删除进程</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// pm2 delete [appname] | id
+pm2 delete app  // 指定进程名删除
+pm2 delete 0    // 指定进程id删除
+</code></pre></div></div>
+
+<h3 id="删除进程列表中所有进程">删除进程列表中所有进程</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 delete all
+查看进程状态
+pm2 list
+// 或者
+pm2 ls
+</code></pre></div></div>
+
+<h3 id="查看某个进程的信息">查看某个进程的信息</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 describe 0
+</code></pre></div></div>
+
+<h3 id="负载均衡">负载均衡</h3>
+<p>命令如下，表示开启三个进程。如果<strong>-i 0</strong>，则会根据机器当前核数自动开启尽可能多的进程。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start app.js -i 3 # 开启三个进程
+pm2 start app.js -i max # 根据机器CPU核数，开启对应数目的进程 
+</code></pre></div></div>
+
+<h3 id="日志查看">日志查看</h3>
+<p>除了可以打开日志文件查看日志外，还可以通过<strong>pm2 logs</strong>来查看实时日志。这点对于线上问题排查非常重要。</p>
+
+<p>比如某个 node 服务突然异常重启了，那么可以通过 pm2 提供的日志工具来查看实时日志，看是不是脚本出错之类导致的异常重启。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 logs
+</code></pre></div></div>
+
+<h3 id="开机自动启动">开机自动启动</h3>
+<p>可以通过<strong>pm2 startup</strong>来实现开机自启动。细节可参考。大致流程如下</p>
+
+<p>通过<strong>pm2 save</strong>保存当前进程状态。
+通过<strong>pm2 startup [platform]</strong>生成开机自启动的命令。（记得查看控制台输出）
+将步骤2生成的命令，粘贴到控制台进行，搞定。</p>
+
+<h3 id="监控monitor-查看进程的资源消耗情况">监控(monitor)-查看进程的资源消耗情况</h3>
+
+<p>运行如下命令，查看当前通过pm2运行的进程的状态。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 monit
+</code></pre></div></div>
+
+
+  </section>
+
+</article>
+
+<section>
+
+            <!-- <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+                <div class="shang_info-play">
+                  <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+                </div>
+              </div>
+            </div> -->
+            <!-- <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script> -->
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2022/04/koa-jwt/" data-toggle="tooltip" data-placement="top" title="koa-jwt">上一篇：  <span>koa-jwt</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2022/06/jekyll-docker-setup/" data-toggle="tooltip" data-placement="top" title="jekyll docker 部署">下一篇：  <span>jekyll docker 部署</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+      <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/djonce" title="@djonce 的 Github" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:djonce@qq.com" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
+            </a>
+          </li>
+          
+          
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class = "footer_div" style="text-align: center">  
+        <p class="copyright text-muted">
+          Copyright &copy; 泽柏 2022 Theme by leopardpan |
+          <iframe
+              style="margin-left: 2px; margin-bottom:-5px;"
+              frameborder="0" scrolling="0" width="91px" height="20px"
+              src="https://ghbtns.com/github-btn.html?user=djonce&repo=djonce.github.io&type=star&count=true" >
+          </iframe>
+        </p>
+        
+        <div>
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+         </div>
+
+      <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>typeof和instanceof的区别</title>
+  <meta name="description" content="">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="typeof和instanceof的区别">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="typeof和instanceof的区别">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2021/07/typeofinstanceof/">
+  <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f7c35025ac3816ec9b20ec884106bd3b";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+
+  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 泽柏 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                jonce
+                            
+                        </h2>
+                        <p>
+                           
+                                Android / 机器学习
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 泽柏" class="blog-button">泽柏</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎来到我的个人站~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <head>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">typeof和instanceof的区别</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2021-07-24 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-07-24</time>  
+
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  
+    <h2 class="post-title">目录</h2>
+    <ul>
+  <li><a href="#前言">前言</a></li>
+  <li><a href="#数据类型">数据类型</a></li>
+  <li><a href="#typeof">typeof</a>
+    <ul>
+      <li><a href="#typeof-实现原理">typeof 实现原理</a></li>
+    </ul>
+  </li>
+  <li><a href="#instanceof">instanceof</a>
+    <ul>
+      <li><a href="#instanceof-实现原理">instanceof 实现原理</a></li>
+      <li><a href="#手写-instanceof">手写 instanceof</a></li>
+    </ul>
+  </li>
+  <li><a href="#总结">总结</a></li>
+</ul>
+
+  
+
+  <section class="post">
+    
+<h2 id="前言">前言</h2>
+
+<p>虽然 typeof 和 instanceof 是 JavaScript 中的基础知识，但这个知识点却有很多的小细节。</p>
+
+<h2 id="数据类型">数据类型</h2>
+
+<p>js 中有 7 种数据类型，其中有 6 种基本数据类型：</p>
+
+<p>1、<strong>undefined</strong></p>
+
+<p>2、<strong>Null</strong></p>
+
+<p>3、<strong>Boolean</strong></p>
+
+<p>4、<strong>Number</strong></p>
+
+<p>5、<strong>String</strong></p>
+
+<p>6、<strong>Symbol</strong>
+(在 es10 中加入了第 7 种原始类型 <strong>BigInt</strong>，现已被最新 Chrome 支持)
+其中 <strong>Symbol</strong> 是 <strong>ES6</strong> 新增的，还有一种复杂类型（引用类型）Object。
+我们常用 <strong>typeof</strong> 和 <strong>instanceof</strong> 操作符来判断数据类型</p>
+
+<h2 id="typeof">typeof</h2>
+
+<p><strong>typeof</strong>  是一个一元操作符不是函数，所以不需要传递参数，使用方法非常简单：<strong>typeof A</strong>，使用 typeof 会直接返回类型结果</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Numbers
+typeof 37 === 'number';
+// Strings
+typeof "" === 'string';
+// Booleans
+typeof true === 'boolean';
+// Symbols
+typeof Symbol('foo') === 'symbol';
+// Undefined
+typeof undefined === 'undefined';
+typeof blabla === 'undefined'; // 一个未定义的变量,或者一个定义了却未赋初值的变量
+// Objects
+typeof {a:1} === 'object';
+type [1,2,3] = 'object'
+
+// 函数
+typeof function(){} === 'function';
+// Null
+typeof null === 'object'
+</code></pre></div></div>
+
+<p>我们可以轻松的用 <strong>typeof</strong> 判断数据类型，但是虚线下面的判断结构好像有点怪。这就涉及到了 typeof 实现原理的问题</p>
+
+<h3 id="typeof-实现原理">typeof 实现原理</h3>
+
+<p>让我们先来聊聊 <strong>typeof</strong> 的实现原理吧
+js 在底层存储变量的时候，会在变量的机器码的低位 1-3 位存储其类型信息</p>
+
+<ul>
+  <li>000：对象</li>
+  <li>010：浮点数</li>
+  <li>100：字符串</li>
+  <li>110：布尔</li>
+  <li>1：整数</li>
+</ul>
+
+<p>但是 <strong>undefined</strong> 和 <strong>null</strong> 这两个值却比较特殊</p>
+
+<p>1、<strong>null</strong>：所有机器码均为 <strong>0</strong></p>
+
+<p>2、<strong>undefined</strong>：用 <strong>−2^30</strong> 整数来表示</p>
+
+<p>这里我们先不管 <strong>undefined</strong>，现在你们知道为什么 <strong>typeof</strong> 判断 <strong>null</strong> 是对象了吗，因为 <strong>null</strong> 的机器码全是 0，所以被当成了 <strong>object</strong>。这个 bug 存在了将近 20 多年，也许永远也不会修复，因为这牵涉到太多的 web 系统，修复它会产生更多的 bug，令许多系统无法正常工作。</p>
+
+<p><strong>typeof</strong> 判断函数返回结果就是函数，这其实还好理解，函数也是对象，因为函数比较重要，有自己特殊的属性，所以我们用 <strong>typeof</strong> 判断函数时会区分与对象，单独显示。</p>
+
+<p>但是万一我们要判断这个实例属于哪个对象，那显然这时 <strong>typeof</strong> 已经失去作用了，因为除了函数，它都会判断为对象，这时我们就需要用到 <strong>instanceof</strong> 了</p>
+
+<h2 id="instanceof">instanceof</h2>
+
+<p><strong>instance</strong> 中文翻译为实例，因此 <strong>instanceof</strong> 的含义就不言而喻，判断该对象是谁的实例，同时我们也就知道 <strong>instanceof</strong> 是对象运算符。</p>
+
+<h3 id="instanceof-实现原理">instanceof 实现原理</h3>
+
+<p><strong>instanceof</strong> 的判断就是根据原型链进行搜寻，在对象 objA 的原型链上如果存在另一个对象 objB 的<strong>原型属性</strong>，那么表达式（<strong>objA instanceof objB</strong>）返回值为 true；否则返回 false。</p>
+
+<p>下面代码说明了 instanceof 的使用方法</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Parent(){};
+function Child(){};
+function Other(){};
+
+Child.prototype = new Parent();
+let child = new Child();
+
+child instanceof Child; // true
+child instanceof Parent; // true
+child instanceof Object; // true
+child instanceof Other; // false
+
+</code></pre></div></div>
+
+<h3 id="手写-instanceof">手写 instanceof</h3>
+
+<p>手写 <strong>instanceof</strong> 代码的实现原理也是面试的考察点，<strong>instanceof</strong> 核心实现如下，我们自己封装了一个具有 <strong>instanceof</strong> 功能的函数。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function instance_of(left, right) {
+  let leftVal = left.__proto__;
+  let rightVal = right.prototype;
+  while (true) {
+   if (leftVal === null) return false;
+   if (leftVal === rightVal) return true;
+   leftVal = leftVal.__proto__;
+  }
+}
+
+let a = { title: 'hello world' }
+console.log(instance_of(a, Object)); //true
+
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p><strong>typeof</strong> 与 <strong>instanceof</strong> 都是判断数据类型的方法，区别如下：</p>
+
+<p>1、<strong>typeof</strong> 会返回一个变量的基本类型，<strong>instanceof</strong> 返回的是一个布尔值</p>
+
+<p>2、<strong>instanceof</strong> 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型</p>
+
+<p>3、而 <strong>typeof</strong> 也存在弊端，它虽然可以判断基础数据类型（null 除外），但是引用数据类型中，除了 function 类型以外，其他的也无法判断</p>
+
+<p>参考链接：https://juejin.cn/post/7042164762456621087</p>
+
+  </section>
+
+</article>
+
+<section>
+
+            <!-- <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏一个呗</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+                <div class="shang_info-play">
+                  <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+                </div>
+              </div>
+            </div> -->
+            <!-- <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script> -->
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2021/06/pm2-logrotate/" data-toggle="tooltip" data-placement="top" title="pm2 logrotate">上一篇：  <span>pm2 logrotate</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2021/09/css-tools/" data-toggle="tooltip" data-placement="top" title="css相关工具">下一篇：  <span>css相关工具</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+      <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/djonce" title="@djonce 的 Github" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:djonce@qq.com" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
+            </a>
+          </li>
+          
+          
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class = "footer_div" style="text-align: center">  
+        <p class="copyright text-muted">
+          Copyright &copy; 泽柏 2022 Theme by leopardpan |
+          <iframe
+              style="margin-left: 2px; margin-bottom:-5px;"
+              frameborder="0" scrolling="0" width="91px" height="20px"
+              src="https://ghbtns.com/github-btn.html?user=djonce&repo=djonce.github.io&type=star&count=true" >
+          </iframe>
+        </p>
+        
+        <div>
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+         </div>
+
+      <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>泽柏</title>
+  <meta name="description" content="欢迎来到我的个人站~">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="泽柏">
+  <meta name="twitter:description" content="欢迎来到我的个人站~">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="泽柏">
+  <meta property="og:description" content="欢迎来到我的个人站~">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/page/2/">
+  <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f7c35025ac3816ec9b20ec884106bd3b";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+
+  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover " style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 泽柏 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                jonce
+                            
+                        </h2>
+                        <p>
+                           
+                                Android / 机器学习
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 泽柏" class="blog-button">泽柏</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎来到我的个人站~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <div class="main-post-list hidden">
+
+  <ol class="post-list">
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2021/06/pm2-logrotate/" title="访问 pm2 logrotate">pm2 logrotate</a></h2>
+      <p class="excerpt">pm2-logrotate是一个 pm2 的插件, 日志管理。安装使用1. 安装pm2 install pm2-logrotate2. 查看默认配置pm2 conf可看到默认配置如下图所示，其配置文件一般在:/root/.pm2/module_conf.json：$ pm2 set pm2-logrotate:max_size 10M$ pm2 set pm2-logrotate:retain 30$ pm2 set pm2-logrotate:compress false$ pm2 se...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2021-06-05 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2021-06-05</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">pm2</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2021/06/pm2-logrotate/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/09/vscode-%E6%8F%92%E4%BB%B6/" title="访问 vscode前端插件">vscode前端插件</a></h2>
+      <p class="excerpt">Live server静态服务器REST ClientGitLensgit日志增强CSS Peek快捷查看css样式Quokka.js快捷调试js代码CodeSnap代码截图Auto Rename tag改标签Snippets代码缩写indent-rainbow彩虹缩进，提高辨识vscode-icons文件图标Prettier文件代码格式化Color Highlight颜色标识设置 Settings -&gt; marker type -&gt; User&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2020-09-07 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2020-09-07</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right"></span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2020/09/vscode-%E6%8F%92%E4%BB%B6/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2020/09/vscode-short-command/" title="访问 vscode快捷键">vscode快捷键</a></h2>
+      <p class="excerpt">  点击查看官方快捷键文档常规 General            按 Press      功能 Function                  Ctrl + Shift + P，F1      显示命令面板 Show Command Palette              Ctrl + P      快速打开 Quick Open              Ctrl + Shift + N      新窗口/实例 New window/instance             ...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2020-09-07 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2020-09-07</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">vscode</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2020/09/vscode-short-command/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/http-guide/" title="访问 HTTP 协议小结">HTTP 协议小结</a></h2>
+      <p class="excerpt">初识 HTTPHTTP 全名为超文本传输协议，是应用层的协议。语意简单，可扩展，协议无状态。协议分析  HTTP/0.9 只能相应 GET /page.html，只能响应 HTML 文档。  HTTP/1.0 增加了 Header，状态吗、多种文档类型。  HTTP/1.1 开始标准化，链接复用、缓存、内容协商等。  HTTP/2 增加优异表现，二进制，压缩，服务器推送。  HTTP/3 草案阶段。报文内容  startline  header  Empty-line  body请求类型 ...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-10-10 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-10-10</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right"></span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/10/http-guide/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/10/array-flat/" title="访问 数组拍平">数组拍平</a></h2>
+      <p class="excerpt">什么是数组拍平数组拍平方法 Array.prototype.flat() 也叫数组扁平化、数组拉平、数组降维。指的是把多维数组变成一维数组。数组拍平的使用场景复杂场景下的数据处理 （例如：echarts 大屏数据展示）常用实现数组拍平 3 种方法const array = [1,3,4,[4,5,12,67],  [7,8,[6,90,5]]];使用 reduce 函数代码如下function flatten(array) {  return array.reduce((prev, cur...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-10-10 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-10-10</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">javascript</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/10/array-flat/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-div-position-center/" title="访问 css div 绝对居中">css div 绝对居中</a></h2>
+      <p class="excerpt">&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-09-30 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-09-30</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/09/css-div-position-center/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-left-fixed-right-auto/" title="访问 css如何实现左边定宽，右边自适应">css如何实现左边定宽，右边自适应</a></h2>
+      <p class="excerpt">主要有六种方式效果如下html代码&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;  &lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport" content="width=device-width,"&gt;    &lt;title&gt;左边定宽右边自适应&lt;/title&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;di...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-09-28 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-09-28</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/09/css-left-fixed-right-auto/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-px-em-rem-vw-vh/" title="访问 css px em rem vw vh">css px em rem vw vh</a></h2>
+      <p class="excerpt">概念PX的概念pixel像素的缩写，可以简单理解为网页开发的基本长度单位。em的概念em是一个相对长度单位，相对于当前元素内文本的字体尺寸。rem的概念rem是CSS3新增的一个相对单位，基于html元素的字体大小来决定，通常配合媒体查询用于解决移动端适配问题。vw和vh的概念vw和vh是相对于视口的长度单位，1vw即值为视口宽度的1%,1vh意味着值为视口高度的1%。速记一绝三相  px： 绝对单位，网页开发基本长度单位  em： 相对单位，相对当前盒子字体大小进行计算  （不设置浏览器...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-09-24 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-09-24</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/09/css-px-em-rem-vw-vh/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-some-selector-extends/" title="访问 css哪些属性可以继承">css哪些属性可以继承</a></h2>
+      <p class="excerpt">CSS哪些属性可以继承1、字体  font  font-family  font-size  font-style  font-style  font-variant  font-weight2、字母间距  letter-spacing3、字母间距  word-spacing4、文字展示  line-height  text-align  text-indent  text-transform5、可见性  visibility&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-09-23 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-09-23</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/09/css-some-selector-extends/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-selector-priority/" title="访问 css 选择器优先级规则">css 选择器优先级规则</a></h2>
+      <p class="excerpt">优先级简述浏览器通过优先级来判断哪些属性值与一个元素最为相关，从而在该元素上应用这些属性值。简单的说优先级是基于不同种类选择器组成的匹配规则。选择器优先级规则CSS选择器的优先级（权重如下）！important &gt; 行内样式 &gt; ID选择器 &gt; 类、伪类、属性选择器 &gt; 标签、伪元素选择器 &gt; 通配符、子类选择器、兄弟选择器小结讲清楚如下两点:1、什么是 css 选择器优先级: css选择器优先级是基于不同种类选择器组成的匹配规则。2、css 选择器的优先级:...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-09-22 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-09-22</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/09/css-selector-priority/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/09/css-selector/" title="访问 css 选择器">css 选择器</a></h2>
+      <p class="excerpt">CSS选择器是什么？CSS选择器是CSS规则的一部分。它是元素和其他部分组合起来告诉浏览器那个HTML元素应当是选为应用规则中的CSS属性值的方式。选择器所选择的元素，叫做’选择器的对象‘。通俗的讲CSS选择器用来对选定的页面元素进行样式修改。CSS选择器有哪些？CSS选择器从种类上可以分为如下11中：            选择器      式例                  标签选择器      h1{}              通配选择器      * { }         ...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-09-04 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-09-04</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/09/css-selector/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/08/css-box-bfc/" title="访问 css box BFC">css box BFC</a></h2>
+      <p class="excerpt">什么是BFC?块格式化上下文（Block Formatting Context, BFC)是web页面的可视CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。它是 CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。简单的说BFC是一个完全独立的空间，这个空间里子元素的渲染不会影响到外面的布局触发BFC的条件  浮动元素(float除了none以外的值)  定位元素(position: absolute / ...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-08-22 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-08-22</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/08/css-box-bfc/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/08/css-content-box/" title="访问 css盒子模型">css盒子模型</a></h2>
+      <p class="excerpt">什么是盒模型CSS规范的一个模块，定义了一个长方形的盒子，包括各自的content、padding、border、margin。常译为盒子模型、盒模型或框模型。盒模型分类  从标准上分为标准盒模型和替代（IE)盒模型;  从元素类型上分为块级盒子（block box)和内联盒子（Inline box);两种盒模型的区别  W3C标准盒子模型(content-box): 内容是盒子的边界；  W3C标准盒子模型(content-box): width=内容宽度；  IE盒子模型（border...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-08-21 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-08-21</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/08/css-content-box/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/08/node-package-version/" title="访问 node package versions">node package versions</a></h2>
+      <p class="excerpt">node package version13.4.6major 13, minor:4, patch: 6major 、minor 、patchmajor : 主版本 - 做了不会向下兼容的改动minor : 次版本号 - 做了会向下兼容的功能新增patch : 修订号 - 做了会向下兼容的问题修正npm 版本符号^ : 锁定 major~ : 锁定 minor空 : 锁定 patch  : 最新版本package version 更新命令升级 patch 版本 npm version p...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-08-01 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-08-01</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">nodejs</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/08/node-package-version/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/08/css-guide/" title="访问 css 小结">css 小结</a></h2>
+      <p class="excerpt">CSS 渲染流程Filtering通过给定的所有 CSS 样式，匹配到元素的样式，得到 declared value。每个元素的每个样式可能有 0 或多个。得到声明值（多个）。Cascading按照特异性和顺序，为多个属性的样式确定优先级最高的属性值。得到层叠值。Defaulting将依旧为空的属性设置继承值或者初始值。此时每个元素的每个属性都一定不为空。得到指定值。Resolving将相对值或者关键字转化为绝对值，如 em 变成 px。此时依旧不考虑得到计算值。Formatting将计算...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2019-08-01 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2019-08-01</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">css</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2019/08/css-guide/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/11/markdownTool/" title="访问 文档支持的Markdown语法">文档支持的Markdown语法</a></h2>
+      <p class="excerpt">什么是 MarkdownMarkdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：如您正在阅读的这篇文章。它使用简单的符号标记不同的标题，分割不同的段落，粗体 或者 斜体 某些文字.很多产品的文档也是用markdown编写的，并且以“README.MD”的文件名保存在软件的目录下面。　　一些基本语法标题          H1 :# Header 1          H2 :## Header 2         H3 :###...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2016-11-20 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2016-11-20</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">markdown</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2016/11/markdownTool/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/10/jekyll_tutorials1/" title="访问 Jekyll搭建个人博客">Jekyll搭建个人博客</a></h2>
+      <p class="excerpt">介绍　Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的　使用 Jekyll 搭建博客之前要确认下本机环境，Git 环境（用于部署到远端）、Ruby 环境（J...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2016-10-14 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2016-10-14</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">jekyll</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2016/10/jekyll_tutorials1/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/09/vyaasa/" title="访问 Who is Jonce?">Who is Jonce?</a></h2>
+      <p class="excerpt">You can watch the battle here.&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2016-09-19 02:04:56 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2016-09-19</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right"></span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2016/09/vyaasa/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/09/welcome-to-jekyll/" title="访问 Welcome to Jekyll!">Welcome to Jekyll!</a></h2>
+      <p class="excerpt">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-r...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2016-09-18 02:04:56 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2016-09-18</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right"></span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2016/09/welcome-to-jekyll/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2016/09/all-text/" title="访问 A sample post">A sample post</a></h2>
+      <p class="excerpt">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, preti...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2016-09-17 02:04:56 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2016-09-17</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right"></span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2016/09/all-text/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+  </ol>
+
+  <hr class="post-list__divider " />
+
+<nav class="pagination" role="navigation">
+
+	<!-- 百度搜索 -->
+	<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=12441349038163667913' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+	</script>
+	
+    
+        <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/#blog">&larr; 最近</a>
+    
+    <span class="pagination__page-number">2 / 4</span>
+    
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/page/3/#blog">更早 &rarr;</a>
+    
+</nav>
+
+
+</div>
+
+            <section class="footer">
+    <footer>
+      <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/djonce" title="@djonce 的 Github" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:djonce@qq.com" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
+            </a>
+          </li>
+          
+          
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class = "footer_div" style="text-align: center">  
+        <p class="copyright text-muted">
+          Copyright &copy; 泽柏 2022 Theme by leopardpan |
+          <iframe
+              style="margin-left: 2px; margin-bottom:-5px;"
+              frameborder="0" scrolling="0" width="91px" height="20px"
+              src="https://ghbtns.com/github-btn.html?user=djonce&repo=djonce.github.io&type=star&count=true" >
+          </iframe>
+        </p>
+        
+        <div>
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+         </div>
+
+      <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>
