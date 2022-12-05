@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>jekyll docker 部署</title>
+  <title>react应用启动过程</title>
   <meta name="description" content="">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="jekyll docker 部署">
+  <meta name="twitter:title" content="react应用启动过程">
   <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="jekyll docker 部署">
+  <meta property="og:title" content="react应用启动过程">
   <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/06/jekyll-docker-setup/">
+  <link rel="canonical" href="http://localhost:4000/2022/06/react-startup/">
   <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -170,10 +170,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">jekyll docker 部署</h1>
+    <h1 class="post-title">react应用启动过程</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2022-06-06 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-06-06</time>  
+      <time datetime="2022-06-03 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-06-03</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -183,29 +183,154 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#文档">文档</a></li>
-  <li><a href="#快速启动命令">快速启动命令</a></li>
+  <li><a href="#react-启动模式">React 启动模式</a></li>
+  <li><a href="#react-启动流程">React 启动流程</a>
+    <ul>
+      <li><a href="#创建全局对象">创建全局对象</a></li>
+      <li><a href="#创建-reactdomroot-对象">创建 ReactDOMRoot 对象</a></li>
+    </ul>
+  </li>
 </ul>
 
   
 
   <section class="post">
     
-<h3 id="文档">文档</h3>
-<p>https://github.com/envygeeks/jekyll-docker/blob/master/README.md</p>
+<h2 id="react-启动模式">React 启动模式</h2>
 
-<h3 id="快速启动命令">快速启动命令</h3>
+<p>在 react@17.0.2 源码中 ，有<strong>3</strong>种启动模式。基本如下：</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nb">sudo </span>docker run <span class="nt">--rm</span> <span class="se">\</span>
-  <span class="nt">--volume</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PWD</span><span class="s2">:/srv/jekyll:Z"</span> <span class="se">\</span>
-  <span class="nt">--publish</span> <span class="o">[</span>::1]:4000:4000 <span class="se">\</span>
-  <span class="nt">-it</span> <span class="se">\</span>
-  jekyll/jekyll <span class="se">\</span>
-  jekyll serve
+<p>1、legacy 模式：ReactDOM.render(<app></app>, rootNode).</p>
+
+<p>2、Blocking 模式： ReactDOM.createBlockingRoot(rootNode).render(<App></App>)</p>
+
+<p>3、Concurrent 模式： ReactDOM.createRoot(rootNode).render(<App></App>)</p>
+
+<h2 id="react-启动流程">React 启动流程</h2>
+
+<p>在调用入口函数之前 ， ReactElement(<App></App>) 和 DOM 对象 div#root 之间没有关联。</p>
+
+<h3 id="创建全局对象">创建全局对象</h3>
+
+<p>无论在 Legacy, Concurrent 或者 Blocking 模式， react 在初始化时，都会创建 3 个全局对象</p>
+
+<p>1、 ReactDOMRoot 对象 （ 属于 react-dom 包)</p>
+
+<ul>
+  <li>该对象暴露 render, unmount 方法， 通过调用该实例的 render 方法， 可以引导 react 应用的启动。</li>
+</ul>
+
+<p>2、 FiberRoot 对象 (属于 react-reconciler 包)</p>
+
+<ul>
+  <li>作为 react-reconciler 在运行过程中的全局上下文，保存 fiber 构建过程中所依赖的全局状态。</li>
+  <li>大部分实例变量来存储 fiber 构造循环过程过程中的各种状态。</li>
+</ul>
+
+<p>3、HostRootFiber (属于 react-reconciler 包)</p>
+
+<ul>
+  <li>这是 react 应用第一个 Fiber 对象，是 Fiber 树的根节点， 节点类型是 HostRoot.</li>
+</ul>
+
+<p><img src="https://19ba.oss-cn-hangzhou.aliyuncs.com/blog/img/function-call.fc60389d.png" alt="创建流程图" /></p>
+
+<h3 id="创建-reactdomroot-对象">创建 ReactDOMRoot 对象</h3>
+
+<p><strong>3</strong> 种模式启动的 API 有所不同，最终都是通过 new ReactDOMRoot 或 ReactDOMBlockingRoot 的实例。创建的过程通过 RootTag 参数区分。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export type RootTag = 0 | 1 | 2;
+
+export const LegacyRoot = 0;
+export const BlockingRoot = 1;
+export const ConcurrentRoot = 2;
+
 </code></pre></div></div>
 
-<p>sudo docker run –rm -p 4000:4000 -v $PWD:/srv/jekyll/ -it jekyll/jekyll:3.5 jekyll server</p>
+<p><strong>legacy 模式</strong></p>
+
+<p>legacy 模式直接调用 ReactDOM.render, 调用的是 <strong>ReactDOMLegacy.js</strong> 中的 render 方法，后续调用 <strong>legacyRenderSubtreeIntoContainer</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function legacyRenderSubtreeIntoContainer(
+  parentComponent: ?React$Component&lt;any, any&gt;,
+  children: ReactNodeList,
+  container: Container,
+  forceHydrate: boolean,
+  callback: ?Function,
+) {
+  let root: RootType = (container._reactRootContainer: any);
+  let fiberRoot;
+  if (!root) {
+    // 初次调用, root还未初始化, 会进入此分支
+    //1. 创建ReactDOMRoot对象, 初始化react应用环境
+    root = container._reactRootContainer = legacyCreateRootFromDOMContainer(
+      container,
+      forceHydrate,
+    );
+    fiberRoot = root._internalRoot;
+    if (typeof callback === 'function') {
+      const originalCallback = callback;
+      callback = function() {
+        // instance最终指向 children(入参: 如&lt;App/&gt;)生成的dom节点
+        const instance = getPublicRootInstance(fiberRoot);
+        originalCallback.call(instance);
+      };
+    }
+    // 2. 更新容器
+    unbatchedUpdates(() =&gt; {
+      updateContainer(children, fiberRoot, parentComponent, callback);
+    });
+  } else {
+    // root已经初始化, 二次调用render会进入
+    // 1. 获取FiberRoot对象
+    fiberRoot = root._internalRoot;
+    if (typeof callback === 'function') {
+      const originalCallback = callback;
+      callback = function() {
+        const instance = getPublicRootInstance(fiberRoot);
+        originalCallback.call(instance);
+      };
+    }
+    // 2. 调用更新
+    updateContainer(children, fiberRoot, parentComponent, callback);
+  }
+  return getPublicRootInstance(fiberRoot);
+}
+
+</code></pre></div></div>
+
+<p>继续跟踪 legacyCreateRootFromDOMContainer. 最后调用 new ReactDOMBlockingRoot(container, LegacyRoot, options);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function legacyCreateRootFromDOMContainer(
+  container: Container,
+  forceHydrate: boolean,
+): RootType {
+  const shouldHydrate =
+    forceHydrate || shouldHydrateDueToLegacyHeuristic(container);
+  return createLegacyRoot(
+    container,
+    shouldHydrate
+      ? {
+          hydrate: true,
+        }
+      : undefined,
+  );
+}
+
+export function createLegacyRoot(
+  container: Container,
+  options?: RootOptions,
+): RootType {
+  return new ReactDOMBlockingRoot(container, LegacyRoot, options); // 注意这里的LegacyRoot是固定的, 并不是外界传入的
+}
+</code></pre></div></div>
+
+<p>通过以上分析， <strong>legacy</strong> 模式下调用 ReactDOM.render 有 2 个核心步骤：
+1、创建 ReactDOMBlockingRoot 实例， 初始化 react 应用环境。
+2、调用 <strong>updateContainer</strong> 进行更新。</p>
+
+<p>参考：
+https://17.reactjs.org/docs/concurrent-mode-adoption.html#why-so-many-modes</p>
 
   </section>
 
@@ -275,13 +400,13 @@
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2022/06/react-startup/" data-toggle="tooltip" data-placement="top" title="react应用启动过程">上一篇：  <span>react应用启动过程</span>
+            <a href="/2022/06/react-base/" data-toggle="tooltip" data-placement="top" title="react源码包结构分析">上一篇：  <span>react源码包结构分析</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2022/06/docker-env-mysql-cluster-deployment-copy/" data-toggle="tooltip" data-placement="top" title="Docker环境下的前后端分离mysql集群部署">下一篇：  <span>Docker环境下的前后端分离mysql集群部署</span>
+            <a href="/2022/06/jekyll-docker-setup/" data-toggle="tooltip" data-placement="top" title="jekyll docker 部署">下一篇：  <span>jekyll docker 部署</span>
             </a>
         </li>
         
