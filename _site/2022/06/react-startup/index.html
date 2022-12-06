@@ -200,15 +200,15 @@
 
 <p>在 react@17.0.2 源码中 ，有<strong>3</strong>种启动模式。基本如下：</p>
 
-<p>1、legacy 模式：ReactDOM.render(<app></app>, rootNode).</p>
+<p>1、legacy 模式：ReactDOM.render(&lt; App/&gt;, rootNode).</p>
 
-<p>2、Blocking 模式： ReactDOM.createBlockingRoot(rootNode).render(<App></App>)</p>
+<p>2、Blocking 模式： ReactDOM.createBlockingRoot(rootNode).render(&lt; App/&gt;)</p>
 
-<p>3、Concurrent 模式： ReactDOM.createRoot(rootNode).render(<App></App>)</p>
+<p>3、Concurrent 模式： ReactDOM.createRoot(rootNode).render(&lt; App/&gt;)</p>
 
 <h2 id="react-启动流程">React 启动流程</h2>
 
-<p>在调用入口函数之前 ， ReactElement(<App></App>) 和 DOM 对象 div#root 之间没有关联。</p>
+<p>在调用入口函数之前 ， ReactElement(&lt; App/&gt;) 和 DOM 对象 div#root 之间没有关联。</p>
 
 <h3 id="创建全局对象">创建全局对象</h3>
 
