@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>前端架手架设计</title>
+  <title>使用sentry搭建监控平台</title>
   <meta name="description" content="">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="前端架手架设计">
+  <meta name="twitter:title" content="使用sentry搭建监控平台">
   <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="前端架手架设计">
+  <meta property="og:title" content="使用sentry搭建监控平台">
   <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/10/front-end-scaffolding-design/">
+  <link rel="canonical" href="http://localhost:4000/2022/08/use-sentry-to-build-a-monitoring-platform/">
   <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -170,10 +170,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">前端架手架设计</h1>
+    <h1 class="post-title">使用sentry搭建监控平台</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2022-10-19 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-10-19</time>  
+      <time datetime="2022-08-14 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-08-14</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -183,23 +183,115 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#架构图">架构图</a></li>
-  <li><a href="#源码地址">源码地址</a></li>
+  <li><a href="#前言">前言</a></li>
+  <li><a href="#部署">部署</a>
+    <ul>
+      <li><a href="#1拉取镜像">1、拉取镜像</a></li>
+      <li><a href="#2启动数据库服务">2、启动数据库服务</a></li>
+      <li><a href="#3生成-sentry-秘钥">3、生成 sentry 秘钥</a></li>
+      <li><a href="#4数据库及账户初始化">4、数据库及账户初始化</a></li>
+      <li><a href="#5启动-sentry-的-web-服务">5、启动 sentry 的 web 服务</a></li>
+      <li><a href="#6启动-sentry-cronwork-服务">6、启动 sentry-cron/work 服务</a></li>
+      <li><a href="#域名配置">域名配置</a></li>
+    </ul>
+  </li>
+  <li><a href="#访问地址">访问地址</a></li>
 </ul>
 
   
 
   <section class="post">
     
-<h2 id="架构图">架构图</h2>
+<h2 id="前言">前言</h2>
 
-<p><img src="https://19ba.oss-cn-hangzhou.aliyuncs.com/blog/img/WechatIMG345.jpeg" alt="效果图" /></p>
+<p>Sentry 是一个开源的实时错误监控系统。</p>
 
-<h2 id="源码地址">源码地址</h2>
+<h2 id="部署">部署</h2>
 
-<p>https://github.com/djonce/def-cli</p>
+<h3 id="1拉取镜像">1、拉取镜像</h3>
 
-<p>更新中。。。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d --name sentry-redis --restart=always redis
+docker run -d --name sentry-postgres -e POSTGRES_PASSWORD=wangjie -e POSTGRES_USER=sentry --restart=always postgres
+</code></pre></div></div>
+
+<h3 id="2启动数据库服务">2、启动数据库服务</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d --name sentry-redis --restart=always redis
+docker run -d --name sentry-postgres -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=sentry --restart=always postgres
+</code></pre></div></div>
+
+<h3 id="3生成-sentry-秘钥">3、生成 sentry 秘钥</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm sentry config generate-secret-key
+eg: z0v!)p2^mdyr3kl+qz3vp9=h2y4vfbtljsk#55pxbu#4^t2#-y
+</code></pre></div></div>
+
+<h3 id="4数据库及账户初始化">4、数据库及账户初始化</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -it --rm -e SENTRY_SECRET_KEY=&lt;your generate-secret-key&gt; --link sentry-postgres:postgres --link sentry-redis:redis sentry upgrade
+</code></pre></div></div>
+
+<h3 id="5启动-sentry-的-web-服务">5、启动 sentry 的 web 服务</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 9000:9000 --name my-sentry -e SENTRY_SECRET_KEY=&lt;your generate-secret-key&gt; --link sentry-redis:redis --link sentry-postgres:postgres --restart=always sentry
+</code></pre></div></div>
+
+<h3 id="6启动-sentry-cronwork-服务">6、启动 sentry-cron/work 服务</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d --name sentry-cron -e SENTRY_SECRET_KEY=&lt;your generate-secret-key&gt; --link sentry-postgres:postgres --link sentry-redis:redis sentry run cron
+docker run -d --name sentry-worker-1 -e SENTRY_SECRET_KEY=&lt;your generate-secret-key&gt; --link sentry-postgres:postgres --link sentry-redis:redis sentry run worker
+</code></pre></div></div>
+
+<h3 id="域名配置">域名配置</h3>
+
+<p>nginx 配置</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server{
+   listen 80;
+   server_name ms.19ba.cn;
+
+   rewrite ^(.*)$ https://$host$1  permanent;
+}
+
+server {
+    #SSL 访问端口号为 443
+    listen 443 ssl;
+    #填写绑定证书的域名
+    server_name ms.19ba.cn;
+    #证书文件名称，容器中的路径
+    ssl_certificate /etc/nginx/cert/ms.19ba.cn.pem;
+    #私钥文件名称， 容器中的路径
+    ssl_certificate_key /etc/nginx/cert/ms.19ba.cn.key;
+    ssl_session_timeout 5m;
+    #请按照以下协议配置
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+    location / {
+    #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
+        # root /usr/share/nginx/html;
+        # index  index.html;
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header Accept-Encoding gzip;
+        proxy_pass http://your host:9000;
+    }
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+   }
+
+</code></pre></div></div>
+
+<h2 id="访问地址">访问地址</h2>
+
+<p><a href="https://ms.19ba.cn">https://ms.19ba.cn</a></p>
+
+<p>参考：https://hub.docker.com/_/sentry</p>
 
   </section>
 
@@ -269,13 +361,13 @@
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2022/08/use-sentry-to-build-a-monitoring-platform/" data-toggle="tooltip" data-placement="top" title="使用sentry搭建监控平台">上一篇：  <span>使用sentry搭建监控平台</span>
+            <a href="/2022/06/oprnfire-install/" data-toggle="tooltip" data-placement="top" title="oprnfire install">上一篇：  <span>oprnfire install</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2022/11/react-components-library/" data-toggle="tooltip" data-placement="top" title="组件库搭建">下一篇：  <span>组件库搭建</span>
+            <a href="/2022/10/front-end-scaffolding-design/" data-toggle="tooltip" data-placement="top" title="前端架手架设计">下一篇：  <span>前端架手架设计</span>
             </a>
         </li>
         

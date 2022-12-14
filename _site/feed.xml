@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 06 Dec 2022 11:16:02 +0800</pubDate>
-    <lastBuildDate>Tue, 06 Dec 2022 11:16:02 +0800</lastBuildDate>
+    <pubDate>Wed, 14 Dec 2022 13:37:17 +0800</pubDate>
+    <lastBuildDate>Wed, 14 Dec 2022 13:37:17 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -43,6 +43,107 @@
         <guid isPermaLink="true">http://localhost:4000/2022/10/front-end-scaffolding-design/</guid>
         
         <category>工程化</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>使用sentry搭建监控平台</title>
+        <description>
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;Sentry 是一个开源的实时错误监控系统。&lt;/p&gt;
+
+&lt;h2 id=&quot;部署&quot;&gt;部署&lt;/h2&gt;
+
+&lt;h3 id=&quot;1拉取镜像&quot;&gt;1、拉取镜像&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d --name sentry-redis --restart=always redis
+docker run -d --name sentry-postgres -e POSTGRES_PASSWORD=wangjie -e POSTGRES_USER=sentry --restart=always postgres
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2启动数据库服务&quot;&gt;2、启动数据库服务&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d --name sentry-redis --restart=always redis
+docker run -d --name sentry-postgres -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=sentry --restart=always postgres
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3生成-sentry-秘钥&quot;&gt;3、生成 sentry 秘钥&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --rm sentry config generate-secret-key
+eg: z0v!)p2^mdyr3kl+qz3vp9=h2y4vfbtljsk#55pxbu#4^t2#-y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4数据库及账户初始化&quot;&gt;4、数据库及账户初始化&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -it --rm -e SENTRY_SECRET_KEY=&amp;lt;your generate-secret-key&amp;gt; --link sentry-postgres:postgres --link sentry-redis:redis sentry upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5启动-sentry-的-web-服务&quot;&gt;5、启动 sentry 的 web 服务&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 9000:9000 --name my-sentry -e SENTRY_SECRET_KEY=&amp;lt;your generate-secret-key&amp;gt; --link sentry-redis:redis --link sentry-postgres:postgres --restart=always sentry
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6启动-sentry-cronwork-服务&quot;&gt;6、启动 sentry-cron/work 服务&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d --name sentry-cron -e SENTRY_SECRET_KEY=&amp;lt;your generate-secret-key&amp;gt; --link sentry-postgres:postgres --link sentry-redis:redis sentry run cron
+docker run -d --name sentry-worker-1 -e SENTRY_SECRET_KEY=&amp;lt;your generate-secret-key&amp;gt; --link sentry-postgres:postgres --link sentry-redis:redis sentry run worker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;域名配置&quot;&gt;域名配置&lt;/h3&gt;
+
+&lt;p&gt;nginx 配置&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server{
+   listen 80;
+   server_name ms.19ba.cn;
+
+   rewrite ^(.*)$ https://$host$1  permanent;
+}
+
+server {
+    #SSL 访问端口号为 443
+    listen 443 ssl;
+    #填写绑定证书的域名
+    server_name ms.19ba.cn;
+    #证书文件名称，容器中的路径
+    ssl_certificate /etc/nginx/cert/ms.19ba.cn.pem;
+    #私钥文件名称， 容器中的路径
+    ssl_certificate_key /etc/nginx/cert/ms.19ba.cn.key;
+    ssl_session_timeout 5m;
+    #请按照以下协议配置
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    #请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+    location / {
+    #网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
+        # root /usr/share/nginx/html;
+        # index  index.html;
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header Accept-Encoding gzip;
+        proxy_pass http://your host:9000;
+    }
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+   }
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;访问地址&quot;&gt;访问地址&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ms.19ba.cn&quot;&gt;https://ms.19ba.cn&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;参考：https://hub.docker.com/_/sentry&lt;/p&gt;
+</description>
+        <pubDate>Sun, 14 Aug 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/08/use-sentry-to-build-a-monitoring-platform/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/08/use-sentry-to-build-a-monitoring-platform/</guid>
         
         
       </item>
@@ -486,28 +587,6 @@ docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/h
         <guid isPermaLink="true">http://localhost:4000/2022/06/docker-install-nginx/</guid>
         
         <category>docker</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>coder server搭建</title>
-        <description>
-&lt;h2 id=&quot;搭建&quot;&gt;搭建&lt;/h2&gt;
-
-&lt;p&gt;通过docker镜像来快速搭建&lt;/p&gt;
-
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  docker run -d --name code-server -p 8070:8080 \
-  -v &quot;$PWD/.config:/home/coder/.config&quot; \
-  -v &quot;$PWD/code-server:/home/coder/project&quot; \
-  -u &quot;$(id -u):$(id -g)&quot; \
-  -e &quot;DOCKER_USER=$USER&quot; \
-  codercom/code-server:latest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 13 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/coder-server/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/coder-server/</guid>
         
         
       </item>
