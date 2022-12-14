@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>react源码包结构分析</title>
+  <title>why should we use pnpm</title>
   <meta name="description" content="">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="react源码包结构分析">
+  <meta name="twitter:title" content="why should we use pnpm">
   <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="react源码包结构分析">
+  <meta property="og:title" content="why should we use pnpm">
   <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/06/react-base/">
+  <link rel="canonical" href="http://localhost:4000/2021/12/why-should-we-use-pnpm/">
   <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -170,10 +170,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">react源码包结构分析</h1>
+    <h1 class="post-title">why should we use pnpm</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2022-06-02 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-06-02</time>  
+      <time datetime="2021-12-06 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-12-06</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -182,156 +182,12 @@
 
   
     <h2 class="post-title">目录</h2>
-    <ul>
-  <li><a href="#react-package-工程目录">React package 工程目录</a></li>
-  <li><a href="#基础包结构">基础包结构</a></li>
-  <li><a href="#架构分层">架构分层</a>
-    <ul>
-      <li><a href="#1接口层-react包">1、接口层 <strong>react</strong>包</a></li>
-      <li><a href="#2内核层-core-整个内核部分-由-3-部分构成">2、内核层 （core) 整个内核部分， 由 3 部分构成</a></li>
-    </ul>
-  </li>
-  <li><a href="#内核调用关系图">内核调用关系图</a></li>
-  <li><a href="#小结">小结</a></li>
-</ul>
+    
 
   
 
   <section class="post">
     
-<h2 id="react-package-工程目录">React package 工程目录</h2>
-
-<blockquote>
-  <p>React 工程目录的 packages 下包含 <strong>36</strong> 个包（@17.0.2 版本）其中与 web 相关的核心包共有 <strong>4</strong> 个。本文以 4 个包为线索进行展开，深入分析 react 的架构原理。</p>
-</blockquote>
-
-<p>包目录</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">packages</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">create-subscription</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">dom-event-testing-library</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">eslint-plugin-react-hooks</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">jest-mock-scheduler</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">jest-react</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-cache</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-art</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-client</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-debug-tools</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-core</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-extensions</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-inline</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-scheduling-profiler</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-shared</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-shell</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-devtools-timeline</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-dom</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-fetch</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-interactions</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-is</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-native-renderer</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-noop-renderer</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-reconciler</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-refresh</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-server</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-server-dom-relay</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-server-dom-webpack</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-server-native-relay</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-test-renderer</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-transport-dom-relay</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">react-transport-dom-webpack</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">scheduler</span><span class="w">
-</span><span class="err">├──</span><span class="w"> </span><span class="err">shared</span><span class="w">
-</span><span class="err">└──</span><span class="w"> </span><span class="err">use-subscription</span><span class="w">
-</span></code></pre></div></div>
-
-<h2 id="基础包结构">基础包结构</h2>
-
-<p>1、react</p>
-
-<blockquote>
-  <p>react 基础包，只提供定义 react 组件（<strong>ReactElement</strong>) 的必要函数， 一般来说需要和渲染器（react-dom, react-native)一同使用， 在编写 <strong>react</strong> 引用代码时，大部部分调用此包的 api.</p>
-</blockquote>
-
-<p>2、react-dom</p>
-
-<blockquote>
-  <p>react 渲染器之一，是 react 与 web 平台链接的桥梁（可以在浏览器和 nodejs 环境中使用）,将 react-reconciler 中运行结果输出到 web 界面上，在编写 react 应用的代码时，大多数场景下，能用到 此包的 ReactDOM.render (&lt; APP/&gt;, document.getElementById(‘root’)), 其余使用的 api,基本是 react 包提供。</p>
-</blockquote>
-
-<p>3、react-reconciler</p>
-
-<blockquote>
-  <p>react 得以运行的核心包 （协调 react-dom, react, scheduler 各个包之间的调用和配合).管理 react 应用状态的输入和结果的输出。将输入的信号转换成输出信号传递给渲染器。</p>
-</blockquote>
-
-<ul>
-  <li>接受输入 (scheduleUpdateOnFiber),将 fiber 树生成逻辑封装到一个回调函数中 （涉及 fiber 树形结构，fiber.updateQueue 队列，调和算法等）。</li>
-  <li>把此回调函数 （performSyncWorkOnRoot 或 performConcurrentWorkOnRoot) 送入 scheduler 进行调度</li>
-  <li><strong>scheduler</strong> 会控制回调函数执行时机， 回调函数执行完成后得到全新的 fiber 树</li>
-  <li>再调用渲染器 （如 react-dom, react-native 等）将 fiber 树形结构最终反映到界面上</li>
-</ul>
-
-<p>4、scheduler</p>
-
-<blockquote>
-  <p>调度机制的核心实现， 控制由 <strong>react-reconciler</strong> 送入的回调函数的执行时机， 在 concurrent 模式下可以实现任务分片，在编写 <strong>react</strong> 应用代码时，
-同样几乎不会直接调用到此包提供的 api.</p>
-</blockquote>
-
-<ul>
-  <li>核心任务就是执行回调 （回调函数由 <strong>react-reconciler</strong> 提供）</li>
-  <li>通过控制回调函数的执行时机，来达到任务分片的目的，实现可中断渲染 （concurrent 模式下才有此特性）</li>
-</ul>
-
-<h2 id="架构分层">架构分层</h2>
-
-<p>为了便于理解， 可将 react 应用整体结构 分为 接口层（api) 和 内核层 （core) 2 个部分</p>
-
-<h3 id="1接口层-react包">1、接口层 <strong>react</strong>包</h3>
-
-<p>平时开发过程中使用到绝大部分 api 均在 react 包中。在 react 启动后，正常触发渲染的操作有<strong>3</strong>个。</p>
-
-<ul>
-  <li>class 组件中使用 setState()</li>
-  <li>function 组件里面使用 hook, 并发起 dispatchAction 去改变 hook 对象</li>
-  <li>改变 context</li>
-</ul>
-
-<p>以上 setState 和 dispatchAction 都由 react 包直接暴露，所以基本调用 react 包 API 去与其它包进行交互</p>
-
-<h3 id="2内核层-core-整个内核部分-由-3-部分构成">2、内核层 （core) 整个内核部分， 由 3 部分构成</h3>
-
-<ul>
-  <li>
-    <p>调度器 scheduler 包，核心职责只有 1 个 ，就是执行回调<br />
-a、把 react-reconciler 提供的回调函数，包装到一个任务对象中。<br />
-b、在内部维护一个任务队列，优先级高的排在最前面。<br />
-c、循环消息任务队列，直到队列清空</p>
-  </li>
-  <li>
-    <p>协调器 react-reconciler 包，有 3 个核心职责：<br />
-a、装载渲染器，渲染器必须实现 HostConfig 协议（如：react-dom),保证在需要的时候，能够正确调用渲染器 api,生成实际节点（如：dom 节点）;
-b、接收 react-dom 包 （初次 render)和 react 包（后续更新 setState)发起的更新请求。
-c、将 fiber 树的构造过程包装在一个回调函数中，并将此回调函数传入到 scheduler 包等待调度。</p>
-  </li>
-  <li>
-    <p>渲染器 react-dom 包，有 2 个核心职责：
-a、引导 react 应用的启动 （通过 ReactDOM.render)
-b、实现 HostConfig 协议 （ReactDOMHostConfig.js 中）,能够将 react-reconciler 包构造出来 fiber 树表现出来，生成 dom 节点 （浏览器中）， 生成字符串（ssr）</p>
-  </li>
-</ul>
-
-<h2 id="内核调用关系图">内核调用关系图</h2>
-
-<p>内核中 3 个包的主要职责和调用关系图如下：</p>
-
-<p><img src="https://19ba.oss-cn-hangzhou.aliyuncs.com/blog/img/core-packages.08e2adc3.png" alt="调用架构图" /></p>
-
-<h2 id="小结">小结</h2>
-
-<p>react 暴露主要接口， react-dom 负责虚拟 dom 转实际 dom 渲染相关， react-reconciler 协调任务，scheduler 负责调度；</p>
 
   </section>
 
@@ -401,13 +257,13 @@ b、实现 HostConfig 协议 （ReactDOMHostConfig.js 中）,能够将 react-rec
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2022/04/pm2/" data-toggle="tooltip" data-placement="top" title="pm2使用教程">上一篇：  <span>pm2使用教程</span>
+            <a href="/2021/10/event-looppromisesettimeoutasync/" data-toggle="tooltip" data-placement="top" title="事件循环（Event Loop）promise、setTimeout、async的先后执行顺序">上一篇：  <span>事件循环（Event Loop）promise、setTimeout、async的先后执行顺序</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2022/06/react-app-setup/" data-toggle="tooltip" data-placement="top" title="react应用启动过程">下一篇：  <span>react应用启动过程</span>
+            <a href="/2022/04/koa-jwt/" data-toggle="tooltip" data-placement="top" title="koa-jwt">下一篇：  <span>koa-jwt</span>
             </a>
         </li>
         
