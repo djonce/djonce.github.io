@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>koa-jwt</title>
+  <title>flex</title>
   <meta name="description" content="">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="koa-jwt">
+  <meta name="twitter:title" content="flex">
   <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="koa-jwt">
+  <meta property="og:title" content="flex">
   <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/04/koa-jwt/">
+  <link rel="canonical" href="http://localhost:4000/2021/12/flex/">
   <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -170,10 +170,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">koa-jwt</h1>
+    <h1 class="post-title">flex</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2022-04-18 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-04-18</time>  
+      <time datetime="2021-12-10 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-12-10</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -183,11 +183,22 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#koa-jwt">Koa-jwt</a>
+  <li><a href="#flex-容器基础概念">flex 容器基础概念</a>
     <ul>
-      <li><a href="#什么是jwt">什么是JWT</a></li>
-      <li><a href="#jwt原理">JWT原理</a></li>
-      <li><a href="#jwt-结构">JWT 结构</a></li>
+      <li><a href="#display-flex--flex-direction">display: flex &amp; flex-direction</a></li>
+    </ul>
+  </li>
+  <li><a href="#flex-元素增长">flex 元素增长</a>
+    <ul>
+      <li><a href="#flex-basis--flex-grow">flex-basis &amp; flex-grow</a></li>
+    </ul>
+  </li>
+  <li><a href="#flex-元素收缩">flex 元素收缩</a></li>
+  <li><a href="#flex-多行">flex 多行</a></li>
+  <li><a href="#flex-简写">flex 简写</a>
+    <ul>
+      <li><a href="#flex-flow">flex-flow</a></li>
+      <li><a href="#flex">flex</a></li>
     </ul>
   </li>
 </ul>
@@ -196,48 +207,71 @@
 
   <section class="post">
     
-<h2 id="koa-jwt">Koa-jwt</h2>
+<h2 id="flex-容器基础概念">flex 容器基础概念</h2>
 
-<h3 id="什么是jwt">什么是JWT</h3>
-<p>JWT（JSON Web Token） 是一种方便地实现服务器与客户端安全通讯的规范，是目前最流行的跨域认证解决方案。</p>
+<h3 id="display-flex--flex-direction">display: flex &amp; flex-direction</h3>
 
-<h3 id="jwt原理">JWT原理</h3>
+<p>flex-direction 默认 <strong>row</strong> , 横向布局; <strong>column</strong>, 垂直布局;</p>
 
-<p>在介绍 JWT 之前，先来看看如何使用 session 和 cookie 做用户验证，流程一般如下：</p>
+<p><strong>column-reverse</strong>, 反向垂直布局; <strong>row-reverse</strong>, 反向横向布局;</p>
 
-<p>服务器验证客户端发送的用户名和密码后，在当前对话（session）保存用户信息相关数据并返回一个 session_id 给用户，写入用户 cookie。</p>
+<h2 id="flex-元素增长">flex 元素增长</h2>
 
-<p>之后用户的每次请求都会通过 cookie 将 session_id 传回服务器，服务器收到 session_id，找到之前保存的数据并获得用户信息
-上面这种方式，session 数据共享不方便，不好实现跨域服务，如果是服务器集群，需要实现 session 共享才能让每台服务器都能够进行用户验证。</p>
+<h3 id="flex-basis--flex-grow">flex-basis &amp; flex-grow</h3>
 
-<p>使用 JWT，服务器认证用户之后，会生成包含一个 JSON 对象信息的 token 返回给用户，如：</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "name": "xxx",
-  "role": "admin"
-}
+<p><strong>flex-basis</strong> 一般情况可以直接用 width, 如果定义 width, flex-basis: auto 会直接使用 width 的值。 未设置 width, 默认为 min-content, 一个单词的宽度。</p>
+
+<p><strong>flex-grow</strong> 在 flex 容器中分配剩余空间的相对比例。属性值为 number， 默认为 0， 负值无效。</p>
+
+<h2 id="flex-元素收缩">flex 元素收缩</h2>
+
+<p><strong>flex-shrink</strong> 属性指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。</p>
+
+<p>默认值 1 ， <strong>flex-shrink</strong> 属性只能是一个 number, 且不能为负值.</p>
+
+<h2 id="flex-多行">flex 多行</h2>
+
+<p>为了实现多行效果，请为属性 flex-wrap 添加一个属性值 wrap。现在，如果您的项目太大而无法全部显示在一行中，则会换行显示。下面的实时例子包含已给出宽度的项目，对于 flex 容器，项目的子元素总宽度大于容器最大宽度。由于 flex-wrap 的值设置为 wrap，所以项目的子元素换行显示。若将其设置为 nowrap，这也是初始值，它们将会缩小以适应容器，因为它们使用的是允许缩小的初始 Flexbox 值。如果项目的子元素无法缩小，使用 nowrap 会导致溢出，或者缩小程度还不够小。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  .box {
+    display: flex;
+    flex-wrap: wrap;
+  }
 </code></pre></div></div>
-<p>然后客户端请求服务的时候，都要带上该 token 以供服务器做验证。服务器还会为这个 JSON 添加签名以防止用户篡改数据。通过使用 JWT，服务端不再保存 session 数据，更加容易实现扩展。</p>
 
-<h3 id="jwt-结构">JWT 结构</h3>
+<h2 id="flex-简写">flex 简写</h2>
 
-<p>JSON Web Tokens 由以点 ( .) 分隔的三部分组成。</p>
+<h3 id="flex-flow">flex-flow</h3>
 
-<ul>
-  <li>Header</li>
-  <li>Payload</li>
-  <li>Signature</li>
-</ul>
+<p>你可以将两个属性 flex-direction 和 flex-wrap 组合为简写属性 flex-flow。第一个指定的值为 flex-direction ，第二个指定的值为 flex-wrap.</p>
 
-<p>Therefore, a JWT typically looks like the following.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  .box {
+    display: flex;
+    flex-flow: row wrap;
+  }
+</code></pre></div></div>
 
-<p>xxxxx.yyyyy.zzzzz</p>
+<h3 id="flex">flex</h3>
 
-<p>参考： 
-https://jwt.io/introduction</p>
+<p>你可能很少看到 flex-grow，flex-shrink，和 flex-basis 属性单独使用，而是混合着写在 flex 简写形式中。 Flex 简写形式允许你把三个数值按这个顺序书写 — flex-grow，flex-shrink，flex-basis。</p>
 
-<p>https://www.jianshu.com/p/2552cdf35e66</p>
+<p>flex 简写形式中的数值更改为不同数值，但要记得第一个数值是 flex-grow。赋值为正数的话是让元素增加所占空间。第二个数值是 flex-shrink — 正数可以让它缩小所占空间，但是只有在 flex 元素总和超出主轴才会生效。最后一个数值是 flex-basis；flex 元素是在这个基准值的基础上缩放的。</p>
 
-<p>https://juejin.cn/post/6881630034260393992</p>
+<p>大多数情况下可以用预定义的简写形式。在这个教程中你可能经常会看到这种写法，许多情况下你都可以这么使用。下面是几种预定义的值：</p>
+
+<p>flex: initial
+flex: auto
+flex: none</p>
+
+<p>flex: number</p>
+
+<p>flex: initial 是把 flex 元素重置为 Flexbox 的初始值，它相当于 flex: 0 1 auto。在这里 flex-grow 的值为 0，所以 flex 元素不会超过它们 flex-basis 的尺寸。flex-shrink 的值为 1, 所以可以缩小 flex 元素来防止它们溢出。flex-basis 的值为 auto. Flex 元素尺寸可以是在主维度上设置的，也可以是根据内容自动得到的。</p>
+
+<p>flex: auto 等同于 flex: 1 1 auto；和上面的 flex:initial 基本相同，但是这种情况下，flex 元素在需要的时候既可以拉伸也可以收缩。</p>
+
+<p>flex: none 可以把 flex 元素设置为不可伸缩。它和设置为 flex: 0 0 auto 是一样的。元素既不能拉伸或者收缩，但是元素会按具有 flex-basis: auto 属性的 flexbox 进行布局。</p>
+
+<p>常看到的 flex: 1 或者 flex: 2 等等。它相当于 flex: 1 1 0 或者 flex: 2 1 0。元素可以在 flex-basis 为 0 的基础上伸缩。</p>
 
   </section>
 
@@ -307,13 +341,13 @@ https://jwt.io/introduction</p>
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2021/12/flex/" data-toggle="tooltip" data-placement="top" title="flex">上一篇：  <span>flex</span>
+            <a href="/2021/12/why-should-we-use-pnpm/" data-toggle="tooltip" data-placement="top" title="why should we use pnpm">上一篇：  <span>why should we use pnpm</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2022/04/pm2/" data-toggle="tooltip" data-placement="top" title="pm2使用教程">下一篇：  <span>pm2使用教程</span>
+            <a href="/2022/04/koa-jwt/" data-toggle="tooltip" data-placement="top" title="koa-jwt">下一篇：  <span>koa-jwt</span>
             </a>
         </li>
         
