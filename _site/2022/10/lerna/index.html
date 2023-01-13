@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>前端架手架设计</title>
+  <title>Lerna简介和使用</title>
   <meta name="description" content="">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="前端架手架设计">
+  <meta name="twitter:title" content="Lerna简介和使用">
   <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="前端架手架设计">
+  <meta property="og:title" content="Lerna简介和使用">
   <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2022/10/front-end-scaffolding-design/">
+  <link rel="canonical" href="http://localhost:4000/2022/10/lerna/">
   <link rel="alternate" type="application/rss+xml" title="泽柏" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -170,7 +170,7 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">前端架手架设计</h1>
+    <h1 class="post-title">Lerna简介和使用</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
       <time datetime="2022-10-19 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2022-10-19</time>  
@@ -183,23 +183,78 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#架构图">架构图</a></li>
-  <li><a href="#源码地址">源码地址</a></li>
+  <li><a href="#lerna">lerna</a></li>
+  <li><a href="#解决什么问题">解决什么问题</a></li>
+  <li><a href="#官网">官网</a></li>
+  <li><a href="#使用">使用</a></li>
 </ul>
 
   
 
   <section class="post">
     
-<h2 id="架构图">架构图</h2>
+<h2 id="lerna">lerna</h2>
 
-<p><img src="https://19ba.oss-cn-hangzhou.aliyuncs.com/blog/img/WechatIMG345.jpeg" alt="效果图" /></p>
+<p>Lerna 是一个优化基于 git + npm 的多 package 项目的管理工具。</p>
 
-<h2 id="源码地址">源码地址</h2>
+<h2 id="解决什么问题">解决什么问题</h2>
 
-<p>https://github.com/djonce/def-cli</p>
+<ul>
+  <li>
+    <p>重复操作
+多 Package 本地 link
+多 Package 依赖安装
+多 Package 单元测试
+多 Package 代码提交
+多 Package 代码发布</p>
+  </li>
+  <li>
+    <p>版本一致性
+发布时版本一致性
+发布后相互依赖版本升级</p>
+  </li>
+</ul>
 
-<p>更新中。。。</p>
+<h2 id="官网">官网</h2>
+
+<p>官网： https://leran.js.org</p>
+
+<h2 id="使用">使用</h2>
+
+<p>1、初始化 npm 项目</p>
+
+<ul>
+  <li>安装 lerna</li>
+  <li>lerna init : 初始化项目</li>
+</ul>
+
+<p>2、创建 package</p>
+
+<ul>
+  <li>lerna create : 创建 Package</li>
+  <li>lerna add : 安装依赖</li>
+  <li>lerna link : 链接依赖</li>
+</ul>
+
+<p>3、开发和测试</p>
+
+<ul>
+  <li>lerna exec: 执行 shell 脚本</li>
+  <li>lerna run: 执行 npm 命令 -eg: lerna run test</li>
+  <li>lerna clean: 清空依赖</li>
+  <li>lerna bootstrap: 重装依赖</li>
+</ul>
+
+<p>4、发布上线</p>
+
+<ul>
+  <li>lerna / bump version</li>
+  <li>lerna changed: 查看上版本以来的所有变更</li>
+  <li>lerna diff: 查看 diff</li>
+  <li>lerna publish: 项目发布</li>
+</ul>
+
+<p>命令文档：https://lerna.js.org/docs/api-reference/commands</p>
 
   </section>
 
@@ -269,7 +324,7 @@
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2022/08/use-sentry-to-build-a-monitoring-platform/" data-toggle="tooltip" data-placement="top" title="使用sentry搭建监控平台">上一篇：  <span>使用sentry搭建监控平台</span>
+            <a href="/2022/10/front-end-scaffolding-design-copy/" data-toggle="tooltip" data-placement="top" title="前端架手架设计">上一篇：  <span>前端架手架设计</span>
             </a>
         </li>
         
@@ -340,7 +395,7 @@
 
       <div class = "footer_div" style="text-align: center">  
         <p class="copyright text-muted">
-          Copyright &copy; 泽柏 2022 Theme by leopardpan |
+          Copyright &copy; 泽柏 2023 Theme by leopardpan |
           <iframe
               style="margin-left: 2px; margin-bottom:-5px;"
               frameborder="0" scrolling="0" width="91px" height="20px"

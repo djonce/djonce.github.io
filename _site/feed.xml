@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Dec 2022 22:54:41 +0800</pubDate>
-    <lastBuildDate>Mon, 19 Dec 2022 22:54:41 +0800</lastBuildDate>
+    <pubDate>Fri, 13 Jan 2023 12:19:43 +0800</pubDate>
+    <lastBuildDate>Fri, 13 Jan 2023 12:19:43 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -26,11 +26,213 @@
       </item>
     
       <item>
+        <title>Lerna简介和使用</title>
+        <description>
+&lt;h2 id=&quot;lerna&quot;&gt;lerna&lt;/h2&gt;
+
+&lt;p&gt;Lerna 是一个优化基于 git + npm 的多 package 项目的管理工具。&lt;/p&gt;
+
+&lt;h2 id=&quot;解决什么问题&quot;&gt;解决什么问题&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;重复操作
+多 Package 本地 link
+多 Package 依赖安装
+多 Package 单元测试
+多 Package 代码提交
+多 Package 代码发布&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;版本一致性
+发布时版本一致性
+发布后相互依赖版本升级&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;官网&quot;&gt;官网&lt;/h2&gt;
+
+&lt;p&gt;官网： https://leran.js.org&lt;/p&gt;
+
+&lt;h2 id=&quot;使用&quot;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;1、初始化 npm 项目&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装 lerna&lt;/li&gt;
+  &lt;li&gt;lerna init : 初始化项目&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2、创建 package&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;lerna create : 创建 Package&lt;/li&gt;
+  &lt;li&gt;lerna add : 安装依赖&lt;/li&gt;
+  &lt;li&gt;lerna link : 链接依赖&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3、开发和测试&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;lerna exec: 执行 shell 脚本&lt;/li&gt;
+  &lt;li&gt;lerna run: 执行 npm 命令 -eg: lerna run test&lt;/li&gt;
+  &lt;li&gt;lerna clean: 清空依赖&lt;/li&gt;
+  &lt;li&gt;lerna bootstrap: 重装依赖&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;4、发布上线&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;lerna / bump version&lt;/li&gt;
+  &lt;li&gt;lerna changed: 查看上版本以来的所有变更&lt;/li&gt;
+  &lt;li&gt;lerna diff: 查看 diff&lt;/li&gt;
+  &lt;li&gt;lerna publish: 项目发布&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;命令文档：https://lerna.js.org/docs/api-reference/commands&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/lerna/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/lerna/</guid>
+        
+        <category>工程化</category>
+        
+        
+      </item>
+    
+      <item>
         <title>前端架手架设计</title>
         <description>
 &lt;h2 id=&quot;架构图&quot;&gt;架构图&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://19ba.oss-cn-hangzhou.aliyuncs.com/blog/img/WechatIMG345.jpeg&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;脚手架的核心价值&quot;&gt;脚手架的核心价值&lt;/h2&gt;
+
+&lt;p&gt;自动化：项目重复拷贝/git 操作/发布上线操作&lt;/p&gt;
+
+&lt;p&gt;标准化：项目创建/ git flow/ 发布流程/ 回滚流程&lt;/p&gt;
+
+&lt;p&gt;数据化：研发过程系统化、数据化、使得研发过程可量化&lt;/p&gt;
+
+&lt;h2 id=&quot;开发流程&quot;&gt;开发流程&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建 npm 项目&lt;/li&gt;
+  &lt;li&gt;创建脚手架入口文件，最上方添加：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env node&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;配置 package.json，添加 bin 属性&lt;/li&gt;
+  &lt;li&gt;编写脚手架代码&lt;/li&gt;
+  &lt;li&gt;将脚手架发布到 npm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;使用流程&quot;&gt;使用流程&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装脚手架
+pnpm install -g 91-cli&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用脚手架
+91-cli&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;脚手架开发难点&quot;&gt;脚手架开发难点&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;分包：将复杂的系统拆分成若干个模块&lt;/li&gt;
+  &lt;li&gt;命令注册：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def create
+def add
+def publish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;参数解析&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def command [options] &amp;lt;params&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;帮助文档
+global help
+Usage Options Commands&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其它： 命令行交互、日志打印、命令行文字变色、网络通讯（http/websocket)、文件处理等&lt;/p&gt;
+
+&lt;h2 id=&quot;脚手架本地调试&quot;&gt;脚手架本地调试&lt;/h2&gt;
+
+&lt;p&gt;主要解决本地库之间的依赖，引用问题&lt;/p&gt;
+
+&lt;p&gt;可以通过 npm link 来进行未发布上线的包依赖&lt;/p&gt;
+
+&lt;p&gt;大致步骤&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;链接本地脚手架&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd  your-cli-dir
+npm link
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;链接本地库文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  cd your-lib-dir
+  npm link
+  cd your-cli-dir
+  npm link your-lib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;取消链接本地库文件：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd your-lib-dir
+npm unlink
+cd your-cli-dir
+# link存在
+npm unlink your-lib
+# link不存在
+rm -rf node_modules
+npm install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;理解&lt;strong&gt;npm link&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm link your-lib: 将当前项目中**node_modules 下指定文件链接到 node 全局 node_modules 下的库文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;npm link : 将当前项目链接到 node 全局 node_modules 中作为一个库文件， 并解析 bin 配置创建可执行文件&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;理解 &lt;strong&gt;npm unlink&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;npm unlink: 将当前项目从 node 全局 node_modules 中移除&lt;/li&gt;
+  &lt;li&gt;npm unlink your-lib： 将当前项目中的库文件依赖移除&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;脚手架注册命令和参数解析&quot;&gt;脚手架注册命令和参数解析&lt;/h2&gt;
+
+&lt;p&gt;const argv = require(‘process’).argv;
+console.log(argv);&lt;/p&gt;
 
 &lt;h2 id=&quot;源码地址&quot;&gt;源码地址&lt;/h2&gt;
 
@@ -39,8 +241,8 @@
 &lt;p&gt;更新中。。。&lt;/p&gt;
 </description>
         <pubDate>Wed, 19 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/front-end-scaffolding-design/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/front-end-scaffolding-design/</guid>
+        <link>http://localhost:4000/2022/10/front-end-scaffolding-design-copy/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/front-end-scaffolding-design-copy/</guid>
         
         <category>工程化</category>
         
@@ -488,105 +690,6 @@ CMD npm start
         <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2022/06/https-cert-apply/</link>
         <guid isPermaLink="true">http://localhost:4000/2022/06/https-cert-apply/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>docker install nginx</title>
-        <description>
-&lt;h3 id=&quot;docker-官方镜像仓库&quot;&gt;docker 官方镜像仓库&lt;/h3&gt;
-
-&lt;p&gt;地址： https://hub.docker.com&lt;/p&gt;
-
-&lt;h3 id=&quot;选择合适的-nginx-镜像版本&quot;&gt;选择合适的 nginx 镜像版本&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/docker/install-nginx-1.png&quot; alt=&quot;搜索nginx镜像&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/docker/install-nginx-2.png&quot; alt=&quot;查看nginx版本&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;下载-nginx-镜像&quot;&gt;下载 nginx 镜像&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;命令&lt;/th&gt;
-      &lt;th&gt;描述&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;docker pull nginx&lt;/td&gt;
-      &lt;td&gt;下载最新版本（等同于：docker pull nginx:latest&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;docker pull nginx:版本号&lt;/td&gt;
-      &lt;td&gt;下载制定版本&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;查看-nginx-镜像信息&quot;&gt;查看 nginx 镜像信息&lt;/h3&gt;
-
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker images
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/docker/install-nginx-3.png&quot; alt=&quot;下载nginx镜像&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;创建-nginx-配置文件&quot;&gt;创建 nginx 配置文件&lt;/h3&gt;
-
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run --name nginx -p 80:80 -d nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;两种创建配置方式&lt;/p&gt;
-
-&lt;h4 id=&quot;第一种参考-nginx-配置文档纯手撸&quot;&gt;第一种参考 nginx 配置文档，纯手撸&lt;/h4&gt;
-
-&lt;p&gt;地址：https://nginx.org/en/docs/http/configuring_https_servers.html&lt;/p&gt;
-
-&lt;h4 id=&quot;第二种使用-nginx-默认配置文件&quot;&gt;第二种使用 nginx 默认配置文件&lt;/h4&gt;
-
-&lt;p&gt;这里通过 docker cp 把容器里的 nginx 配置拷贝&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/etc/nginx/nginx.conf /home/nginx/nginx.conf
-docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/etc/nginx/conf.d /home/nginx/conf.d
-docker &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;nginx:/usr/share/nginx/html /home/nginx/html
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;创建-nginx-容器并运行&quot;&gt;创建 Nginx 容器并运行&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443:443 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; nginx &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /docker/nginx/nginx.conf:/etc/nginx/nginx.conf &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /docker/nginx/conf.d:/etc/nginx/conf.d &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /docker/nginx/certs:/etc/nginx/certs &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /docker/nginx/log:/var/log/nginx &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /docker/nginx/html:/usr/share/nginx/html &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; nginx:latest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;验证结果&quot;&gt;验证结果&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://127.0.0.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;注意点&quot;&gt;注意点&lt;/h3&gt;
-
-&lt;p&gt;注：&lt;/p&gt;
-
-&lt;p&gt;1、站点目录，最好不要建在 &lt;strong&gt;root&lt;/strong&gt; 目录，防止出现权限不足问题
-（”/root/wwwroot/demo.19ba.cn/index.html” is forbidden (13: Permission denied)）&lt;/p&gt;
-
-&lt;p&gt;2、将网站的目录挂载到容器，解决文件 not found.
-（*47 “/wwwroot/demo.19ba.cn/index.html” is not found (2: No such file or directory)）&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/docker-install-nginx/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/docker-install-nginx/</guid>
-        
-        <category>docker</category>
         
         
       </item>
