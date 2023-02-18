@@ -3,10 +3,10 @@
   <channel>
     <title>泽柏</title>
     <description>欢迎来到我的个人站~</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Jan 2023 12:19:43 +0800</pubDate>
-    <lastBuildDate>Fri, 13 Jan 2023 12:19:43 +0800</lastBuildDate>
+    <link>http://jonce.cn/</link>
+    <atom:link href="http://jonce.cn/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 18 Feb 2023 20:04:02 +0800</pubDate>
+    <lastBuildDate>Sat, 18 Feb 2023 20:04:02 +0800</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -19,8 +19,8 @@
 &lt;h2 id=&quot;实战&quot;&gt;实战&lt;/h2&gt;
 </description>
         <pubDate>Sun, 06 Nov 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/11/react-components-library/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/11/react-components-library/</guid>
+        <link>http://jonce.cn/2022/11/react-components-library/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/11/react-components-library/</guid>
         
         
       </item>
@@ -92,8 +92,8 @@
 &lt;p&gt;命令文档：https://lerna.js.org/docs/api-reference/commands&lt;/p&gt;
 </description>
         <pubDate>Wed, 19 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/lerna/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/lerna/</guid>
+        <link>http://jonce.cn/2022/10/lerna/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/10/lerna/</guid>
         
         <category>工程化</category>
         
@@ -241,8 +241,8 @@ console.log(argv);&lt;/p&gt;
 &lt;p&gt;更新中。。。&lt;/p&gt;
 </description>
         <pubDate>Wed, 19 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/front-end-scaffolding-design-copy/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/front-end-scaffolding-design-copy/</guid>
+        <link>http://jonce.cn/2022/10/front-end-scaffolding-design-copy/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/10/front-end-scaffolding-design-copy/</guid>
         
         <category>工程化</category>
         
@@ -344,8 +344,8 @@ server {
 &lt;p&gt;参考：https://hub.docker.com/_/sentry&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Aug 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/08/use-sentry-to-build-a-monitoring-platform/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/08/use-sentry-to-build-a-monitoring-platform/</guid>
+        <link>http://jonce.cn/2022/08/use-sentry-to-build-a-monitoring-platform/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/08/use-sentry-to-build-a-monitoring-platform/</guid>
         
         
       </item>
@@ -422,8 +422,8 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 30 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/oprnfire-install/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/oprnfire-install/</guid>
+        <link>http://jonce.cn/2022/06/oprnfire-install/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/06/oprnfire-install/</guid>
         
         
       </item>
@@ -500,8 +500,8 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;strong&gt;默认管理员登录账号 admin，密码 admin123, 详细见文档&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/calibre/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/calibre/</guid>
+        <link>http://jonce.cn/2022/06/calibre/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/06/calibre/</guid>
         
         
       </item>
@@ -520,8 +520,8 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;p&gt;&lt;a href=&quot;https://www.logomaker.com.cn/&quot;&gt;标智客&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/some-good-dev-tools/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/some-good-dev-tools/</guid>
+        <link>http://jonce.cn/2022/06/some-good-dev-tools/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/06/some-good-dev-tools/</guid>
         
         <category>工具</category>
         
@@ -552,8 +552,8 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 &lt;p&gt;&lt;a href=&quot;https://wedata.weixin.qq.com/mp2/basic-data/core-data?source=3&quot;&gt;微信小程序数据分析-We分析&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 16 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/weixin-miniapp-dev/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/weixin-miniapp-dev/</guid>
+        <link>http://jonce.cn/2022/06/weixin-miniapp-dev/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/06/weixin-miniapp-dev/</guid>
         
         <category>小程序</category>
         
@@ -628,8 +628,8 @@ CMD npm start
 
 </description>
         <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/node-project-package-docker-images/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/node-project-package-docker-images/</guid>
+        <link>http://jonce.cn/2022/06/node-project-package-docker-images/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/06/node-project-package-docker-images/</guid>
         
         
       </item>
@@ -688,8 +688,8 @@ CMD npm start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 15 Jun 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/06/https-cert-apply/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/06/https-cert-apply/</guid>
+        <link>http://jonce.cn/2022/06/https-cert-apply/</link>
+        <guid isPermaLink="true">http://jonce.cn/2022/06/https-cert-apply/</guid>
         
         
       </item>
